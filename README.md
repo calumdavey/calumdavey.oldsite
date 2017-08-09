@@ -1,3 +1,5 @@
+[About](about.md) | [research](research.md) | [Resources](resources.md) 
+
 ## Welcome to GitHub Pages
 
 [Link](hello_world.md) to the *Hello World* page. 
