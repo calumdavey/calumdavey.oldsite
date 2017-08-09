@@ -1,4 +1,4 @@
-[About](about.md) | [research](research.md) | [Resources](resources.md) 
+[About](about.md) | [Research](research.md) | [Resources](resources.md) 
 
 ## Welcome to GitHub Pages
 
