@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-[Link](hello-world.md) to the *Hello World* page. 
+[Link](hello_world.md) to the *Hello World* page. 
 
 You can use the [editor on GitHub](https://github.com/calumdavey/calumdavey.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
