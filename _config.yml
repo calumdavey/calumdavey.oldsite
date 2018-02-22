@@ -18,6 +18,9 @@ kramdown:
 # Enable disqus 
 disqus: disqus_0mg3dgf5kD 
 
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-114626982-1
+
 # Set the Sass partials directory, as we're using @imports
 sass:
   style: :expanded # You might prefer to minify using :compressed
