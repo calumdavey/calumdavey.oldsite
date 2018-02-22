@@ -1,9 +1,9 @@
-[Home](index.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) 
-
 ---
 title: About
 layout: page
 ---
+
+[Home](index.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) 
 
 Some information about you!
 
