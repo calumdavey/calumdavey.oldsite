@@ -1,4 +1,7 @@
-[Home](index.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) 
+---
+layout: page2
+title: Home
+---
 
 ![](2016-07-22-0014.png)
 
