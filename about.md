@@ -3,6 +3,6 @@
 ## About me
 
 - Blah 
-- etc.
-- Download [CV](https://www.dropbox.com/s/dkr22fwldyt69ig/cv.pdf?dl=0)
+- etc.0
+- Download [CV](cv.pdf)
 - Or download [CU](whatever.com)
