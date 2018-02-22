@@ -1,4 +1,7 @@
-[Home](index.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) 
+---
+layout: page2
+title: Blog
+---
 
 <div class="posts">
   {% for post in site.posts %}
