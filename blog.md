@@ -1,6 +1,6 @@
 [Home](index.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) | [Resources](resources.md)
 
-<div class="posts">
+<div class="posts"> 
   {% for post in site.posts %}
   {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
   {% if year != y %}
