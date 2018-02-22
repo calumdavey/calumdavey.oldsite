@@ -31,3 +31,5 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  
+  # END
