@@ -1,0 +1,21 @@
+<article class="post">
+  <div class="entry">
+    <table>
+  <tbody>
+    <tr>
+      <td><a href="/">Home</a></td>
+      <td><a href="/about/">About</a></td>
+      <td><a href="/research/">Research</a></td>
+      <td><a href="/blog/">Blog</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>  
+  
+  <h1>{{ page.title }}</h1>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+
+</article>
