@@ -2,6 +2,7 @@
 
 ---
 title: About
+layout: page
 ---
 
 Some information about you!
