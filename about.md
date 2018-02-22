@@ -1,9 +1,7 @@
 [Home](index.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) | [Resources](resources.md) 
 
 ---
-layout: page
 title: About
-permalink: /about/
 ---
 
 Some information about you!
