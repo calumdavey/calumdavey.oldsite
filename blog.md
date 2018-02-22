@@ -1,4 +1,4 @@
-[Home](README.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) | [Resources](resources.md)
+[Home](index.md) | [About](about.md) | [Research](research.md) | [Blog](blog.md) | [Resources](resources.md)
 
 <div class="posts">
   {% for post in site.posts %}
