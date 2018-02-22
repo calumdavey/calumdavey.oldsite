@@ -11,6 +11,9 @@
       </div>
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      
+      <p> </p>
+      
     </article>
   {% endfor %}
 </div>
