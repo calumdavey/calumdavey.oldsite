@@ -16,7 +16,7 @@ kramdown:
     css_class: 'highlight'
 
 # Enable disqus 
-disqus: disqus_0mg3dgf5kD
+disqus: http://disqus.com/by/disqus_0mg3dgf5kD 
 
 # Set the Sass partials directory, as we're using @imports
 sass:
