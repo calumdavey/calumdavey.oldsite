@@ -1,12 +1,9 @@
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
 title: Calum Davey
 avatar: https://github.com/calumdavey/calumdavey.github.io/blob/master/IMG_0391.jpg
 description: Epidemiologist at LSHTM 
 
 permalink: /:title/
-
-# The release of Jekyll Now that you're using
-version: v1.2.0
 
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
