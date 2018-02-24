@@ -3,8 +3,4 @@ layout: page2
 title: Welcome
 ---
 
-Hi, and thanks for visiting my website. It's very much under construction right now, so please enjoy this photo I took a while back with a 10 second exposure. 
-
-![](2016-07-22-0014.png)
-
-Beirut at night, 2016
+Hi, and thanks for visiting my website. It's very much under construction right now. For now, there's an [About](about.md) page, and the start of a [blog](blog.md) to look at. 
