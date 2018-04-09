@@ -21,7 +21,9 @@ For note taking there's Apple's 'Notes'. Better is something called [nvALT](http
 
 Finally, get [Self Control](https://selfcontrolapp.com/). This little program shuts you out of distracting websites for as long as you tell it to, and no amount of pleading (or even restating) makes a damned bit of difference. 
 
-Apart from the up-front cost of the laptop, done of this stuff costs any money. And there's tonnes of other open-source software out there. Better still, you don't have to put up with advertising when you use any of these programs. Apple's Mail, for example, works well with Gmail, but filters out the adds that clutter your inbox when you use Gmail online. Adobe Acrobat is fine for reading PDFs, but there are also often little adds floating around. Without spending any money on software, or selling your personal data to 'pay' for services, it is possible to produce publication-quality work. This was a vision for the internet and, quietly, it's becoming a reality. 
+Apart from the up-front cost of the laptop, none of this stuff costs any money. And there's tonnes of other open-source software out there. Better still, you don't have to put up with advertising when you use any of these programs. Apple's Mail, for example, works well with Gmail, but filters out the adds that clutter your inbox when you use Gmail online. Adobe Acrobat is fine for reading PDFs, but there are also often little adds floating around. Without spending any money on software, or selling your personal data to 'pay' for services, it is possible to produce publication-quality work. This was a vision for the internet and, quietly, it's becoming a reality. 
+
+
 
 
 
