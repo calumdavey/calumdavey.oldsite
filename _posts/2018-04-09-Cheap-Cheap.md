@@ -7,7 +7,7 @@ I'm becoming more and more taken with the availability of free, reliable, and in
 
 Get a Mac. I know that sounds deliberately provocative in an article about free software, but I really think it's the frugal choice. Old Macs are [easy to come by](https://www.gumtree.com/macs/london/mac) (Apple nerds are constantly updating their gear). Apple laptops are really well made and run for ages. Last computer that I bought was an almost new 11" MacBook Air for £300. It's great. I'm sure that I could not have found a better laptop. 
 
-Why get a Mac? Because Apple give you bunch of useful, if not quite perfect, software for free. Safari* is pretty good, as is Mail, the Calendar app is fine, Text Edit is nice, and Preview is a great PDF reader (there's also Notes, which can have locked notes, Reminders, and Photos). Plus, remember when you had to pay for your operating system? No more. Updates have been free for a while, and likely to stay that way. Sure, most of what I've just said could apply to a Windows PC (and definitely to a Linux OS) but it's all easily packaged on a Mac, everything works together nicely. Believe me, I wasn't always this way, but once you start seeing the Apple OS as a frugal workhorse (and not a shiny show-off machine) then you start to appreciate these little things. 
+Why get a Mac? Because Apple give you bunch of useful, if not quite perfect, software for free. Safari is pretty good, as is Mail, the Calendar app is fine, Text Edit is nice, and Preview is a great PDF reader (there's also Notes, which can have locked notes, Reminders, and Photos). Plus, remember when you had to pay for your operating system? No more. Updates have been free for a while, and likely to stay that way. Sure, most of what I've just said could apply to a Windows PC (and definitely to a Linux OS) but it's all easily packaged on a Mac, everything works together nicely. Believe me, I wasn't always this way, but once you start seeing the Apple OS as a frugal workhorse (and not a shiny show-off machine) then you start to appreciate these little things. 
 
 For analysis, [use R](https://www.rstudio.com/). R is great, although there's a bit of a learning curve. Apparently even some hard-core coders find it a bit weird. It was written by data researchers, and with each 'package' (extensions with additional features) there's something new to learn. 
 
@@ -23,7 +23,6 @@ Finally, get [Self Control](https://selfcontrolapp.com/). This little program sh
 
 Apart from the up-front cost of the laptop, done of this stuff costs any money. And there's tonnes of other open-source software out there. Better still, you don't have to put up with advertising when you use any of these programs. Apple's Mail, for example, works well with Gmail, but filters out the adds that clutter your inbox when you use Gmail online. Adobe Acrobat is fine for reading PDFs, but there are also often little adds floating around. Without spending any money on software, or selling your personal data to 'pay' for services, it is possible to produce publication-quality work. This was a vision for the internet and, quietly, it's becoming a reality. 
 
-* I've recently switched to FireFox for the security extensions, but will see how well that goes.
 
 
 
