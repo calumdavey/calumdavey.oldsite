@@ -19,7 +19,7 @@ For references, use [BibDesk](https://bibdesk.sourceforge.io/). BibDesk manages 
 
 For note taking there's Apple's 'Notes'. Better is something called [nvALT](http://brettterpstra.com/projects/nvalt/), which stores all of your notes as text files. That way if anything goes wrong you can still get access to your notes (e.g. by opening them in Text Edit). nvALT is super quick at creating new notes and searching existing ones. It also uses the Markdown language, so you can format notes with headings with ease.
 
-Finally, get [Self Control](https://selfcontrolapp.com/). This little program shuts you out of distracting websites for as long as you tell it to, and no amount of pleading (or even restating) makes a damned bit of difference. 
+Finally, get [Self Control](https://selfcontrolapp.com/). This little program shuts you out of distracting websites for as long as you tell it to, and no amount of pleading (or even restarting) makes a damned bit of difference. 
 
 Apart from the up-front cost of the laptop, none of this stuff costs any money. And there's tonnes of other open-source software out there. Better still, you don't have to put up with advertising when you use any of these programs. Apple's Mail, for example, works well with Gmail, but filters out the adds that clutter your inbox when you use Gmail online. Adobe Acrobat is fine for reading PDFs, but there are also often little adds floating around. Without spending any money on software, or selling your personal data to 'pay' for services, it is possible to produce publication-quality work. This was a vision for the internet and, quietly, it's becoming a reality. 
 
