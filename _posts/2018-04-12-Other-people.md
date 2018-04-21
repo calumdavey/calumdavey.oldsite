@@ -5,7 +5,7 @@ title: Habit-hell is other people('s habits)
 
 When a group of people meet in the same room a number of times, people often remark on how funny it is that they always sit in the same place. 
 
-Someone will then say something about 'force of habit', or something like that. And it's true that we make habitual choices every day. Habits help us to minimise energy used to make decisions. 
+Someone will then say something about 'force of habit', and it's true that we make habitual choices every day. Habits help us to minimise energy used to make decisions. 
 
 But every day we manage to overcome our habits, put in a little more energy, so why can't we overcome this one? Because in some way we feel like we have to overcome all of the energy saved through habitual action by everyone in the room just to make a different decision about where to sit. If we sat somewhere new, perhaps every other person would be forced to use energy to make a decision, too. 
 
