@@ -1,0 +1,39 @@
+---
+title: "My first word document written in RStudio"
+author:
+-  Firstname Surname
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+ word_document: 
+  reference_docx: Formats/Example-word-styles.docx
+  toc: false
+bibliography: References/Example-library.bib
+csl: Formats/harvard-imperial-college-london.csl
+---
+
+# Famous people in public health  
+## John Snow 
+
+John Snow is famous for, among other things, working out that *cholera was waterborne* [@Snow:1856].
+
+## Florence Nightingale 
+
+Florence Nightingale invented nursing as a profession [@Nightingale:1992].
+
+## Michael Marmot 
+
+Michael Marmot led the Whitehall studies, which showed that socioeconomic *class inequalities can be bad for your health* (when you're at the **bottom**, not the top!) [@Marmot:1991]. 
+
+## Doll and Bradford-Hill
+
+Along with others, these two lead studies that supported the idea, controversial at the time, that smoking is bad for you [@Doll:1950], causing: 
+
+- Lung disease 
+- Heart disease
+- Yellow teeth
+- Bad breath 
+
+\pagebreak 
+
+#References
+
