@@ -33,6 +33,22 @@ Along with others, these two lead studies that supported the idea, controversial
 - Yellow teeth
 - Bad breath 
 
+# Tables 
+## Table 1: characteristics of famous people
+
+| Name | Gender | Year of birth  | University / institution  |
+|:------|:--|:--|:--|
+| John Snow | Male | 1813 | Royal College of Physicians |
+| Florence Nightingale | Female | 1820 | St Thomas' Hospital |
+| Michael Marmot | Male | 1945 | UCL |
+| Richard Doll | Male | 1912 | Oxford University |
+| Austin Bradford-Hill | Male | 1897 | LSHTM |
+
+# Figures 
+## Figure 1: John Snow's map
+
+![John Snow's map](Images/1024px-Snow-cholera-map-1.jpg)
+
 \pagebreak 
 
 #References
