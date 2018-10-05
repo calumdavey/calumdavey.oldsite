@@ -13,3 +13,7 @@
 	</script>
 	<!-- End Google Analytics -->
 {% endif %}
+
+{% if site.tags != "" %}
+  {% include collecttags.html %}
+{% endif %}
