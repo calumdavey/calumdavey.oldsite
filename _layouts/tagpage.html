@@ -2,6 +2,16 @@
 layout: default
 ---
 <div class="post">
+<table width=200>
+  <tbody>
+    <tr>
+      <td><a href="/">home</a></td>
+      <td><a href="/about/">about</a></td>
+      <td><a href="/blog/">blog</a></td>
+    </tr>
+  </tbody>
+</table>
+
 <h1>Tag: {{ page.tag }}</h1>
 <ul>
 {% for post in site.tags[page.tag] %}
