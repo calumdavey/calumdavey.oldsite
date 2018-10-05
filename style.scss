@@ -68,13 +68,17 @@ p {
   margin: 15px 0;
 }
 
-a {
+a, tagstyle {
   color: $blue;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
     color: $blue;
   }
+}
+
+tagstyle {
+  font-size: 12px;
 }
 
 ul, ol {

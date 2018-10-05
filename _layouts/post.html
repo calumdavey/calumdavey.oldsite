@@ -18,12 +18,12 @@ comments: true
   
   <h2>{{ page.title }}</h2>
 
-<span>[
+<span>
   {% for tag in page.tags %}
     {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="/tag/{{ tag_name }}"><nobr>{{ tag_name }}</nobr>&nbsp;</a>
+    <tagstyle href="/tag/{{ tag_name }}"><nobr>{{ tag_name }}</nobr>&nbsp;</tagstyle>
   {% endfor %}
-]</span>
+</span>
 
   <div class="entry">
     {{ content }}

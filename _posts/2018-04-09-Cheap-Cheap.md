@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Cheap Cheap Free!
+tags: R
 ---
 
 I'm becoming more and more taken with the availability of free, reliable, and in many ways _superior_ software for doing academic work. For anyone starting out, here are my suggestions.

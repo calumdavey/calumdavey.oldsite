@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Writing Word documents in RStudio
+tags: R
 ---
 
 For collaborating in research it is often necessary to produce Word documents (.docx format) for sharing with co-authors for comments and changes. To produce research outputs that are reproducible, and to avoid spending any more time than is necessary in Word (plus having a system that doesn't 'corrupt') we can use RStudio, BibDesk, and a few setup steps to write documents in markdown and output in Word. (I'm assuming that you [have a Mac](https://calumdavey.github.io/Cheap-Cheap/), but if not then I think everything works the same except for the reference manager). 

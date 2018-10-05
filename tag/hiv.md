@@ -1,5 +1,5 @@
 ---
 layout: tagpage
-title: "Tag: hiv"
-tag: hiv
+title: "Tag: HIV"
+tag: HIV
 ---
