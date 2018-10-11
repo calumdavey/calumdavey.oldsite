@@ -1,0 +1,25 @@
+---
+layout: post
+title: Be quiet -- this is The Library
+tags: email productivity 
+---
+
+In a [recent post](http://calnewport.com/blog/2018/10/09/the-average-user-checks-email-5-6-hours-per-weekday-this-is-not-good/), Cal Newport — blogger and ‘deep work’ enthusiast — quotes from a survey from Adobe that the average worker checks email for 5.6 hours a day. 
+
+As he says, while email has removed some inefficiencies in the flow of information, it has clearly created other inefficiencies, inefficient use of _time_. 
+
+Others, such as in the tech industry, see the shortcomings of email the other way around, that it is too slow and doesn’t do a good job of replicating the busy flow of information around a dynamic office space. This has led to [businesses using Slack or other messaging software instead of email](https://tech.co/slack-replacing-email-workplace-2018-08), and adopting a cursory email etiquette — message snippets pecked-out on smartphones between meetings. 
+
+What, if anything, does this mean for academics? Firstly, spending huge amount of time on email is not conducive to the kinds of focused work that is needed for high quality science. Second, chat-like programmes, like Slack, would only make this worse, pinging short messages all the time, the electronic equivalent of everyone you work with talking loudly in the [(open) office](https://www.theguardian.com/higher-education-network/2015/oct/16/the-open-plan-university-noisy-nightmare-or-buzzing-ideas-hub). Sure, you can mute the notifications, but the technology isn’t designed to encourage this and, like a real conversation, will [eventually draw you in](https://www.inc.com/minda-zetlin/facebook-messenger-hangouts-whatsapp-how-to-deal-with-messaging-app-overload.html). 
+
+Perhaps what we need is the equivalent of a library. Librarians force a break in the noise; although people smile to each other about the ‘shushing’ and the ‘please be quiet’s, they keep coming because libraries are some of the few places where anyone can hear themselves think. 
+
+There are two ingredients: libraries, and librarians; you cannot have one without the other. The library is a space — and being in the library is a time-in-space — where people go to work quietly. But it would not be a library without the librarian to enforce the rules and to shoulder the socially transgressive burden of telling people to stop chatting. However, the librarian is just a person without the library; they cannot, by force of being a librarian, make people be quiet on the bus. There is a contract with the librarian, made by stepping into a library, that we will submit to the rules for the better of ourselves. 
+
+Translating this for digital communication means identifying a virtual library that people can enter, with rules enforced by a virtual librarian. It is important that the libraries are socially sanctioned — being in a library is more than just a status update or out-of-office reply — and that the librarian, whatever system that is, is empowered and, crucially, _willing to enforce_ (e.g. have people be annoyed with them for being a stickler for the rules) their power to protect the sanctity of the library. 
+
+I’m imagining software that sits on people’s computers (and phones?) called ‘The Library’. One can go into The Library with a click. All email and messaging will be immediately blocked before reaching your devices. Senders will receive a message that you are ‘in the library’ and not to be disturbed. As with real libraries, The Library would not tolerate people going in an out; after entering, you would need to stay a minimum of 30 minutes before being able to take a break. And breaks could only be so long too — no leaving your stuff in The Library while you hang out in the cafe. At the end of each week, The Library would tell you how long you had spent there. 
+
+Another feature of libraries might be important in some way: they’re nearly always very beautiful. Why is that? Regardless of why that is, the beauty creates, I think, a reverence that helps to enforce the rules of the space. Creating this aesthetically-empowered ethic online might be difficult. It’s possible that good graphical design in the out-of-office messages, photographs of real libraries, and high-handed prose could be used to create the effect. 
+
+Most scientists recognise that unhealthy — and unproductive — behaviours are highly affected by the structures that we work in. Replacing the library with the desk, and the desktop computer, has changed the structure, making traditional ‘deep work’ very difficult. Rather than blame individuals, implicit in giving advice to individuals, I think we need to recognise the structural forces and change the architecture — build a Library in the technical and social sense so that we can have a space to hear ourselves think. 
