@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Be quiet -- this is The Library
+title: Be quiet, this is The Library
 tags: email productivity 
 ---
 
