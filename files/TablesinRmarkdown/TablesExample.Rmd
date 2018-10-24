@@ -1,0 +1,75 @@
+---
+title: "Table Example"
+author: "Calum Davey"
+date: "24/10/2018"
+output: 
+  word_document:
+    reference_docx: styles.docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) # this just prints the code in the Word doc. Change TRUE to FALSE and see what happens when you knit. 
+```
+
+First, install the package 'openxlsx' by running `install.packages('openxlsx')` just once. 
+
+Then, you need to load the package, which we need to do each time we launch RStudio so might as well just have in the script. 
+
+```{r Libraries}
+library(openxlsx)
+```
+
+Then we need to load the Excel sheet into R. 
+
+```{r Import sheet}
+cities <- read.xlsx('cities.xlsx', sheet = 1)
+```
+
+We can simply print the data in the table...
+
+```{r Print}
+cities 
+```
+
+but the output is pretty ugly. Instead, we can use one of the functions associated with the 'knit' command to make the table look nicer (you can find out more by typing `?knitr::kable` in the command line). To get the entries to be smaller you need to update the 'compact' style in the reference Word doc. 
+
+```{r Table}
+# install.packages('kableExtra') #only need to do once 
+knitr::kable(cities) 
+```
+
+(Don't worry about the next part, but might be useful)
+
+If it seems that this requires a lot of lines of code, you can put it all in one line:
+
+```{r One line}
+knitr::kable(read.xlsx('cities.xlsx', sheet = 1))
+```
+
+You probably notices that R has put dots between words in the column headings, which is pretty ugly. You can change the headings this way:
+
+```{r Change headings}
+names(cities) <- c('Rank', 'City', 'Population', 'Definition', 'Area (sq km)',	'Population density (per sq km)',	'Country')
+
+knitr::kable(cities)
+```
+
+If you want to get a bit fancy, you could write a little function that changes the dots to spaces, which means that you can still make the table appear in just one line of code (after you've defined the function just one time):
+
+```{r Make pretty}
+makePretty <- function(x){
+  names(x) <- gsub('\\.', '\\ ', names(x))
+  return(x)
+}
+
+knitr::kable(makePretty(read.xlsx('cities.xlsx', sheet = 1)))
+```
+
+We can add commas for thousands with a simple option in knitr::kable, and control the alignment of the columns:
+
+```{r Add commas}
+knitr::kable(makePretty(read.xlsx('cities.xlsx', sheet = 1)),
+             format.args = list(big.mark = ","),
+             align = c('r','c','c','c','c','c','c'))
+```
+
