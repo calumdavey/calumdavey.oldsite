@@ -8,14 +8,22 @@ output:
 ---
 ## Set the design parameters for the study 
 
-The first stage is to set the number of disabled and non-disabled children that will be recruited overall, and the number of clusters. The number of children per cluster is assumed to be equal, although this could be relaxed. 
+The first stage is to set the number of disabled and non-disabled children that will be recruited overall, and the number of clusters. 
 
 ```{r}
-n <- 2000 # 2000 disabled children, 2000 non-disabled 
-d <- matrix(,nrow=n*2, ncol=4) # Create data 
-d[,1] <- rep(c(0,1),times=c(n,n)) # Code disabled, and non-disabled (1,0)
-c <- 40 # total number of clusters 
-d[,2] <- rep(rep(seq(1,c,1), times=rep(n/c, times=c)),times=2)
+library(openxlsx)
+# Load the number of people enumerated in each cluster 
+N <- openxlsx::read.xlsx('Cluster Population CE1.xlsx')
+N[,3] <- round(N[,2]*(2000/sum(N[,2])),0) # back-calc for the proportion of CWD in each cluster 
+N[,4] <- round(N[,2]*(2000/(sum(N[,2]*0.05))),0) # back-calc for the total children in each cluster 
+colnames(N) <- c('cluster','N','N_cwd','N_c')
+head(N)
+# n <- N[,3] # total number of disabled children 
+# 
+# d <- matrix(,nrow=n*2, ncol=4) # Create data 
+# d[,1] <- rep(c(0,1),times=c(n,n)) # Code disabled, and non-disabled (1,0)
+# c <- 40 # total number of clusters 
+# d[,2] <- rep(rep(seq(1,c,1), times=rep(n/c, times=c)),times=2)
 ```
 
 ## Set assummed population-level parameters 
@@ -23,17 +31,22 @@ d[,2] <- rep(rep(seq(1,c,1), times=rep(n/c, times=c)),times=2)
 Next, we set the population-level parameters, e.g. the 'true' paramter values, for each cluster. In this case, that means the true proportion attending school for disabled and non-disabled children. 
 
 ```{r}
-e0_p <- c(.7) # enrolment of non-disabled children 
-e1_p <- c(.5) # enrolment of disabled children 
-k <- c(.01) # Set intercluster coefficient of variation
-var_b1 <- k/e1_p
-var_b2 <- k/e0_p
-# Fix true cluster-level means of the outcome 
-e1_c <- rnorm(40, e1_p, var_b1^.5)
-e0_c <- rnorm(40, e0_p, var_b2^.5)
-d[,3] <- c(rep(e0_c, times=rep(n/c, times=c)),
-           rep(e1_c, times=rep(n/c, times=c)))
-  # Do need a way to avoid values >1 or <0
+# Enrolment 
+  e0 <- c(.7) # enrolment of all children 
+  e1 <- c(.5) # enrolment of disabled children 
+  k <- c(.01) # Set intercluster coefficient of variation in enrollment levels 
+  var_b1 <- k/e1 # Calculate the variance of the cluster proportions 
+  var_b2 <- k/e0 # Calculate the variance of the cluster proportions 
+  # Fix true cluster-level means of school enrollment 
+  N$e_1 <- round(rnorm(nrow(N), e1, var_b1^.5),2) # Do need a way to avoid values >1 or <0
+  N$e_0 <- round(rnorm(nrow(N), e0, var_b2^.5),2) # Do need a way to avoid values >1 or <0
+  # d[,3] <- c(rep(e0_c, times=rep(n/c, times=c)),
+  #            rep(e1_c, times=rep(n/c, times=c)))
+# True relationship between enrollment and treatment 
+  t0 <- c(.8) # 80% of enrolled children are in school and treated 
+  t1 <- c(.6) # 60% of enrolled children with disabilities are in school and treated 
+# True proportions treated by the intervention
+  
 ```
 
 ## Generate enrolment outcome 
