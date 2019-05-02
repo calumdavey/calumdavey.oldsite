@@ -4,13 +4,13 @@ library(openxlsx)
 library(dplyr)
 # Load the number of people enumerated in each cluster 
 N <- openxlsx::read.xlsx('Cluster Population CE1.xlsx')
-N[,3] <- round(N[,2]*(2000/sum(N[,2])),0) # back-calc for the proportion of CWD in each cluster 
-N[,4] <- round(N[,2]*(2000/(sum(N[,2]*0.05))),0) # back-calc for the total children in each cluster 
+N[,3] <- round(N[,2]*(2400/sum(N[,2])),0) # back-calc for the proportion of CWD in each cluster 
+N[,4] <- round(N[,2]*(2400/(sum(N[,2]*0.05))),0) # back-calc for the total children in each cluster 
 colnames(N) <- c('cluster','N','N_cwd','N_c')
 head(N)
 
 # Number of simulations to run 
-j <- 1000
+j <- 5000
 # Matrix to save the results 
 d <- matrix(, ncol=0, nrow=j)
 
@@ -21,7 +21,7 @@ for (i in es){
 # Enrolment 
 e0 <- c(.75) # enrolment of all children 
 e1 <- c(i) # enrolment of disabled children 
-k <- c(.01) # Set intercluster coefficient of variation in enrollment levels 
+k <- c(.05) # Set intercluster coefficient of variation 
 var_b0 <- k/e0 # Calculate the variance of the cluster proportions enrolled  
 var_b1 <- k/e1 # Calculate the variance of the cluster proportions enrolled 
 # Fix true cluster-level means of school enrollment 
@@ -37,10 +37,9 @@ N$e_0 <- apply(N, 1, function(x) rnorm_0_1(e0, var_b0))
 N$e_1 <- apply(N, 1, function(x) rnorm_0_1(e1, var_b1))
 
 # True relationship between enrollment and treatment in school-treatment arm
-a0 <- c(.9) # 90% of enrolled children are in school and treated 
-a1 <- c(.8) # 80% of enrolled children with disabilities are in school and treated 
+a0 <- c(.8) # 80% of enrolled children are in school and treated 
+a1 <- c(.7) # 70% of enrolled children with disabilities are in school and treated 
 # True proportions treated by the intervention
-k <- c(.01) # Set intercluster coefficient of variation in attendance if enrolled 
 var_b0 <- k/a0 # Calculate the variance of the cluster attendance if enrolled 
 var_b1 <- k/a1 # Calculate the variance of the cluster attendance if enrolled   
 # Fix the true cluster-level means of the attendance at school if enrolled 
@@ -93,14 +92,14 @@ diff_p <- t_0_p[,1:(ncol(t_0_p)-1)] - t_1_p[,1:(ncol(t_1_p)-1)]
 diff_p <- cbind(diff_p, N$allocation)
 
 # Calculate sample enrolment figures 
-p0_sc   <- as.data.frame(t_0_p) %>% filter(V1001==0) %>% select(-V1001) %>% apply(2, mean)
-p1_sc   <- as.data.frame(t_1_p) %>% filter(V1001==0) %>% select(-V1001) %>% apply(2, mean)
-p0_comm <- as.data.frame(t_0_p) %>% filter(V1001==1) %>% select(-V1001) %>% apply(2, mean)
-p1_comm <- as.data.frame(t_1_p) %>% filter(V1001==1) %>% select(-V1001) %>% apply(2, mean)
+p0_sc   <- as.data.frame(t_0_p) %>% filter(V5001==0) %>% select(-V5001) %>% apply(2, mean)
+p1_sc   <- as.data.frame(t_1_p) %>% filter(V5001==0) %>% select(-V5001) %>% apply(2, mean)
+p0_comm <- as.data.frame(t_0_p) %>% filter(V5001==1) %>% select(-V5001) %>% apply(2, mean)
+p1_comm <- as.data.frame(t_1_p) %>% filter(V5001==1) %>% select(-V5001) %>% apply(2, mean)
 
 # Median disparity in each arm
-diff_sc <- as.data.frame(diff_p) %>% filter(V1001==0) %>% select(-V1001) %>% apply(2, mean)
-diff_comm <- as.data.frame(diff_p) %>% filter(V1001==1) %>% select(-V1001) %>% apply(2, mean)
+diff_sc <- as.data.frame(diff_p) %>% filter(V5001==0) %>% select(-V5001) %>% apply(2, mean)
+diff_comm <- as.data.frame(diff_p) %>% filter(V5001==1) %>% select(-V5001) %>% apply(2, mean)
 
 # Difference in the disparity between the arms 
 diff_in_disp <- diff_sc - diff_comm
@@ -111,7 +110,7 @@ d <- cbind(d,diff_in_disp)
 
 # Plot the differences in the disparities s
 plot(density(d[,1]),col='red',ylim=c(0,30), main='', xlab='Difference in disparity', 
-     freq=F, xlim=c(0,.4),bty="n")
+     freq=F, xlim=c(0,.6),bty="n")
 lines(density(d[,2]), col='red')
 lines(density(d[,3]), col='red')
 lines(density(d[,4]), col='red')
