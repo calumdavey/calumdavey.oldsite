@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Calum Davey" />
+
+
+<title>Paper 4 analysis plan</title>
+
+<script src="Dummy_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Dummy_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Dummy_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Dummy_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Dummy_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Dummy_files/navigation-1.1/tabsets.js"></script>
+<script src="Dummy_files/navigation-1.1/codefolding.js"></script>
+<link href="Dummy_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Dummy_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Paper 4 analysis plan</h1>
+<h4 class="author"><em>Calum Davey</em></h4>
+<h4 class="date"><em>31/03/2019</em></h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#simple-introduction-to-the-data-and-analysis">Simple introduction to the data and analysis</a></li>
+<li><a href="#table-1-py-in-m1-m0-in-each-round">Table 1: p[y] in m==1 &amp; m==0 in each round</a></li>
+<li><a href="#table-2-cohort-data-outcome-distribution">Table 2: cohort data outcome distribution</a></li>
+<li><a href="#table-3-dependency-of-y.1-on-m.1">Table 3: dependency of y.1 on m.1</a></li>
+<li><a href="#apply-the-ip-weighting-21.2">Apply the IP-weighting (21.2)</a></li>
+<li><a href="#what-are-we-trying-to-estimate">What are we trying to estimate?</a><ul>
+<li><a href="#mobility-histories-and-healthcare-use">Mobility histories and healthcare use</a><ul>
+<li><a href="#fully-mobile-vs.immobile">Fully mobile vs. immobile</a></li>
+</ul></li>
+<li><a href="#fitting-a-marginal-structural-model-with-inverse-weighting">Fitting a marginal structural model with inverse-weighting</a></li>
+<li><a href="#questions">Questions</a></li>
+</ul></li>
+</ul>
+</div>
+
+<p>The aim of this analysis is to esimate the effect of mobility on healthcare use using a cohort of around 1500 female sex workers in northern Karnataka, in India. The women were enumerated at baseline and followed-up at three subsequent times. At all interviews, they were asked about how many places they had visited since the previous interview, and whether or not they had used healthcare in that time.</p>
+<p>The challenge for this analysis is accounting for confounding by fixed factors, such as age in years, as well as varying factors such as income. Mobility itself may be affected by healthcare use at a previous time, and <em>visa versa</em>. Furthermore, the varying factors may be affected by mobility (exposure) and healthcare use (outcome) at previous times (not dealt with here).</p>
+<p>The estimation challenge described in the previous paragraph can be shown diagrammatically in the following directed acyclical graph (DAG):</p>
+<p><img src="Dummy_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Mobility measured at baseline, and the three follow-up interviews is denoted as M0, M1, M3, and M4. Likewise, the healthcare-use outcome is shown as Y0, Y1, Y2, Y3. An arrow from mobility to healthcare during the same time period denotes the assumption that mobility can affect healthcare use during the same period. Arrows from each of mobility and healthcare to the other in the subsequent period denotes the assumption that prior mobility can affect healthcare at a future time, and <em>visa versa</em>.</p>
+<p>Other variables are also shown in the DAG. Baseline and non-varying counfounders are denoted by V, with arrows to all subsequent rounds of invereiews ommitted for clarity. Varying confounders are labelled Z for each interview.</p>
+<div id="simple-introduction-to-the-data-and-analysis" class="section level2">
+<h2>Simple introduction to the data and analysis</h2>
+<p>Before applying g-methods to a simplified version of the data, I want to try to replicate the even simpler analyses in Robins and Hernan’s book. For this, I’ll use just two rounds of data (interviews at 3 and 9 months), with ‘visited clinic’ as the outcome <code>y</code>, any moves <code>m</code>==1 and otherwise ==0, with time-varying confounder ‘owns a cellphone’ <code>z</code>. The first 6 rows of data are:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="right">round</th>
+<th align="right">y</th>
+<th align="right">m</th>
+<th align="right">z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>The data on the confounding variable, <code>z</code>, will be ignored for now. The causal model can be shown in this simplified DAG:</p>
+<p><img src="Dummy_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="table-1-py-in-m1-m0-in-each-round" class="section level2">
+<h2>Table 1: p[y] in m==1 &amp; m==0 in each round</h2>
+<p>The first table is the frequency of <code>y==1</code> for levels of <code>m</code> and in round 1 and round 2. This is shown below. the final column is the probability that <code>y==1</code>.</p>
+<pre class="r"><code>knitr::kable(data2 %&gt;%
+  group_by(round, m) %&gt;%
+  summarise(`Y==1` = sum(y), `P[y==1]`=mean(y)), digits = 2)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">round</th>
+<th align="right">m</th>
+<th align="right">Y==1</th>
+<th align="right">P[y==1]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">466</td>
+<td align="right">0.65</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">168</td>
+<td align="right">0.35</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">504</td>
+<td align="right">0.76</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">169</td>
+<td align="right">0.31</td>
+</tr>
+</tbody>
+</table>
+<p>We can see that in both rounds 1 and 2, the women who were mobile were around half as likely to have attended healthcare.</p>
+</div>
+<div id="table-2-cohort-data-outcome-distribution" class="section level2">
+<h2>Table 2: cohort data outcome distribution</h2>
+<p>Since the analysis is of a cohort, the data can be reshaped ‘wide’ so that each row described each woman across the two rounds. In the table below, the number of women who used healthcare in round 2 is shown in the column <code>y.2==1</code> for each level of mobility and healthcare use in both rounds (i.e. 2 * 2 * 2 = 8 groups). For this simplified stage in the analysis, I an focusing on the estimate of the effect of mobility on the outcome in round 2, with healthcare use in round 1 as a confounder of the effect of mobility in round 2 <em>and simultaniously a mediator</em> of the effect of mobility in round 1. This is the analysis done by Hérnan &amp; Robins: a varying exposure and final outcome.</p>
+<pre class="r"><code>dw &lt;- reshape(data = data2,direction = &#39;wide&#39;,v.names = c(&#39;y&#39;, &#39;m&#39;, &#39;z&#39;),
+              timevar = &#39;round&#39;, idvar = &#39;ID&#39;)
+dw &lt;- dw[complete.cases(dw),]
+
+t2 &lt;- dw %&gt;%
+  dplyr::group_by(m.1,y.1,m.2) %&gt;%
+  summarise(N = max(row_number()), `Y.2==1`=sum(y.2), `Pr[Y]`=mean(y.2))
+knitr::kable(t2, digits = 2)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">m.1</th>
+<th align="right">y.1</th>
+<th align="right">m.2</th>
+<th align="right">N</th>
+<th align="right">Y.2==1</th>
+<th align="right">Pr[Y]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">166</td>
+<td align="right">83</td>
+<td align="right">0.50</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">8</td>
+<td align="right">0.10</td>
+</tr>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">423</td>
+<td align="right">377</td>
+<td align="right">0.89</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">43</td>
+<td align="right">29</td>
+<td align="right">0.67</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">40</td>
+<td align="right">17</td>
+<td align="right">0.42</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">269</td>
+<td align="right">40</td>
+<td align="right">0.15</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">33</td>
+<td align="right">25</td>
+<td align="right">0.76</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">135</td>
+<td align="right">88</td>
+<td align="right">0.65</td>
+</tr>
+</tbody>
+</table>
+<p>By eye-balling the data in this table we can see that mobility and healthcare use in the previous period are both associated with higher frequency of healthcare use in round 2.</p>
+</div>
+<div id="table-3-dependency-of-y.1-on-m.1" class="section level2">
+<h2>Table 3: dependency of y.1 on m.1</h2>
+<p>To apply the g-formula, we need to calculate the predicted probabilities of <code>y.1</code> at the levels of <code>m.1</code>. These are shown below:</p>
+<pre class="r"><code>dw %&gt;%
+  dplyr::group_by(m.1) %&gt;%
+  summarise(`Pr[y.1==1]` = mean(y.1),
+            `Pr[y.1==0]`= 1-mean(y.1)) %&gt;%
+  knitr::kable(digits = 2)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">m.1</th>
+<th align="right">Pr[y.1==1]</th>
+<th align="right">Pr[y.1==0]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0.65</td>
+<td align="right">0.35</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.35</td>
+<td align="right">0.65</td>
+</tr>
+</tbody>
+</table>
+<p>I can now apply g-formula (21.1 in Robins &amp; Hernan book) to estimtate effect of <code>m1==m2==0</code> vs <code>m1==m2==1</code> on <code>Y.2</code>, taking into account the effect of <code>m.1</code> on <code>y.1</code>, that in turn affects <code>y.2</code>.</p>
+<p><span class="math display">\[ effect = E[Y.2^{m.1=1,m.2=1}|Y.1^{m.1}]-E[Y.2^{m.1=0,m.2=0}|Y.1^{m.1}] \]</span></p>
+<p>The probabilities can be read off of the previous two tables. Unfold the code-block to view.</p>
+<pre class="r"><code>    # E[Y when m1==m2==0]
+    e0_gf &lt;- (.5 * .35) + (.89 * .65)
+    # E[Y when m1==m2==1]
+    e1_gf &lt;- (.65 * .35) + (.15 * .65)
+    # Ratio
+    round(e1_gf/e0_gf,2)</code></pre>
+<pre><code>## [1] 0.43</code></pre>
+</div>
+<div id="apply-the-ip-weighting-21.2" class="section level2">
+<h2>Apply the IP-weighting (21.2)</h2>
+<p>An alternative approach to accounting for the confounding/mediating effect of <code>y.1</code> is to use inverse probability weighting. To do this, we need to calculate weights for each row, add these to the table, and divide to produce a pseudo-population of women. Estimates of effect calculated in the psuedo-population will be unbiased.</p>
+<p>The table is repeated below with the pseudo-population, <code>Np</code>, on the left.</p>
+<pre class="r"><code>  # Add weights to table
+  t3 &lt;- as.data.frame(t2)
+  t3$W &lt;- 0  
+    t3$W[1] &lt;- 1/((1-mean(dw$m.1)) * (1-mean(dw$m.2[dw$m.1==0 &amp; dw$y.1==0])))
+    t3$W[2] &lt;- 1/((1-mean(dw$m.1)) * (mean(dw$m.2[dw$m.1==0 &amp; dw$y.1==0])))
+    t3$W[3] &lt;- 1/((1-mean(dw$m.1)) * (1-mean(dw$m.2[dw$m.1==0 &amp; dw$y.1==1])))
+    t3$W[4] &lt;- 1/((1-mean(dw$m.1)) * (mean(dw$m.2[dw$m.1==0 &amp; dw$y.1==1])))
+    t3$W[5] &lt;- 1/((mean(dw$m.1)) * (1-mean(dw$m.2[dw$m.1==1 &amp; dw$y.1==0])))
+    t3$W[6] &lt;- 1/((mean(dw$m.1)) * (mean(dw$m.2[dw$m.1==1 &amp; dw$y.1==0])))
+    t3$W[7] &lt;- 1/((mean(dw$m.1)) * (1-mean(dw$m.2[dw$m.1==1 &amp; dw$y.1==1])))
+    t3$W[8] &lt;- 1/((mean(dw$m.1)) * (mean(dw$m.2[dw$m.1==1 &amp; dw$y.1==1])))
+  # Create the pseudo population 
+  t3$Np &lt;- round(t3$N*t3$W,0)
+  knitr::kable(t3, digits = 2)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">m.1</th>
+<th align="right">y.1</th>
+<th align="right">m.2</th>
+<th align="right">N</th>
+<th align="right">Y.2==1</th>
+<th align="right">Pr[Y]</th>
+<th align="right">W</th>
+<th align="right">Np</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">166</td>
+<td align="right">83</td>
+<td align="right">0.50</td>
+<td align="right">2.47</td>
+<td align="right">411</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">8</td>
+<td align="right">0.10</td>
+<td align="right">5.14</td>
+<td align="right">411</td>
+</tr>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">423</td>
+<td align="right">377</td>
+<td align="right">0.89</td>
+<td align="right">1.84</td>
+<td align="right">778</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">43</td>
+<td align="right">29</td>
+<td align="right">0.67</td>
+<td align="right">18.10</td>
+<td align="right">778</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">40</td>
+<td align="right">17</td>
+<td align="right">0.42</td>
+<td align="right">19.26</td>
+<td align="right">770</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">269</td>
+<td align="right">40</td>
+<td align="right">0.15</td>
+<td align="right">2.86</td>
+<td align="right">770</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">33</td>
+<td align="right">25</td>
+<td align="right">0.76</td>
+<td align="right">12.69</td>
+<td align="right">419</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">135</td>
+<td align="right">88</td>
+<td align="right">0.65</td>
+<td align="right">3.10</td>
+<td align="right">419</td>
+</tr>
+</tbody>
+</table>
+<p>The effect of mobility on the outcome can be estimated using the psuedo-population:</p>
+<pre class="r"><code>  # Estiamte E[Y when m1==m2==0]
+  e0_IP &lt;- .5 * 411/(411+778) + .89 * 778/(411+778)
+  # Estiamte E[Y when m1==m2==1]
+  e1_IP &lt;- .65 * 419/(419 + 770) + .15 * 770/(419+770)
+  # Ratio 
+  round(e1_IP/e0_IP,2)</code></pre>
+<pre><code>## [1] 0.43</code></pre>
+<p>The estimates of the effect of mobility – RR of 0.43 – are the same with both methods.</p>
+</div>
+<div id="what-are-we-trying-to-estimate" class="section level1">
+<h1>What are we trying to estimate?</h1>
+<p>The above exercise confirmed, to me, that the g-formula and IPW are understandable and consistant. However, this application was to a simplied scenario and only for the effect on the outcome measured at the final time point. I want to know the effect of mobility on healthcare access/use overall: Hérnan &amp; Robins approach takes outcome to be at the end, so would need to fit model for each outcome (rounds 1,2,3). With panel data, there are a number of ways to specify the effect. Could focus on concurrent exposure, or cummulative, or whatever. Could these estimates be combined? E.g. the effect of one aditional trip on healthcare use probability across the period? G-methods can be used to contruct a marginal structural model with some functional form for the effect of mobility.</p>
+<div id="mobility-histories-and-healthcare-use" class="section level2">
+<h2>Mobility histories and healthcare use</h2>
+<div id="fully-mobile-vs.immobile" class="section level3">
+<h3>Fully mobile vs. immobile</h3>
+<p>One option would be to continue the analysis above and try to esimate the effect of moving in all periods versus not moving at all on healthcare use for outcomes measured at all time points <em>k</em>. (N.N. the formulae are illustrative, not accurate!)</p>
+<p><span class="math display">\[ effect = E[Y_k^{\bar{a}=\{1,1,1,1\}}|Y_{k-1}]-E[Y.k^{\bar{a}=\{0,0,0,0\}}|Y_{k-1}] \]</span></p>
+<p>However, since there are not many women in these two conditions, it might be better to estimate some functional form and then produce predicted values. For this we will need a marginal structural model, of the form of (something like) this:</p>
+<p><span class="math display">\[ E[Y^\bar{a}] = \mu_0 + \mu_1 \cdot cum_{-1}(\bar{a}) + \mu_2 \cdot cum(\bar{a})\]</span></p>
+<p>The model will be fitted in the pseudo-population (e.g. weighted using the stablised weights) to account for confounding. Effect of each additional move, interacted with the round.</p>
+</div>
+</div>
+<div id="fitting-a-marginal-structural-model-with-inverse-weighting" class="section level2">
+<h2>Fitting a marginal structural model with inverse-weighting</h2>
+<p>First I’m going to try this with the simplified data, for the effect of <code>m2</code> on <code>y2</code>, controlling for <code>y1</code>, <code>z1</code> by weighted for the inverse of the propensity of <code>m2</code> according to those variables.</p>
+<pre class="r"><code># First, fit a model for m2 to produce the predicted probabilities 
+m2_model &lt;- glm(m.2 ~ m.1 + z.2 + y.1, 
+                data=dw, family=binomial(link=&#39;logit&#39;))
+
+# Predicted probabilities, and non-stabalised weights 
+dw$pre.prob &lt;- predict(m2_model, dw, type=&#39;response&#39;)
+dw$w &lt;- 1/dw$pre.prob
+
+# Fit weighted logistic regression, adjusting for previous healthcare use 
+dw_weighted &lt;- svydesign(id = ~ID, weights=~w, data=dw)
+y2_model &lt;- svyglm(y.2 ~ m.2, design=dw_weighted, 
+                   family=quasibinomial(link=&#39;logit&#39;))
+
+# Save the OR 
+or &lt;- round(exp(summary(y2_model)$coefficients[2,1]),2)
+
+# Quasi-poisson model
+y2_model &lt;- svyglm(y.2 ~ m.2, design=dw_weighted, 
+                   family=quasipoisson(link = &quot;log&quot;))
+
+# Save the RR
+rr &lt;- round(exp(summary(y2_model)$coefficients[2,1]),2)</code></pre>
+<p>This analysis produced an odds ratio of 0.14, and a risk ratio of 0.49.</p>
+<p>Ok, now try with all four rounds. First, the complete data needs to be reshaped wide across rounds 0-3:</p>
+<pre class="r"><code># Select data 
+dw4 &lt;- reshape(data = data,
+              direction = &#39;wide&#39;,
+              v.names = c(&#39;y&#39;, &#39;m&#39;, &#39;z&#39;),
+              timevar = &#39;round&#39;,
+              idvar = &#39;ID&#39;)
+
+# Use complete data only
+dw4$z.0 &lt;- NULL
+dw4 &lt;- dw4[complete.cases(dw4),]
+head(dw4)</code></pre>
+<pre><code>##    ID y.0 m.0 y.1 m.1 z.1 y.2 m.2 z.2 y.3 m.3 z.3
+## 1   1   1   0   1   0   0   1   0   0   1   0   0
+## 5   2   1   0   1   0   0   1   0   0   1   0   0
+## 9   3   1   1   0   1   0   0   1   0   0   1   0
+## 13  5   1   0   1   0   1   1   0   1   1   0   1
+## 17  6   1   0   1   0   0   0   0   0   1   0   0
+## 21  7   0   1   1   0   0   0   1   0   1   1   0</code></pre>
+<p>Next, we need to fit models for the probability of mobility at each round based on each prior confounder, and use these to compute predicted probabilities and the inverse weights.</p>
+<pre class="r"><code># Models for mobility at each follow-up round 
+  m3_model &lt;- glm(m.3 ~ m.0+m.1+m.2+y.0+y.1+y.2+z.3,
+                  data = dw4, family = binomial(link = &#39;logit&#39;))
+  m2_model &lt;- glm(m.2 ~ m.0+m.1+y.0+y.1+z.3,
+                 data = dw4, family = binomial(link = &#39;logit&#39;))
+  m1_model &lt;- glm(m.1 ~ m.0+y.0+z.3,
+                 data = dw4, family = binomial(link = &#39;logit&#39;))
+# Inverse of the predicted probabilities  
+  dw4$m3 &lt;- 1/(predict(m3_model, dw4, type=&#39;response&#39;))
+  dw4$m2 &lt;- 1/(predict(m2_model, dw4, type=&#39;response&#39;))
+  dw4$m1 &lt;- 1/(predict(m1_model, dw4, type=&#39;response&#39;))
+  # Product of weights 
+  dw4$w &lt;- dw4$m3 * dw4$m2 * dw4$m1</code></pre>
+<p>We can then fit structural model for cumulative exposure <code>m</code> on <code>y.3</code>, controlling for prior y:</p>
+<pre class="r"><code>dw4$m &lt;- dw4$m.1 + dw4$m.2 + dw4$m.3
+  dw4_weighted &lt;- svydesign(id=~ID, weights = ~w, data=dw4)
+  y3_model &lt;- svyglm(y.3 ~ m , design=dw4_weighted,
+                     family = quasibinomial(link=&#39;logit&#39;))</code></pre>
+<p>BUT, what really want to do is to combine the effects for outcomes measured at each time point. This means appending the data with the weights, and conducting the analysis with the outcome measured in rounds 0-3:</p>
+<pre class="r"><code># Fit joint model across y.1, y.2, y.3?
+  dw4_3 &lt;- dw4[,c(&#39;ID&#39;,&#39;y.3&#39;,&#39;m&#39;,&#39;w&#39;)]
+  dw4$w &lt;- dw4$m2 * dw4$m1; dw4$m &lt;- dw4$m.1 + dw4$m.2
+  dw4_2 &lt;- dw4[,c(&#39;ID&#39;,&#39;y.2&#39;,&#39;m&#39;,&#39;w&#39;)]
+  dw4$w &lt;- dw4$m1; dw4$m &lt;- dw4$m.1 
+  dw4_1 &lt;- dw4[,c(&#39;ID&#39;,&#39;y.1&#39;,&#39;m&#39;,&#39;w&#39;)]
+  dw4_123 &lt;- as.data.frame(mapply(c, dw4_3, dw4_2, dw4_1))
+  dw4_123 &lt;- cbind(dw4_123, as.factor(rep(c(1,2,3), times=c(nrow(dw4),nrow(dw4),nrow(dw4)))))
+  colnames(dw4_123) &lt;- c(colnames(dw4_123)[1:4], &#39;round&#39;)
+  
+# Logistic model 
+  dw4_weighted &lt;- svydesign(id=~ID, weights = ~w, data=dw4_123)
+  y_model &lt;- svyglm(y.3 ~ m * round, design=dw4_weighted,
+                     family = quasibinomial(link=&#39;logit&#39;))
+# Poisson model
+  y_model2 &lt;- svyglm(y.3 ~ m * round, design=dw4_weighted,
+                     family = quasipoisson(link=&#39;log&#39;))</code></pre>
+<p>We can then plot the results:</p>
+<pre class="r"><code># Plot the results 
+  m &lt;- seq(0,3,1)
+  plot(m, main=&#39;Risk: logistic model&#39;,
+  predict(y_model, newdata=data.frame(round=as.factor(1), m=m), type=&quot;response&quot;),
+  type=&quot;o&quot;,pch=21,bg=&quot;white&quot;,ylab=&quot;&quot;,ylim=c(0,1), bty=&quot;n&quot;, xaxp  = c(0, 3, 3))
+  
+  points(m,
+  predict(y_model,newdata=data.frame(round=as.factor(2),m=m),type=&quot;response&quot;),
+  type=&quot;o&quot;,pch=21,bg=&quot;black&quot;)
+  
+  points(m,
+  predict(y_model,newdata=data.frame(round=as.factor(3),m=m),type=&quot;response&quot;),
+  type=&quot;o&quot;,pch=21,bg=&quot;red&quot;)
+  
+  legend(x=&quot;topright&quot;,pch=21,col=c(&quot;black&quot;,&quot;black&quot;,&quot;red&quot;),
+         pt.bg=c(&quot;white&quot;,&quot;black&quot;,&quot;red&quot;),
+  legend=c(&quot;Round 1&quot;,&quot;Round 2&quot;,&quot;Round 3&quot;))</code></pre>
+<p><img src="Dummy_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code># Bootstrap the entire procedure...   </code></pre>
+<pre class="r"><code># Plot the results 
+  m &lt;- seq(0,3,1)
+  plot(m, main=&#39;Risk: Poisson model&#39;,
+  predict(y_model2, newdata=data.frame(round=as.factor(1), m=m), type=&quot;response&quot;),
+  type=&quot;o&quot;,pch=21,bg=&quot;white&quot;,ylab=&quot;&quot;,ylim=c(0,1), bty=&quot;n&quot;, xaxp  = c(0, 3, 3))
+  
+  points(m,
+  predict(y_model2,newdata=data.frame(round=as.factor(2),m=m),type=&quot;response&quot;),
+  type=&quot;o&quot;,pch=21,bg=&quot;black&quot;)
+  
+  points(m,
+  predict(y_model2,newdata=data.frame(round=as.factor(3),m=m),type=&quot;response&quot;),
+  type=&quot;o&quot;,pch=21,bg=&quot;red&quot;)
+  
+  legend(x=&quot;topright&quot;,pch=21,col=c(&quot;black&quot;,&quot;black&quot;,&quot;red&quot;),
+         pt.bg=c(&quot;white&quot;,&quot;black&quot;,&quot;red&quot;),
+  legend=c(&quot;Round 1&quot;,&quot;Round 2&quot;,&quot;Round 3&quot;))</code></pre>
+<p><img src="Dummy_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Now to bootstrap the entire procedure…</p>
+</div>
+<div id="questions" class="section level2">
+<h2>Questions</h2>
+<ul>
+<li>Is it valid to combine the outcomes from multiple rounds?</li>
+<li>What if there are other time-varying confounders affected by mobility and healthcare? Can these simply be added to the models for the weights? Eg:</li>
+</ul>
+<p><img src="Dummy_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<ul>
+<li></li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "Dummy_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
