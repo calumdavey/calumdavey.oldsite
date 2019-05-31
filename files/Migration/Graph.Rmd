@@ -5,7 +5,7 @@ date: "31/05/2019"
 output: html_document
 ---
 
-Recent [reports from the Office of National Statistics (ONS)](https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/migrationstatisticsquarterlyreport/may2019) have shown that EU migration to the UK has fallen, and that non-EU migrants are taking up the slack. This is interesting for lots of reasons, including implying that [UK employers are willing to make the extra effort to sponsor migrants](https://www.newstatesman.com/politics/staggers/2019/05/when-it-comes-immigration-uk-already-post-brexit-era) when less beurocratic options go down. 
+Recent [reports from the Office of National Statistics (ONS)](https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/migrationstatisticsquarterlyreport/may2019) have shown that EU migration to the UK has fallen, and that non-EU migrants are taking up the slack. This is interesting for lots of reasons, including implying that [UK employers are willing to make the extra effort to sponsor migrants](https://www.newstatesman.com/politics/staggers/2019/05/when-it-comes-immigration-uk-already-post-brexit-era) when fewer bureaucratic options are available. 
 
 It also implies that over the short term there is roughly a total number of jobs or other social positions that need to be filled by migration each year. This can increase because of the effects of migration on the economy -- I'm not saying there's a limit to the size of the country/economy -- but that takes time. 
 
