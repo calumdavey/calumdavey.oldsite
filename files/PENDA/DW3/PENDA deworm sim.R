@@ -4,8 +4,8 @@ library(openxlsx)
 library(dplyr)
 # Load the number of people enumerated in each cluster 
 N <- openxlsx::read.xlsx('Cluster Population CE1.xlsx')
-N[,3] <- round(N[,2]*(2400/sum(N[,2])),0) # back-calc for the proportion of CWD in each cluster 
-N[,4] <- round(N[,2]*(2400/(sum(N[,2]*0.05))),0) # back-calc for the total children in each cluster 
+N[,3] <- round(N[,2]*(2440/sum(N[,2])),0) # back-calc for the proportion of CWD in each cluster 
+N[,4] <- round(N[,2]*(2440/(sum(N[,2]*0.04))),0) # back-calc for the total children in each cluster 
 colnames(N) <- c('cluster','N','N_cwd','N_c')
 head(N)
 
@@ -19,7 +19,7 @@ es <- c(.4,.5,.6,.7,.75)
 for (i in es){
 # Set assummed population-level parameters 
 # Enrolment 
-e0 <- c(.75) # enrolment of all children 
+e0 <- c(.8) # enrolment of all children 
 e1 <- c(i) # enrolment of disabled children 
 k <- c(.05) # Set intercluster coefficient of variation 
 var_b0 <- k/e0 # Calculate the variance of the cluster proportions enrolled  
