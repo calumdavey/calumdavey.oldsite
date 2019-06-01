@@ -41,7 +41,7 @@ the analysis is looking at disparities in access according to whether
 using freedom of movement or conventional means, and not singling-out
 migration from particular countries.
 
-Having loaded the data into [R](https://www.r-project.org), a free
+I loaded the data into [R](https://www.r-project.org), a free
 statistical software [4]. The raw data is presented in the simple graph
 below. It shows EU and non-EU net migration from 1991 to 2017. We can
 see the strong upward trend in non-EU migration from 1991 to 2004 (green
