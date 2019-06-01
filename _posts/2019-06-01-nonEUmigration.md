@@ -46,7 +46,7 @@ blue line showing EU-free-movement migration is relatively flat before 2004, aft
 
 I did a couple of small calculations (in the code at the end) to get a
 rough estimate of the number of migrants from conventional routes that there *would have
-been* had the EU not expanded in 2004 (the 'missing' non-EU migrants). I
+been* had the EU not expanded in 2004. I
 added the number of EU migrants to the number of non-EU migrants after
 2004; using the same logic applied to the recent
 ONS figures, the assumption is that the total number of positions would have been filled by a
@@ -60,11 +60,11 @@ the expansion of the EU in 2004 is shown in red on the graph below.
 ![](../files/Migration/Graph_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 The total 'missing' migrants from conventional routes is the sum of the difference between
-the red and green lines, which is 2,572,000. Since the Migration
+the red and green lines: 2,572,000 people. Since the Migration
 Observatory estimates the non-EU foreign-born population in the UK in 2017
 was [5,677,000](https://migrationobservatory.ox.ac.uk/resources/briefings/migrants-in-the-uk-an-overview/),
 the 'missing' are 31% of the total non-EU population that would be living
-in the UK had there been no EU expansion in 2004. In other words: the non-EU-born population of the UK in 2017 would have been 45% higher than it was. (N.B. this is a slight over-estimate since the Migration Observatory figure for 2017 doesn't include nationals of countries that joined the EU in 2004 and in our counterfactual scenario they would count as having arrived through conventional means.)
+in the UK had there been no EU expansion in 2004. In other words: the non-EU-born population of the UK in 2017 would have been 45% higher than it was. (N.B. this is a slight over-estimate since the Migration Observatory figure for 2017 doesn't include nationals of countries that joined the EU in 2004 and in our counterfactual scenario they would count as having arrived through conventional means. This could be fixed by adding the number of migrants who would have come to the UK from those countries by conventional means to the denominator.)
 
 This is a crude analysis, and a very rough estimate. There are of course assumptions, such as
 that the economy would have grown at the same rate, which could affect
