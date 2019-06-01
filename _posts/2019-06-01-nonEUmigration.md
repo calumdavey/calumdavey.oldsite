@@ -64,7 +64,7 @@ the red and green lines: 2,572,000 people. Since the Migration
 Observatory estimates the non-EU foreign-born population in the UK in 2017
 was [5,677,000](https://migrationobservatory.ox.ac.uk/resources/briefings/migrants-in-the-uk-an-overview/),
 the 'missing' are 31% of the total non-EU population that would be living
-in the UK had there been no EU expansion in 2004. In other words: the non-EU-born population of the UK in 2017 would have been 45% higher than it was. (N.B. this is a slight over-estimate since the Migration Observatory figure for 2017 doesn't include nationals of countries that joined the EU in 2004 and in our counterfactual scenario they would count as having arrived through conventional means. This could be fixed by adding the number of migrants who would have come to the UK from those countries by conventional means to the denominator.)
+in the UK had there been no EU expansion in 2004. In other words: the conventional-migrant population of the UK in 2017 would have been 45% higher than it was. (N.B. this is a slight over-estimate since the Migration Observatory figure for 2017 doesn't include nationals of countries that joined the EU in 2004 and in our counterfactual scenario they would count as having arrived through conventional means. This could be fixed by adding the number of migrants who would have come to the UK from those countries by conventional means to the denominator.)
 
 This is a crude analysis, and a very rough estimate. There are of course assumptions, such as
 that the economy would have grown at the same rate, which could affect
