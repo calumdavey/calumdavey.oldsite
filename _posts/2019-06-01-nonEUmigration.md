@@ -86,7 +86,8 @@ joined the EU in 2004 count in different groups depending on the year;
 another analysis might break these down, but I am more interested in the
 route of access than in which countries people are coming from.
 
-    # Add EU migration after 2003
+## Code to add the figures after 2003
+
     m91_03 <- median(d[1:13,5]) # median migration before 2003
     d$nonEU.plus <- d$Non.EU + d$EU - m91_03
     d[1:14,6] <- d[1:14,4]
