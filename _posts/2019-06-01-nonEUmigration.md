@@ -45,7 +45,7 @@ I loaded the data into [R](https://www.r-project.org), a free
 statistical software [4]. The raw data is presented in the simple graph
 below. It shows EU and non-EU net migration from 1991 to 2017. We can
 see the strong upward trend in non-EU migration from 1991 to 2004 (green
-line), and subsequent leveling-off or slight decline. In contrast, the
+line), and subsequent levelling-off or slight decline. In contrast, the
 blue EU line is relatively flat before 2004, after which it jumps up.
 
 ![](../files/Migration/Graph_files/figure-markdown_strict/unnamed-chunk-1-1.png)
@@ -70,7 +70,7 @@ migration.
 The total missing non-EU migrants is the sum of the difference between
 the red and green lines, which is 2,572,000. Since the Migration
 Observatory [estimates that the non-EU foreign-born in the UK in 2017
-was only about twixe that figure at
+was only about twice that figure at
 5,677,000](https://migrationobservatory.ox.ac.uk/resources/briefings/migrants-in-the-uk-an-overview/),
 the 'missing' are 31% of the total non-EU nationals that would be living
 in the UK without the expansion of access in 2004. Another way of
@@ -79,7 +79,7 @@ putting it, would be to say that the non-EU born population of the UK in
 
 This is a crude analysis, and a very rough estimate of the
 counterfactual effects on non-EU migration had free movement of people
-not been expanded in 2004. There are of course assumoptions, such as
+not been expanded in 2004. There are of course assumptions, such as
 that the economy would have grown at the same rate, which could affect
 the result. It's somewhat confusing having people from countries that
 joined the EU in 2004 count in different groups depending on the year;
