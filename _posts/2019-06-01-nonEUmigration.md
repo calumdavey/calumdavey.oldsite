@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How has freedom of movement with the EU affected non-EU migration to the UK? 
+title: Has freedom of movement affected non-EU migration to the UK? 
 ---
 
 I'm interested in how migration from the EU and non-EU changed over
