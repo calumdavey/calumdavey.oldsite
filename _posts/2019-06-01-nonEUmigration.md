@@ -6,7 +6,7 @@ title: Has freedom of movement affected non-EU migration to the UK?
 I'm interested in how migration from the EU and non-EU changed over
 time, and the effect that free movement for EU nationals had on access
 for non-EU migrants. Rather than go back to the start of free movement,
-I focused on the effect the [expansion of the Union from
+I focused on the effect of the [expansion of the Union from
 2004](https://eu.boell.org/en/2014/06/10/europe-after-eastern-enlargement-european-union-2004-2014).
 
 The problem, of course, is estimating the number of non-EU migrants
@@ -55,7 +55,7 @@ rough estimate of the number of non-EU migrants that there *would have
 been* had the EU not expanded in 2004 (the 'missing' non-EU migrants). I
 added the number of EU migrants to the number of non-EU migrants after
 2004; the assumption here is that the jobs would have been filled by a
-mix of EU and non-EU migrant, using the same logic applied to the recent
+mix of EU and non-EU migrants, using the same logic applied to the recent
 ONS figures. Since there was a constant level of net migration from the
 EU before 2004, I subtracted the median migration between 1991 and 2003
 from each year after 2003.
@@ -69,13 +69,10 @@ migration.
 
 The total missing non-EU migrants is the sum of the difference between
 the red and green lines, which is 2,572,000. Since the Migration
-Observatory [estimates that the non-EU foreign-born in the UK in 2017
-was only about twice that figure at
-5,677,000](https://migrationobservatory.ox.ac.uk/resources/briefings/migrants-in-the-uk-an-overview/),
-the 'missing' are 31% of the total non-EU nationals that would be living
-in the UK without the expansion of access in 2004. Another way of
-putting it, would be to say that the non-EU born population of the UK in
-2017 would have been 45% higher than it was.
+Observatory estimates the non-EU foreign-born in the UK in 2017
+was [5,677,000](https://migrationobservatory.ox.ac.uk/resources/briefings/migrants-in-the-uk-an-overview/),
+the 'missing' are 31% of the total non-EU population that would be living
+in the UK had there been no EU expansion in 2004. In other words: the non-EU born population of the UK in 2017 would have been 45% higher than it was.
 
 This is a crude analysis, and a very rough estimate of the
 counterfactual effects on non-EU migration had free movement of people
