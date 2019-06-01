@@ -21,14 +21,14 @@ lines(d[,1],d[,5],col='blue')
 abline(v=2004,col='gray50')
 p <- recordPlot()
 p
-legend(x=1991,y=350,legend=c('Free movement','Conventional routes'), fill=c('blue','green'),bty='n',border='white')
+legend(x=1990.5,y=350,legend=c('Free movement','Conventional routes'), fill=c('blue','green'),bty='n',border='white')
 ```
 
 
 ```{r, echo=FALSE}
 p
 lines(d[14:nrow(d),1],d[14:nrow(d),6], col='red')
-legend(x=1991,y=350,legend=c('Free movement','Conventional routes', 'Missing conventional migrants'), fill=c('blue','green','red'),bty='n',border='white')
+legend(x=1990.5,y=350,legend=c('Free movement','Conventional routes', 'Missing conventional migrants'), fill=c('blue','green','red'),bty='n',border='white')
 ```
 
 The total missing non-EU migrants is the sum of the difference between the red and green lines, which is `r format(sum(d[14:nrow(d),6]-d[14:nrow(d),5])*1000,big.mark=',')`. Since the Migration Observatory [estimates that the non-EU foreign-born in the UK in 2017 was only about twixe that figure at 5,677,000](https://migrationobservatory.ox.ac.uk/resources/briefings/migrants-in-the-uk-an-overview/), the 'missing' are `r round(100*sum(d[14:nrow(d),6]-d[14:nrow(d),5])/sum(sum(d[14:nrow(d),6]-d[14:nrow(d),5]), 5677),0)`% of the total non-EU nationals that would be living in the UK without the expansion of access in 2004. Another way of putting it, would be to say that the non-EU born population of the UK in 2017 would have been `r round(100*sum(d[14:nrow(d),6]-d[14:nrow(d),5])/5677,0)`% higher than it was. 
