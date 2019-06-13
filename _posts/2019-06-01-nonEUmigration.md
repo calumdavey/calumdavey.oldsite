@@ -36,7 +36,7 @@ using freedom of movement or conventional means, and not singling-out
 migration from particular countries.
 
 I loaded the data into [R](https://www.r-project.org), a free
-statistical software [4]. The raw data is presented in the simple graph
+statistical software. The raw data is presented in the simple graph
 below. We can
 see the strong upward trend in conventional migration from 1991 to 2004 (green
 line), and subsequent levelling-off or slight decline. In contrast, the
@@ -90,7 +90,5 @@ time. It's a dynamic process, but in the short-run it seems like a
 plausible simplification to say there are a finite number of posts.
 
 [3] 2018-2019 would be possible but require downloading the ONS data). Also, the figures for EU migration from 2004 to 2007 are underestimated because of a problem with measurement.
-
-[4] All the code for this post is available [here](Graph.Rmd).
 
 
