@@ -1,0 +1,45 @@
+---
+title: "Has Freedom of Movement made the UK less ethinically diverse?"
+author: "Calum Davey"
+date: "05/06/2019"
+output: md_document
+---
+
+In a previous post I used a very crude method to estimate that about two and a half million migrants who could have come to the UK through conventional routes (e.g. visas and relationships) did not because of the expansion of the EU in 2004 and susequent free movement access for people from those countries. 
+
+As I mentioned in the post, a confusing issue with that analysis is that people from the countries that joined the EU after 2004 would be counted as part of conventional migration before 2004, and migration through free movement after. I explained that I am not interested in those countries per se, but in the routes that people get access. But, I am going to put my cards on the table here: I _am_ interested in whether the UK's membership of the EU should be thought of as anti-racist; my hypothesis is that while people from the expanded EU could come to the UK before 2004 through conventional means, fewer did as a proportion of overall migration than after 2004, and, since those countries are >95% white while most countries in the world are not, this led to a 'whitification' of the migration flows into the UK.
+   
+Therefore, the question that I want to address in this post is: what difference has EU membership,  specifically the expansion in 2004, had on the proportion of black, asian, or middle-eastern people living in the UK? In other words: is the UK more white than it would have been had we not been in the EU? 
+
+There's a long history to this. Going back to the beginning, when the UK joined the EEA it was very shotly after abolishing the Commonwealth Nationality Act that had allowed people living in Commonwealth countries free movement with the UK. I don't think it is unreasonable to think that this pivot from the Commonwealth to Europe was the start of replacing non-white migration with white migration from Europe. This, however, was long ago and the data would be tricky to find. So, like the last post I will focus the analysis on the changes since 2004. 
+
+
+
+
+
+```{r, echo=FALSE}
+# Read in the data 
+d <- read.csv('net-migration-by-citizen.csv')  
+
+# Add EU migration after 2003
+m91_03 <- median(d[1:13,5]) # but subtract the median migration before 2003
+d$nonEU.plus <- d$Non.EU + d$EU - m91_03
+d[1:14,6] <- d[1:14,4]
+
+# Graph of migration to the UK, EU and non-EU 
+par(lwd=2)
+plot(d[,1],d[,4],typ='l',bty='n',xlab='Year',ylab='Thousands',col='green',ylim=c(0,360))
+lines(d[,1],d[,5],col='blue')
+abline(v=2004,col='gray50')
+p <- recordPlot()
+p
+legend(x=1990.5,y=350,legend=c('Free movement','Conventional routes'), fill=c('blue','green'),bty='n',border='white')
+```
+
+
+```{r, echo=FALSE}
+p
+lines(d[14:nrow(d),1],d[14:nrow(d),6], col='red')
+legend(x=1990.5,y=350,legend=c('Free movement','Conventional routes', 'Missing conventional migrants'), fill=c('blue','green','red'),bty='n',border='white')
+```
+
