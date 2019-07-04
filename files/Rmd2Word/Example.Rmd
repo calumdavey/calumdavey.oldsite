@@ -14,15 +14,15 @@ csl: Formats/harvard-imperial-college-london.csl
 # Famous people in public health  
 ## John Snow 
 
-John Snow is famous for, among other things, working out that *cholera was waterborne* [@Snow:1856].
+John Snow is famous for, among other things, working out that *cholera was waterborne* [@Snow:1856]. He was an English physician and a leader in the development of anaesthesia and medical hygiene. He is considered one of the fathers of modern epidemiology, in part because of his work in tracing the source of a cholera outbreak in Soho, London, in 1854. 
 
 ## Florence Nightingale 
 
-Florence Nightingale invented nursing as a profession [@Nightingale:1992].
+Florence Nightingale was an English social reformer and statistician, and the founder of modern nursing [@Nightingale:1992]. Nightingale came to prominence while serving as a manager and trainer of nurses during the Crimean War, in which she organised care for wounded soldiers. She gave nursing a favourable reputation and became an icon of Victorian culture, especially in the persona of "The Lady with the Lamp" making rounds of wounded soldiers at night.
 
 ## Michael Marmot 
 
-Michael Marmot led the Whitehall studies, which showed that socioeconomic *class inequalities can be bad for your health* (when you're at the **bottom**, not the top!) [@Marmot:1991]. 
+Michael Marmot led the Whitehall studies, which showed that socioeconomic *class inequalities can be bad for your health* (when you're at the **bottom**, not the top!) [@Marmot:1991]. He is Professor of Epidemiology and Public Health at University College London.
 
 ## Doll and Bradford-Hill
 
@@ -44,12 +44,38 @@ Along with others, these two lead studies that supported the idea, controversial
 | Richard Doll | Male | 1912 | Oxford University |
 | Austin Bradford-Hill | Male | 1897 | LSHTM |
 
+Note that this table is a 'Markdown' table and is not generated using R in a chunk.
+
+We could generate a table with R, as was done for the table below.
+
+## Table 2: cycling deaths in London
+
+```{r, echo = FALSE}
+# Load the data
+p <- read.csv('pedal-cyclist-casualties-ksi.csv')
+
+# Include the table 
+knitr::kable(p[,1:6])
+```
+
 # Figures 
 ## Figure 1: John Snow's map
 
 ![John Snow's map](Images/1024px-Snow-cholera-map-1.jpg)
 
+## Figure 2: plot of deaths 
+
+```{r, echo = FALSE, fig.height=3}
+par(oma = c(.1,.1,.1,.1), mai=c(.85,.85,.1,.2))
+plot(p$Year, p$Serious, type='l', bty='n', col='blue',
+     ylab = 'Number of cases',
+     xlab = 'Year',
+     ylim = c(0, max(p$Serious)))
+lines(p$Year, p$Fatal, col='red')
+legend(1990,400,legend = c('Serious injury', 'Fatality'), col=c('blue', 'red'), lty=1, bty='n', cex=.8)
+```
+
 \pagebreak 
 
-#References
+# References
 

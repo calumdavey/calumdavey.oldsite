@@ -1,0 +1,90 @@
+---
+title: "MJ"
+author: "Calum Davey"
+date: "12/01/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#setwd(rstudioapi::getActiveDocumentContext()$path)
+knitr::opts_chunk$set(echo = TRUE)
+library(openxlsx)
+library(Synth)
+library(tidyr)
+```
+
+## Data 
+
+```{r Load data}
+d_wide <- openxlsx::read.xlsx('HomocideData.xlsx')
+colnames(d_wide)[2:ncol(d_wide)] <- paste0('HR.', colnames(d_wide)[2:ncol(d_wide)]) 
+d <- reshape(d_wide,
+             varying = 2:23,
+             direction='long')
+# Add unemployment rate 
+u_wide <- openxlsx::read.xlsx('emp-unemployment.xlsx', sheet=2)
+u_wide <- u_wide[6:56, c(2, seq(19,ncol(u_wide),1))]
+# Add 2016 and 2017 
+u_1617 <- openxlsx::read.xlsx('unem_16_17.xlsx',colNames=FALSE)
+u_wide <- cbind(u_wide, u_1617[,2:3])
+colnames(u_wide) <- c('STATE', paste0('UR.', (1996:2017)))
+u <- reshape(u_wide,
+             varying = 2:23,
+             direction='long')
+# Merge with the HR data 
+d <- merge(d, u[,1:3], by=c('STATE', 'time'))
+# Prep data for synth
+d_synth <- dataprep(d, dependent='HR', 
+                    unit.variable='id', 
+                    unit.names.variable='STATE',
+                    treatment.identifier='Washington',
+                    controls.identifier = unique(d$STATE)[-which(unique(d$STATE) %in%
+                                                                   'Washington')],
+                    time.variable='time',
+                    time.optimize.ssr=(1996:2013),
+                    time.predictors.prior=(1996:2013),
+                    time.plot = 1996:2017,
+                    predictors=c('UR','HR'), predictors.op = 'mean'
+                    )
+# Export data as CSV
+write.csv(d, 'data.csv', row.names = FALSE)
+```
+
+## Analysis 
+
+```{r Washington in context}
+m <- d %>% dplyr::group_by(STATE) %>% dplyr::summarise(mHR = mean(HR)) %>% 
+  dplyr::arrange(-mHR) %>% dplyr::mutate(dot = ifelse(STATE=='Washington', 19,1)) %>% 
+  as.data.frame()
+plot(m$mHR, bty='n', pch=m$dot)
+
+plot(loess(d$HR~d$time), type = 'n', ylim=c(min(d$HR),max(d$HR)), bty='n')
+for (n in unique(d$STATE)){
+  x <- d[d$STATE == n,]
+  lines(loess(x$HR~x$time),lwd=1)
+}
+lines(loess(d$HR[d$STATE=='Washington']~d$time[d$STATE=='Washington']), 
+     lwd=2, col='red', ylim=c(min(d$HR),max(d$HR)))
+```
+
+```{r Analysis}
+s <- synth(data.prep.obj = d_synth, method="All")
+#plot(d_synth$Y1plot-(d_synth$Y0plot%*%s$solution.w))
+```
+
+```{r Tables}
+t <- synth.tab(d_synth, synth.res=s)
+t$tab.pred
+t$tab.w[,1:2]
+```
+
+```{r Figures}
+path.plot(synth.res = s, dataprep.res = d_synth, 
+          Ylab='Homicide rate, per 100,000', Xlab='Year',
+          Legend=c('Washington', 'Synthetic Washington'))
+abline(v=2014, col='red')
+gaps.plot(synth.res = s, dataprep.res = d_synth)
+```
+
+
+

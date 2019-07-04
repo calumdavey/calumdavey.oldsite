@@ -1,0 +1,1101 @@
+"STATE","time","HR","id","UR"
+"Alabama",1996,10.4,1,5.2
+"Alabama",1997,9.9,1,5
+"Alabama",1998,8.1,1,4.4
+"Alabama",1999,7.9,1,4.7
+"Alabama",2000,7.4,1,4.6
+"Alabama",2001,8.5,1,5.1
+"Alabama",2002,6.8,1,5.9
+"Alabama",2003,6.6,1,6
+"Alabama",2004,5.6,1,5.7
+"Alabama",2005,8.2,1,4.5
+"Alabama",2006,8.3,1,4
+"Alabama",2007,8.9,1,4
+"Alabama",2008,7.6,1,5.7
+"Alabama",2009,6.8,1,11
+"Alabama",2010,5.7,1,10.5
+"Alabama",2011,6.2,1,9.6
+"Alabama",2012,7.1,1,8
+"Alabama",2013,7.2,1,7.2
+"Alabama",2014,5.7,1,6.8
+"Alabama",2015,7.2,1,6.1
+"Alabama",2016,8.4,1,5.9
+"Alabama",2017,8.3,1,4.4
+"Alaska",1996,7.4,2,7.6
+"Alaska",1997,8.9,2,7.1
+"Alaska",1998,6.7,2,6.3
+"Alaska",1999,8.6,2,6.5
+"Alaska",2000,4.3,2,6.4
+"Alaska",2001,6.1,2,6.4
+"Alaska",2002,5.1,2,7.3
+"Alaska",2003,6,2,7.8
+"Alaska",2004,5.6,2,7.5
+"Alaska",2005,4.8,2,6.9
+"Alaska",2006,5.4,2,6.6
+"Alaska",2007,6.4,2,6.3
+"Alaska",2008,4.1,2,6.7
+"Alaska",2009,3.1,2,7.7
+"Alaska",2010,4.3,2,7.9
+"Alaska",2011,4.1,2,7.6
+"Alaska",2012,4.1,2,7.1
+"Alaska",2013,4.6,2,6.9
+"Alaska",2014,5.6,2,6.9
+"Alaska",2015,8,2,6.5
+"Alaska",2016,7,2,6.9
+"Alaska",2017,8.4,2,7.2
+"Arizona",1996,8.5,3,5.6
+"Arizona",1997,8.2,3,4.6
+"Arizona",1998,8.1,3,4.3
+"Arizona",1999,8,3,4.4
+"Arizona",2000,7,3,4
+"Arizona",2001,7.5,3,4.8
+"Arizona",2002,7.1,3,6.1
+"Arizona",2003,7.9,3,5.7
+"Arizona",2004,7.2,3,5
+"Arizona",2005,7.5,3,4.7
+"Arizona",2006,7.5,3,4.2
+"Arizona",2007,7.4,3,3.9
+"Arizona",2008,6.3,3,6.2
+"Arizona",2009,5.8,3,9.9
+"Arizona",2010,6.4,3,10.4
+"Arizona",2011,6.1,3,9.5
+"Arizona",2012,5.5,3,8.3
+"Arizona",2013,5.4,3,7.7
+"Arizona",2014,4.7,3,6.8
+"Arizona",2015,4.5,3,6.1
+"Arizona",2016,5.5,3,5.4
+"Arizona",2017,5.9,3,4.9
+"Arkansas",1996,8.7,4,5.3
+"Arkansas",1997,9.9,4,5.2
+"Arkansas",1998,8,4,5.2
+"Arkansas",1999,5.6,4,4.6
+"Arkansas",2000,6.3,4,4.3
+"Arkansas",2001,5.5,4,5
+"Arkansas",2002,5.2,4,5.5
+"Arkansas",2003,6.4,4,5.9
+"Arkansas",2004,6.4,4,5.7
+"Arkansas",2005,6.7,4,5.2
+"Arkansas",2006,7.3,4,5.2
+"Arkansas",2007,6.7,4,5.3
+"Arkansas",2008,5.7,4,5.5
+"Arkansas",2009,6.2,4,7.8
+"Arkansas",2010,4.6,4,8.2
+"Arkansas",2011,5.4,4,8.3
+"Arkansas",2012,5.9,4,7.6
+"Arkansas",2013,5.4,4,7.3
+"Arkansas",2014,5.6,4,6.1
+"Arkansas",2015,6.3,4,5.2
+"Arkansas",2016,7.2,4,3.9
+"Arkansas",2017,8.6,4,3.7
+"California",1996,9.1,5,7.3
+"California",1997,8,5,6.4
+"California",1998,6.6,5,5.9
+"California",1999,6,5,5.2
+"California",2000,6.1,5,4.9
+"California",2001,6.4,5,5.4
+"California",2002,6.8,5,6.7
+"California",2003,6.8,5,6.8
+"California",2004,6.7,5,6.2
+"California",2005,6.9,5,5.4
+"California",2006,6.8,5,4.9
+"California",2007,6.2,5,5.4
+"California",2008,5.8,5,7.3
+"California",2009,5.3,5,11.2
+"California",2010,4.8,5,12.2
+"California",2011,4.8,5,11.7
+"California",2012,5,5,10.4
+"California",2013,4.6,5,8.9
+"California",2014,4.4,5,7.5
+"California",2015,4.8,5,6.2
+"California",2016,4.9,5,5.5
+"California",2017,4.6,5,4.8
+"Colorado",1996,4.7,6,4.2
+"Colorado",1997,4,6,3.5
+"Colorado",1998,4.6,6,3.6
+"Colorado",1999,4.6,6,3.1
+"Colorado",2000,3.1,6,2.8
+"Colorado",2001,3.6,6,3.8
+"Colorado",2002,4,6,5.5
+"Colorado",2003,3.9,6,6
+"Colorado",2004,4.4,6,5.5
+"Colorado",2005,3.7,6,5
+"Colorado",2006,3.3,6,4.3
+"Colorado",2007,3.1,6,3.7
+"Colorado",2008,3.2,6,4.8
+"Colorado",2009,3.2,6,7.3
+"Colorado",2010,2.6,6,8.7
+"Colorado",2011,3,6,8.4
+"Colorado",2012,3.1,6,7.9
+"Colorado",2013,3.4,6,6.8
+"Colorado",2014,2.8,6,5
+"Colorado",2015,3.2,6,3.9
+"Colorado",2016,3.4,6,3.3
+"Colorado",2017,3.9,6,2.8
+"Connecticut",1996,4.8,7,5.5
+"Connecticut",1997,3.8,7,5
+"Connecticut",1998,4.1,7,3.4
+"Connecticut",1999,3.3,7,2.9
+"Connecticut",2000,2.9,7,2.4
+"Connecticut",2001,3.1,7,3.1
+"Connecticut",2002,2.3,7,4.3
+"Connecticut",2003,3,7,5.4
+"Connecticut",2004,2.6,7,5
+"Connecticut",2005,2.9,7,4.9
+"Connecticut",2006,3.1,7,4.3
+"Connecticut",2007,3,7,4.5
+"Connecticut",2008,3.5,7,5.7
+"Connecticut",2009,3,7,7.9
+"Connecticut",2010,3.7,7,9.1
+"Connecticut",2011,3.6,7,8.8
+"Connecticut",2012,4.1,7,8.3
+"Connecticut",2013,2.4,7,7.8
+"Connecticut",2014,2.4,7,6.6
+"Connecticut",2015,3.2,7,5.6
+"Connecticut",2016,2.2,7,5.1
+"Connecticut",2017,2.8,7,4.7
+"Delaware",1996,4.3,8,5.1
+"Delaware",1997,2.5,8,4
+"Delaware",1998,2.8,8,3.7
+"Delaware",1999,3.2,8,3.4
+"Delaware",2000,3.2,8,3.7
+"Delaware",2001,2.9,8,3.5
+"Delaware",2002,3.2,8,4
+"Delaware",2003,2.9,8,4.3
+"Delaware",2004,2,8,4
+"Delaware",2005,4.4,8,4.1
+"Delaware",2006,4.9,8,3.6
+"Delaware",2007,4.3,8,3.4
+"Delaware",2008,6.5,8,4.9
+"Delaware",2009,4.6,8,8.3
+"Delaware",2010,5.7,8,8.4
+"Delaware",2011,5.3,8,7.5
+"Delaware",2012,6.1,8,7.2
+"Delaware",2013,4.2,8,6.7
+"Delaware",2014,5.8,8,5.7
+"Delaware",2015,6.6,8,4.9
+"Delaware",2016,6.1,8,4.5
+"Delaware",2017,5.6,8,4.6
+"Florida",1996,7.5,9,5.2
+"Florida",1997,6.9,9,4.8
+"Florida",1998,6.5,9,4.3
+"Florida",1999,5.7,9,3.9
+"Florida",2000,5.6,9,3.7
+"Florida",2001,5.3,9,4.7
+"Florida",2002,5.5,9,5.6
+"Florida",2003,5.4,9,5.2
+"Florida",2004,5.4,9,4.6
+"Florida",2005,5,9,3.7
+"Florida",2006,6.2,9,3.2
+"Florida",2007,6.6,9,4
+"Florida",2008,6.4,9,6.3
+"Florida",2009,5.5,9,10.4
+"Florida",2010,5.2,9,11.1
+"Florida",2011,5.2,9,10
+"Florida",2012,5.2,9,8.5
+"Florida",2013,5,9,7.3
+"Florida",2014,5.8,9,6.3
+"Florida",2015,5.1,9,5.4
+"Florida",2016,5.4,9,4.8
+"Florida",2017,5,9,4.2
+"Georgia",1996,9.5,10,4.7
+"Georgia",1997,7.5,10,4.6
+"Georgia",1998,8.1,10,4.3
+"Georgia",1999,7.5,10,3.9
+"Georgia",2000,8,10,3.6
+"Georgia",2001,7.1,10,4
+"Georgia",2002,7.1,10,5
+"Georgia",2003,7.6,10,4.8
+"Georgia",2004,6.9,10,4.8
+"Georgia",2005,6.2,10,5.3
+"Georgia",2006,6.4,10,4.7
+"Georgia",2007,7.5,10,4.5
+"Georgia",2008,6.6,10,6.2
+"Georgia",2009,5.8,10,9.9
+"Georgia",2010,5.7,10,10.5
+"Georgia",2011,5.6,10,10.2
+"Georgia",2012,5.9,10,9.2
+"Georgia",2013,5.6,10,8.2
+"Georgia",2014,5.7,10,7.1
+"Georgia",2015,6.1,10,5.9
+"Georgia",2016,6.6,10,5.4
+"Georgia",2017,6.7,10,4.7
+"Hawaii",1996,3.4,11,6.3
+"Hawaii",1997,4,11,6.2
+"Hawaii",1998,2,11,6.1
+"Hawaii",1999,3.7,11,5.4
+"Hawaii",2000,2.9,11,4.2
+"Hawaii",2001,2.6,11,4.5
+"Hawaii",2002,1.9,11,4.2
+"Hawaii",2003,1.7,11,4.1
+"Hawaii",2004,2.6,11,3.4
+"Hawaii",2005,1.9,11,2.9
+"Hawaii",2006,1.6,11,2.6
+"Hawaii",2007,1.7,11,2.8
+"Hawaii",2008,1.9,11,4.3
+"Hawaii",2009,1.8,11,7.2
+"Hawaii",2010,1.8,11,6.9
+"Hawaii",2011,1.5,11,6.8
+"Hawaii",2012,1.5,11,6
+"Hawaii",2013,1.5,11,4.9
+"Hawaii",2014,1.8,11,4.4
+"Hawaii",2015,2,11,3.6
+"Hawaii",2016,2.4,11,2.9
+"Hawaii",2017,2.7,11,2.4
+"Idaho",1996,3.6,12,5.3
+"Idaho",1997,3.2,12,5.1
+"Idaho",1998,2.9,12,5.1
+"Idaho",1999,2,12,4.9
+"Idaho",2000,1.2,12,4.7
+"Idaho",2001,2.3,12,5.1
+"Idaho",2002,2.7,12,5.6
+"Idaho",2003,1.8,12,5.6
+"Idaho",2004,2.2,12,4.9
+"Idaho",2005,2.4,12,4
+"Idaho",2006,2.5,12,3.5
+"Idaho",2007,3.3,12,3.1
+"Idaho",2008,1.5,12,5.1
+"Idaho",2009,1.6,12,8.8
+"Idaho",2010,1.4,12,9
+"Idaho",2011,2.2,12,8.3
+"Idaho",2012,1.9,12,7.2
+"Idaho",2013,1.7,12,6.2
+"Idaho",2014,2,12,4.8
+"Idaho",2015,1.9,12,4.1
+"Idaho",2016,2.9,12,3.8
+"Idaho",2017,1.9,12,3.2
+"Illinois",1996,10,13,5.3
+"Illinois",1997,9.2,13,4.8
+"Illinois",1998,8.4,13,4.4
+"Illinois",1999,7.7,13,4.4
+"Illinois",2000,7.2,13,4.3
+"Illinois",2001,7.9,13,5.3
+"Illinois",2002,7.5,13,6.5
+"Illinois",2003,7.1,13,6.8
+"Illinois",2004,6.1,13,6.2
+"Illinois",2005,6,13,5.7
+"Illinois",2006,6.1,13,4.5
+"Illinois",2007,5.9,13,5
+"Illinois",2008,6.1,13,6.3
+"Illinois",2009,6,13,10.2
+"Illinois",2010,5.5,13,10.4
+"Illinois",2011,6.1,13,9.7
+"Illinois",2012,6,13,9
+"Illinois",2013,5.5,13,9.1
+"Illinois",2014,5.3,13,7.1
+"Illinois",2015,5.9,13,5.9
+"Illinois",2016,8.3,13,5.8
+"Illinois",2017,7.8,13,5
+"Indiana",1996,7.2,14,4.1
+"Indiana",1997,7.3,14,3.5
+"Indiana",1998,7.7,14,3.1
+"Indiana",1999,6.6,14,3
+"Indiana",2000,5.8,14,3.1
+"Indiana",2001,6.8,14,4.2
+"Indiana",2002,5.9,14,5.2
+"Indiana",2003,5.5,14,5.3
+"Indiana",2004,5.1,14,5.4
+"Indiana",2005,5.7,14,5.5
+"Indiana",2006,5.8,14,5
+"Indiana",2007,5.6,14,4.6
+"Indiana",2008,5.1,14,5.9
+"Indiana",2009,4.9,14,10.3
+"Indiana",2010,4.1,14,10.4
+"Indiana",2011,4.7,14,9.1
+"Indiana",2012,4.7,14,8.3
+"Indiana",2013,5.4,14,7.7
+"Indiana",2014,5,14,5.9
+"Indiana",2015,5.6,14,4.8
+"Indiana",2016,6.5,14,4.4
+"Indiana",2017,6,14,3.5
+"Iowa",1996,1.9,15,3.5
+"Iowa",1997,1.8,15,3.1
+"Iowa",1998,1.9,15,2.7
+"Iowa",1999,1.5,15,2.6
+"Iowa",2000,1.6,15,2.6
+"Iowa",2001,1.7,15,3.3
+"Iowa",2002,1.5,15,4
+"Iowa",2003,1.6,15,4.5
+"Iowa",2004,1.6,15,4.5
+"Iowa",2005,1.3,15,4.3
+"Iowa",2006,1.8,15,3.7
+"Iowa",2007,1.2,15,3.7
+"Iowa",2008,2.5,15,4.2
+"Iowa",2009,1.3,15,6.4
+"Iowa",2010,1.2,15,6
+"Iowa",2011,1.4,15,5.5
+"Iowa",2012,1.6,15,5.1
+"Iowa",2013,1.4,15,4.7
+"Iowa",2014,1.9,15,4.2
+"Iowa",2015,2.3,15,3.7
+"Iowa",2016,2.3,15,3.6
+"Iowa",2017,3.3,15,3.1
+"Kansas",1996,6.6,16,4.3
+"Kansas",1997,6,16,3.8
+"Kansas",1998,5.9,16,3.5
+"Kansas",1999,6,16,3.3
+"Kansas",2000,6.3,16,3.6
+"Kansas",2001,3.4,16,4.2
+"Kansas",2002,2.9,16,5.1
+"Kansas",2003,4.5,16,5.5
+"Kansas",2004,4.5,16,5.5
+"Kansas",2005,3.7,16,5
+"Kansas",2006,4.6,16,4.4
+"Kansas",2007,3.9,16,4.2
+"Kansas",2008,4,16,4.6
+"Kansas",2009,4.4,16,6.9
+"Kansas",2010,3.4,16,7.1
+"Kansas",2011,3.9,16,6.5
+"Kansas",2012,2.9,16,5.7
+"Kansas",2013,3.9,16,5.3
+"Kansas",2014,3.1,16,4.6
+"Kansas",2015,4.3,16,4.2
+"Kansas",2016,4.5,16,4
+"Kansas",2017,5.5,16,3.6
+"Kentucky",1996,5.9,17,5.5
+"Kentucky",1997,5.8,17,5.3
+"Kentucky",1998,4.6,17,4.6
+"Kentucky",1999,5.4,17,4.5
+"Kentucky",2000,4.8,17,4.2
+"Kentucky",2001,4.7,17,5.2
+"Kentucky",2002,4.5,17,5.7
+"Kentucky",2003,4.6,17,6.1
+"Kentucky",2004,5.7,17,5.4
+"Kentucky",2005,4.6,17,5.9
+"Kentucky",2006,4,17,5.7
+"Kentucky",2007,4.8,17,5.4
+"Kentucky",2008,4.6,17,6.4
+"Kentucky",2009,4.3,17,10.3
+"Kentucky",2010,4.3,17,10.2
+"Kentucky",2011,3.5,17,9.4
+"Kentucky",2012,4.6,17,8.2
+"Kentucky",2013,3.8,17,8.1
+"Kentucky",2014,3.6,17,6.5
+"Kentucky",2015,4.9,17,5.4
+"Kentucky",2016,6,17,5.1
+"Kentucky",2017,5.9,17,4.9
+"Louisiana",1996,17.5,18,6.6
+"Louisiana",1997,15.7,18,6
+"Louisiana",1998,12.8,18,5.7
+"Louisiana",1999,10.7,18,5.1
+"Louisiana",2000,12.5,18,5.3
+"Louisiana",2001,11.2,18,5.7
+"Louisiana",2002,13.2,18,6.1
+"Louisiana",2003,13,18,6.4
+"Louisiana",2004,12.7,18,5.9
+"Louisiana",2005,9.9,18,7.2
+"Louisiana",2006,12.4,18,4.5
+"Louisiana",2007,14.2,18,4.3
+"Louisiana",2008,11.9,18,4.9
+"Louisiana",2009,11.8,18,6.8
+"Louisiana",2010,11,18,8
+"Louisiana",2011,11.1,18,7.8
+"Louisiana",2012,10.6,18,7.1
+"Louisiana",2013,10.8,18,6.7
+"Louisiana",2014,10.3,18,6.4
+"Louisiana",2015,10.5,18,6.3
+"Louisiana",2016,11.8,18,6
+"Louisiana",2017,12.4,18,5.1
+"Maine",1996,2,19,5.2
+"Maine",1997,2,19,5.1
+"Maine",1998,2,19,4.5
+"Maine",1999,2.2,19,4
+"Maine",2000,1.2,19,3.4
+"Maine",2001,1.4,19,3.8
+"Maine",2002,1.1,19,4.3
+"Maine",2003,1.2,19,5
+"Maine",2004,1.4,19,4.6
+"Maine",2005,1.4,19,4.9
+"Maine",2006,1.7,19,4.6
+"Maine",2007,1.6,19,4.7
+"Maine",2008,2.4,19,5.5
+"Maine",2009,2,19,8.1
+"Maine",2010,1.8,19,8.1
+"Maine",2011,2,19,7.9
+"Maine",2012,2,19,7.5
+"Maine",2013,1.8,19,6.6
+"Maine",2014,1.6,19,5.6
+"Maine",2015,1.7,19,4.4
+"Maine",2016,1.5,19,3.8
+"Maine",2017,1.7,19,3.3
+"Maryland",1996,11.6,20,5
+"Maryland",1997,9.9,20,5
+"Maryland",1998,10,20,4.4
+"Maryland",1999,9,20,3.6
+"Maryland",2000,8.1,20,3.6
+"Maryland",2001,8.3,20,4
+"Maryland",2002,9.4,20,4.4
+"Maryland",2003,9.5,20,4.4
+"Maryland",2004,9.4,20,4.3
+"Maryland",2005,9.9,20,4.1
+"Maryland",2006,9.7,20,3.9
+"Maryland",2007,9.8,20,3.5
+"Maryland",2008,8.8,20,4.2
+"Maryland",2009,7.7,20,7
+"Maryland",2010,7.4,20,7.7
+"Maryland",2011,6.8,20,7.2
+"Maryland",2012,6.3,20,7
+"Maryland",2013,6.4,20,6.6
+"Maryland",2014,6.1,20,5.8
+"Maryland",2015,9,20,5.2
+"Maryland",2016,8,20,4.4
+"Maryland",2017,9,20,4.1
+"Massachusetts",1996,2.6,21,4.4
+"Massachusetts",1997,1.9,21,3.9
+"Massachusetts",1998,2,21,3.3
+"Massachusetts",1999,2,21,3.2
+"Massachusetts",2000,2,21,2.7
+"Massachusetts",2001,2.3,21,3.7
+"Massachusetts",2002,2.7,21,5.3
+"Massachusetts",2003,2.2,21,5.7
+"Massachusetts",2004,2.6,21,5.1
+"Massachusetts",2005,2.7,21,4.8
+"Massachusetts",2006,2.9,21,4.9
+"Massachusetts",2007,2.9,21,4.6
+"Massachusetts",2008,2.6,21,5.5
+"Massachusetts",2009,2.6,21,8.1
+"Massachusetts",2010,3.3,21,8.3
+"Massachusetts",2011,2.8,21,7.3
+"Massachusetts",2012,1.8,21,6.7
+"Massachusetts",2013,2,21,6.7
+"Massachusetts",2014,2,21,5.7
+"Massachusetts",2015,1.9,21,5
+"Massachusetts",2016,2,21,3.9
+"Massachusetts",2017,2.5,21,3.7
+"Michigan",1996,7.5,22,4.9
+"Michigan",1997,7.8,22,4.3
+"Michigan",1998,7.3,22,3.9
+"Michigan",1999,7,22,3.7
+"Michigan",2000,6.7,22,3.6
+"Michigan",2001,6.7,22,5.2
+"Michigan",2002,6.7,22,6.3
+"Michigan",2003,6.1,22,7.2
+"Michigan",2004,6.4,22,7
+"Michigan",2005,6.1,22,6.8
+"Michigan",2006,7.1,22,7
+"Michigan",2007,6.7,22,7
+"Michigan",2008,5.4,22,8
+"Michigan",2009,6.2,22,13.7
+"Michigan",2010,5.9,22,12.6
+"Michigan",2011,6.2,22,10.4
+"Michigan",2012,7.1,22,9.1
+"Michigan",2013,6.4,22,8.8
+"Michigan",2014,5.4,22,7.3
+"Michigan",2015,5.9,22,5.4
+"Michigan",2016,6,22,5
+"Michigan",2017,5.7,22,4.6
+"Minnesota",1996,3.6,23,4
+"Minnesota",1997,2.8,23,3.3
+"Minnesota",1998,2.6,23,2.7
+"Minnesota",1999,2.8,23,2.8
+"Minnesota",2000,3.1,23,3.2
+"Minnesota",2001,2.4,23,3.8
+"Minnesota",2002,2.2,23,4.5
+"Minnesota",2003,2.5,23,4.9
+"Minnesota",2004,2.2,23,4.7
+"Minnesota",2005,2.2,23,4.1
+"Minnesota",2006,2.4,23,4
+"Minnesota",2007,2.2,23,4.6
+"Minnesota",2008,2.1,23,5.4
+"Minnesota",2009,1.4,23,7.8
+"Minnesota",2010,1.8,23,7.4
+"Minnesota",2011,1.4,23,6.5
+"Minnesota",2012,1.8,23,5.6
+"Minnesota",2013,2.1,23,4.9
+"Minnesota",2014,1.6,23,4.2
+"Minnesota",2015,2.4,23,3.7
+"Minnesota",2016,1.8,23,3.9
+"Minnesota",2017,2,23,3.5
+"Mississippi",1996,11.1,24,6
+"Mississippi",1997,13.1,24,5.7
+"Mississippi",1998,11.4,24,5.3
+"Mississippi",1999,7.7,24,5.1
+"Mississippi",2000,9,24,5.4
+"Mississippi",2001,9.9,24,5.5
+"Mississippi",2002,9.2,24,6.6
+"Mississippi",2003,9.3,24,6.3
+"Mississippi",2004,7.8,24,6.2
+"Mississippi",2005,7.3,24,7.5
+"Mississippi",2006,7.7,24,6.5
+"Mississippi",2007,7.1,24,6.1
+"Mississippi",2008,8.1,24,6.6
+"Mississippi",2009,6.6,24,9.5
+"Mississippi",2010,6.9,24,10.4
+"Mississippi",2011,7.8,24,10
+"Mississippi",2012,7.1,24,9
+"Mississippi",2013,6.5,24,8.6
+"Mississippi",2014,8.6,24,7.6
+"Mississippi",2015,8.5,24,6.5
+"Mississippi",2016,7.9,24,5.8
+"Mississippi",2017,8.2,24,5.1
+"Missouri",1996,8.1,25,4.8
+"Missouri",1997,7.9,25,4.3
+"Missouri",1998,7.3,25,4.2
+"Missouri",1999,6.6,25,3.3
+"Missouri",2000,6.2,25,3.6
+"Missouri",2001,6.6,25,4.6
+"Missouri",2002,5.8,25,5.4
+"Missouri",2003,5,25,5.6
+"Missouri",2004,6.2,25,5.9
+"Missouri",2005,6.9,25,5.4
+"Missouri",2006,6.3,25,4.8
+"Missouri",2007,6.5,25,5.1
+"Missouri",2008,7.7,25,6.1
+"Missouri",2009,6.5,25,9.3
+"Missouri",2010,7,25,9.6
+"Missouri",2011,6.1,25,8.5
+"Missouri",2012,6.5,25,7
+"Missouri",2013,6.1,25,6.7
+"Missouri",2014,6.6,25,6.2
+"Missouri",2015,8.3,25,5
+"Missouri",2016,8.8,25,4.6
+"Missouri",2017,9.8,25,3.8
+"Montana",1996,3.9,26,5.3
+"Montana",1997,4.8,26,5.3
+"Montana",1998,4.1,26,5.5
+"Montana",1999,2.6,26,5.3
+"Montana",2000,1.8,26,5
+"Montana",2001,3.8,26,4.5
+"Montana",2002,1.8,26,4.4
+"Montana",2003,3.3,26,4.7
+"Montana",2004,3.2,26,4.8
+"Montana",2005,1.9,26,4.4
+"Montana",2006,1.8,26,3.5
+"Montana",2007,1.5,26,3.6
+"Montana",2008,2.4,26,5.1
+"Montana",2009,3.3,26,6.8
+"Montana",2010,2.5,26,7.3
+"Montana",2011,2.9,26,6.9
+"Montana",2012,2.9,26,6
+"Montana",2013,2.2,26,5.4
+"Montana",2014,3.6,26,4.7
+"Montana",2015,3.7,26,4.1
+"Montana",2016,3.6,26,4.1
+"Montana",2017,3.9,26,4
+"Nebraska",1996,2.9,27,2.7
+"Nebraska",1997,3,27,2.5
+"Nebraska",1998,3.1,27,2.6
+"Nebraska",1999,3.6,27,2.8
+"Nebraska",2000,3.7,27,2.8
+"Nebraska",2001,2.5,27,3.1
+"Nebraska",2002,2.8,27,3.6
+"Nebraska",2003,3.2,27,3.9
+"Nebraska",2004,2.3,27,3.9
+"Nebraska",2005,2.5,27,3.8
+"Nebraska",2006,2.8,27,3.1
+"Nebraska",2007,3.8,27,3
+"Nebraska",2008,3.8,27,3.3
+"Nebraska",2009,2.3,27,4.6
+"Nebraska",2010,3,27,4.6
+"Nebraska",2011,3.7,27,4.4
+"Nebraska",2012,2.8,27,4
+"Nebraska",2013,3.1,27,3.8
+"Nebraska",2014,2.9,27,3.3
+"Nebraska",2015,3.3,27,3
+"Nebraska",2016,2.6,27,3.1
+"Nebraska",2017,2.2,27,2.9
+"Nevada",1996,13.7,28,5
+"Nevada",1997,11.2,28,4.4
+"Nevada",1998,9.7,28,4.2
+"Nevada",1999,9.1,28,4
+"Nevada",2000,6.5,28,4.2
+"Nevada",2001,8.5,28,5.2
+"Nevada",2002,8.3,28,5.6
+"Nevada",2003,8.8,28,5.1
+"Nevada",2004,7.4,28,4.3
+"Nevada",2005,8.5,28,4.1
+"Nevada",2006,9,28,4
+"Nevada",2007,7.5,28,4.5
+"Nevada",2008,6.3,28,6.7
+"Nevada",2009,5.9,28,11.3
+"Nevada",2010,5.8,28,13.5
+"Nevada",2011,5.1,28,13
+"Nevada",2012,4.5,28,11.2
+"Nevada",2013,5.8,28,9.6
+"Nevada",2014,6,28,7.9
+"Nevada",2015,6.2,28,6.7
+"Nevada",2016,7.8,28,5.7
+"Nevada",2017,9.1,28,5
+"New Hampshire",1996,1.7,29,3.8
+"New Hampshire",1997,1.4,29,3.3
+"New Hampshire",1998,1.5,29,2.8
+"New Hampshire",1999,1.5,29,2.7
+"New Hampshire",2000,1.8,29,2.7
+"New Hampshire",2001,1.4,29,3.4
+"New Hampshire",2002,0.9,29,4.5
+"New Hampshire",2003,1.4,29,4.3
+"New Hampshire",2004,1.4,29,3.8
+"New Hampshire",2005,1.4,29,3.6
+"New Hampshire",2006,1,29,3.4
+"New Hampshire",2007,1.1,29,3.5
+"New Hampshire",2008,1,29,3.9
+"New Hampshire",2009,0.8,29,6.2
+"New Hampshire",2010,1,29,5.8
+"New Hampshire",2011,1.3,29,5.4
+"New Hampshire",2012,1.1,29,5.5
+"New Hampshire",2013,1.7,29,5.1
+"New Hampshire",2014,0.9,29,4.3
+"New Hampshire",2015,1.1,29,3.4
+"New Hampshire",2016,1.4,29,2.9
+"New Hampshire",2017,1,29,2.7
+"New Jersey",1996,4.2,30,6.1
+"New Jersey",1997,4.2,30,5.3
+"New Jersey",1998,4,30,4.6
+"New Jersey",1999,3.5,30,4.5
+"New Jersey",2000,3.4,30,3.7
+"New Jersey",2001,4,30,4.3
+"New Jersey",2002,3.9,30,5.8
+"New Jersey",2003,4.7,30,5.8
+"New Jersey",2004,4.5,30,4.8
+"New Jersey",2005,4.8,30,4.5
+"New Jersey",2006,4.9,30,4.7
+"New Jersey",2007,4.4,30,4.3
+"New Jersey",2008,4.3,30,5.3
+"New Jersey",2009,3.7,30,9.1
+"New Jersey",2010,4.2,30,9.5
+"New Jersey",2011,4.3,30,9.3
+"New Jersey",2012,4.4,30,9.3
+"New Jersey",2013,4.5,30,8.2
+"New Jersey",2014,3.9,30,6.7
+"New Jersey",2015,4.1,30,5.6
+"New Jersey",2016,4.2,30,5
+"New Jersey",2017,3.6,30,4.6
+"New Mexico",1996,11.5,31,7.2
+"New Mexico",1997,7.7,31,6.3
+"New Mexico",1998,10.9,31,6.1
+"New Mexico",1999,9.8,31,5.6
+"New Mexico",2000,7.4,31,4.9
+"New Mexico",2001,5.4,31,4.9
+"New Mexico",2002,8.2,31,5.5
+"New Mexico",2003,6,31,5.9
+"New Mexico",2004,8.9,31,5.5
+"New Mexico",2005,7.4,31,5.1
+"New Mexico",2006,6.8,31,4.2
+"New Mexico",2007,8.2,31,3.8
+"New Mexico",2008,7.2,31,4.5
+"New Mexico",2009,9.9,31,7.5
+"New Mexico",2010,6.8,31,8.1
+"New Mexico",2011,7.6,31,7.5
+"New Mexico",2012,5.6,31,7.1
+"New Mexico",2013,6,31,7
+"New Mexico",2014,4.8,31,6.7
+"New Mexico",2015,5.6,31,6.6
+"New Mexico",2016,6.7,31,6.7
+"New Mexico",2017,7.1,31,6.2
+"New York",1996,7.4,32,6.2
+"New York",1997,6,32,6.4
+"New York",1998,5.1,32,5.6
+"New York",1999,5,32,5.2
+"New York",2000,5,32,4.5
+"New York",2001,5,32,4.8
+"New York",2002,4.7,32,6.1
+"New York",2003,4.9,32,6.4
+"New York",2004,4.6,32,5.8
+"New York",2005,4.5,32,5
+"New York",2006,4.8,32,4.5
+"New York",2007,4.2,32,4.6
+"New York",2008,4.3,32,5.4
+"New York",2009,4,32,8.3
+"New York",2010,4.5,32,8.6
+"New York",2011,3.9,32,8.3
+"New York",2012,3.5,32,8.5
+"New York",2013,3.3,32,7.7
+"New York",2014,3.1,32,6.3
+"New York",2015,3.1,32,5.3
+"New York",2016,3.2,32,4.8
+"New York",2017,2.8,32,4.7
+"North Carolina",1996,8.5,33,4.3
+"North Carolina",1997,8.3,33,3.7
+"North Carolina",1998,8.1,33,3.5
+"North Carolina",1999,7.2,33,3.2
+"North Carolina",2000,7,33,3.7
+"North Carolina",2001,6.2,33,5.5
+"North Carolina",2002,6.6,33,6.6
+"North Carolina",2003,6.1,33,6.4
+"North Carolina",2004,6.2,33,5.5
+"North Carolina",2005,6.7,33,5.2
+"North Carolina",2006,6.1,33,4.7
+"North Carolina",2007,6.5,33,4.7
+"North Carolina",2008,6.5,33,6.1
+"North Carolina",2009,5.2,33,10.6
+"North Carolina",2010,5,33,10.9
+"North Carolina",2011,5.2,33,10.3
+"North Carolina",2012,4.9,33,9.3
+"North Carolina",2013,4.8,33,7.9
+"North Carolina",2014,5.1,33,6.3
+"North Carolina",2015,5.2,33,5.7
+"North Carolina",2016,6.7,33,5.1
+"North Carolina",2017,5.8,33,4.6
+"North Dakota",1996,2.2,34,2.9
+"North Dakota",1997,0.9,34,2.7
+"North Dakota",1998,1.1,34,2.9
+"North Dakota",1999,1.6,34,3.3
+"North Dakota",2000,0.6,34,3
+"North Dakota",2001,1.1,34,2.9
+"North Dakota",2002,0.8,34,3.7
+"North Dakota",2003,1.9,34,3.7
+"North Dakota",2004,1.4,34,3.4
+"North Dakota",2005,1.1,34,3.4
+"North Dakota",2006,1.3,34,3.2
+"North Dakota",2007,1.9,34,3.1
+"North Dakota",2008,0.5,34,3.2
+"North Dakota",2009,1.9,34,4.1
+"North Dakota",2010,1.5,34,3.8
+"North Dakota",2011,3.5,34,3.5
+"North Dakota",2012,3.6,34,3.1
+"North Dakota",2013,2.2,34,2.9
+"North Dakota",2014,3,34,2.7
+"North Dakota",2015,2.8,34,2.7
+"North Dakota",2016,2,34,3.1
+"North Dakota",2017,1.3,34,2.6
+"Ohio",1996,4.8,35,5
+"Ohio",1997,4.7,35,4.6
+"Ohio",1998,4,35,4.3
+"Ohio",1999,3.5,35,4.3
+"Ohio",2000,3.7,35,4
+"Ohio",2001,4,35,4.3
+"Ohio",2002,4.6,35,5.7
+"Ohio",2003,4.6,35,6.2
+"Ohio",2004,4.5,35,6.3
+"Ohio",2005,5.1,35,5.9
+"Ohio",2006,4.7,35,5.4
+"Ohio",2007,4.5,35,5.6
+"Ohio",2008,4.7,35,6.4
+"Ohio",2009,4.6,35,10.3
+"Ohio",2010,4.2,35,10.3
+"Ohio",2011,4.4,35,8.8
+"Ohio",2012,4.1,35,7.4
+"Ohio",2013,3.9,35,7.5
+"Ohio",2014,4,35,5.8
+"Ohio",2015,4.5,35,4.9
+"Ohio",2016,5.6,35,5
+"Ohio",2017,6.1,35,5
+"Oklahoma",1996,6.8,36,4.1
+"Oklahoma",1997,6.9,36,4.1
+"Oklahoma",1998,6.1,36,4.3
+"Oklahoma",1999,6.9,36,3.5
+"Oklahoma",2000,5.3,36,3
+"Oklahoma",2001,5.3,36,3.7
+"Oklahoma",2002,4.7,36,4.7
+"Oklahoma",2003,5.9,36,5.5
+"Oklahoma",2004,5.3,36,4.9
+"Oklahoma",2005,5.3,36,4.5
+"Oklahoma",2006,5.8,36,4
+"Oklahoma",2007,6.1,36,4.1
+"Oklahoma",2008,5.8,36,3.7
+"Oklahoma",2009,6.3,36,6.4
+"Oklahoma",2010,5.2,36,6.8
+"Oklahoma",2011,5.6,36,5.9
+"Oklahoma",2012,5.8,36,5.3
+"Oklahoma",2013,5.1,36,5.3
+"Oklahoma",2014,4.5,36,4.5
+"Oklahoma",2015,6.1,36,4.2
+"Oklahoma",2016,6.3,36,4.8
+"Oklahoma",2017,6.2,36,4.3
+"Oregon",1996,4,37,5.7
+"Oregon",1997,2.9,37,5.7
+"Oregon",1998,3.8,37,5.7
+"Oregon",1999,2.7,37,5.5
+"Oregon",2000,2,37,5.1
+"Oregon",2001,2.4,37,6.4
+"Oregon",2002,2,37,7.5
+"Oregon",2003,1.9,37,8.1
+"Oregon",2004,2.5,37,7.3
+"Oregon",2005,2.2,37,6.2
+"Oregon",2006,2.3,37,5.3
+"Oregon",2007,1.9,37,5.2
+"Oregon",2008,2.2,37,6.5
+"Oregon",2009,2.3,37,11.3
+"Oregon",2010,2.5,37,10.6
+"Oregon",2011,2.2,37,9.5
+"Oregon",2012,2.3,37,8.8
+"Oregon",2013,2,37,7.9
+"Oregon",2014,2,37,6.8
+"Oregon",2015,2.7,37,5.7
+"Oregon",2016,2.8,37,4.8
+"Oregon",2017,2.5,37,4.1
+"Pennsylvania",1996,5.7,38,5.4
+"Pennsylvania",1997,5.9,38,5.1
+"Pennsylvania",1998,5.3,38,4.6
+"Pennsylvania",1999,4.9,38,4.4
+"Pennsylvania",2000,4.9,38,4.1
+"Pennsylvania",2001,5.3,38,4.8
+"Pennsylvania",2002,5.1,38,5.6
+"Pennsylvania",2003,5.3,38,5.7
+"Pennsylvania",2004,5.2,38,5.4
+"Pennsylvania",2005,6.1,38,5
+"Pennsylvania",2006,5.9,38,4.6
+"Pennsylvania",2007,5.8,38,4.4
+"Pennsylvania",2008,5.6,38,5.3
+"Pennsylvania",2009,5.3,38,8
+"Pennsylvania",2010,5.1,38,8.5
+"Pennsylvania",2011,5,38,7.9
+"Pennsylvania",2012,5.5,38,7.8
+"Pennsylvania",2013,4.7,38,7.4
+"Pennsylvania",2014,4.8,38,5.9
+"Pennsylvania",2015,5.2,38,5.1
+"Pennsylvania",2016,5.3,38,5.4
+"Pennsylvania",2017,5.8,38,4.9
+"Rhode Island",1996,2.5,39,5.4
+"Rhode Island",1997,2.5,39,5.1
+"Rhode Island",1998,2.4,39,4.6
+"Rhode Island",1999,3.6,39,4.2
+"Rhode Island",2000,4.3,39,4.1
+"Rhode Island",2001,3.7,39,4.6
+"Rhode Island",2002,3.8,39,5
+"Rhode Island",2003,2.3,39,5.3
+"Rhode Island",2004,2.4,39,5.2
+"Rhode Island",2005,3.2,39,5
+"Rhode Island",2006,2.6,39,4.9
+"Rhode Island",2007,1.8,39,5.2
+"Rhode Island",2008,2.8,39,7.8
+"Rhode Island",2009,3,39,11
+"Rhode Island",2010,2.8,39,11.2
+"Rhode Island",2011,1.3,39,11
+"Rhode Island",2012,3.4,39,10.4
+"Rhode Island",2013,2.9,39,9.3
+"Rhode Island",2014,2.4,39,7.7
+"Rhode Island",2015,2.9,39,6
+"Rhode Island",2016,2.7,39,5.2
+"Rhode Island",2017,1.9,39,4.5
+"South Carolina",1996,9,40,5.8
+"South Carolina",1997,8.4,40,4.6
+"South Carolina",1998,8,40,3.8
+"South Carolina",1999,6.6,40,4.3
+"South Carolina",2000,5.8,40,3.8
+"South Carolina",2001,6.3,40,5.2
+"South Carolina",2002,7.3,40,5.8
+"South Carolina",2003,7.2,40,6.9
+"South Carolina",2004,6.9,40,6.8
+"South Carolina",2005,7.4,40,6.7
+"South Carolina",2006,8.3,40,6.4
+"South Carolina",2007,8,40,5.7
+"South Carolina",2008,6.8,40,6.8
+"South Carolina",2009,6.7,40,11.2
+"South Carolina",2010,5.7,40,11.2
+"South Carolina",2011,6.8,40,10.6
+"South Carolina",2012,7,40,9.2
+"South Carolina",2013,6.2,40,7.6
+"South Carolina",2014,6.4,40,6.4
+"South Carolina",2015,8.3,40,6
+"South Carolina",2016,7.2,40,5
+"South Carolina",2017,7.8,40,4.3
+"South Dakota",1996,1.2,41,3.2
+"South Dakota",1997,1.4,41,2.9
+"South Dakota",1998,1.4,41,2.8
+"South Dakota",1999,2.5,41,2.7
+"South Dakota",2000,0.9,41,2.5
+"South Dakota",2001,0.9,41,3.1
+"South Dakota",2002,1.4,41,3.2
+"South Dakota",2003,1.3,41,3.5
+"South Dakota",2004,2.3,41,3.7
+"South Dakota",2005,2.3,41,3.8
+"South Dakota",2006,1.2,41,3.1
+"South Dakota",2007,2.1,41,2.8
+"South Dakota",2008,3.2,41,3.1
+"South Dakota",2009,3.7,41,4.9
+"South Dakota",2010,2.8,41,5
+"South Dakota",2011,2.4,41,4.7
+"South Dakota",2012,2.8,41,4.3
+"South Dakota",2013,2.4,41,3.8
+"South Dakota",2014,2.3,41,3.4
+"South Dakota",2015,3.8,41,3.1
+"South Dakota",2016,3.2,41,3
+"South Dakota",2017,2.9,41,3.3
+"Tennessee",1996,9.5,42,5.2
+"Tennessee",1997,9.5,42,5.3
+"Tennessee",1998,8.5,42,4.3
+"Tennessee",1999,7.1,42,4
+"Tennessee",2000,7.2,42,3.9
+"Tennessee",2001,7.4,42,4.6
+"Tennessee",2002,7.2,42,5.2
+"Tennessee",2003,6.8,42,5.6
+"Tennessee",2004,5.9,42,5.3
+"Tennessee",2005,7.2,42,5.6
+"Tennessee",2006,6.8,42,5.2
+"Tennessee",2007,6.4,42,4.7
+"Tennessee",2008,6.6,42,6.6
+"Tennessee",2009,7.4,42,10.5
+"Tennessee",2010,5.6,42,9.7
+"Tennessee",2011,5.9,42,9
+"Tennessee",2012,6.2,42,7.8
+"Tennessee",2013,5,42,7.8
+"Tennessee",2014,5.7,42,6.5
+"Tennessee",2015,6.3,42,5.8
+"Tennessee",2016,7.4,42,4.7
+"Tennessee",2017,7.8,42,3.7
+"Texas",1996,7.7,43,5.7
+"Texas",1997,6.8,43,5.3
+"Texas",1998,6.8,43,4.9
+"Texas",1999,6.1,43,4.7
+"Texas",2000,5.9,43,4.3
+"Texas",2001,6.2,43,5
+"Texas",2002,6,43,6.4
+"Texas",2003,6.4,43,6.7
+"Texas",2004,6.1,43,5.9
+"Texas",2005,6.2,43,5.4
+"Texas",2006,5.9,43,4.9
+"Texas",2007,5.9,43,4.3
+"Texas",2008,5.6,43,4.8
+"Texas",2009,5.4,43,7.6
+"Texas",2010,4.9,43,8.1
+"Texas",2011,4.4,43,7.8
+"Texas",2012,4.4,43,6.7
+"Texas",2013,4.3,43,6.2
+"Texas",2014,4.4,43,5.1
+"Texas",2015,4.8,43,4.5
+"Texas",2016,5.3,43,4.6
+"Texas",2017,5,43,4.3
+"Utah",1996,3.2,44,3.4
+"Utah",1997,2.4,44,3.2
+"Utah",1998,3.1,44,3.6
+"Utah",1999,2.1,44,3.5
+"Utah",2000,1.9,44,3.3
+"Utah",2001,3,44,4.4
+"Utah",2002,2,44,5.8
+"Utah",2003,2.5,44,5.6
+"Utah",2004,1.9,44,5
+"Utah",2005,2.3,44,4.1
+"Utah",2006,1.8,44,3
+"Utah",2007,2.2,44,2.6
+"Utah",2008,1.4,44,3.6
+"Utah",2009,1.4,44,7.3
+"Utah",2010,1.9,44,7.8
+"Utah",2011,1.8,44,6.7
+"Utah",2012,1.8,44,5.4
+"Utah",2013,1.7,44,4.6
+"Utah",2014,2.3,44,3.8
+"Utah",2015,1.9,44,3.5
+"Utah",2016,2.4,44,3.4
+"Utah",2017,2.4,44,3.2
+"Vermont",1996,1.9,45,4.3
+"Vermont",1997,1.5,45,3.9
+"Vermont",1998,2.6,45,3.4
+"Vermont",1999,2.9,45,3
+"Vermont",2000,1.5,45,2.8
+"Vermont",2001,1.1,45,3.3
+"Vermont",2002,2.1,45,4
+"Vermont",2003,2.3,45,4.3
+"Vermont",2004,2.6,45,3.7
+"Vermont",2005,1.3,45,3.5
+"Vermont",2006,1.9,45,3.7
+"Vermont",2007,1.9,45,4
+"Vermont",2008,2.7,45,4.7
+"Vermont",2009,1.3,45,6.6
+"Vermont",2010,1.1,45,6.1
+"Vermont",2011,1.8,45,5.5
+"Vermont",2012,1.3,45,5
+"Vermont",2013,1.6,45,4.4
+"Vermont",2014,1.6,45,4
+"Vermont",2015,1.6,45,3.7
+"Vermont",2016,2.2,45,3.2
+"Vermont",2017,2.2,45,3
+"Virginia",1996,7.5,46,4.4
+"Virginia",1997,7.2,46,3.8
+"Virginia",1998,6.2,46,2.9
+"Virginia",1999,5.7,46,2.7
+"Virginia",2000,5.7,46,2.3
+"Virginia",2001,5.1,46,3.2
+"Virginia",2002,5.3,46,4.2
+"Virginia",2003,5.6,46,4.1
+"Virginia",2004,5.2,46,3.8
+"Virginia",2005,6.1,46,3.6
+"Virginia",2006,5.2,46,3.1
+"Virginia",2007,5.3,46,3
+"Virginia",2008,4.7,46,3.9
+"Virginia",2009,4.7,46,6.7
+"Virginia",2010,4.7,46,7.1
+"Virginia",2011,3.8,46,6.6
+"Virginia",2012,3.9,46,6
+"Virginia",2013,3.8,46,5.7
+"Virginia",2014,4.1,46,5.2
+"Virginia",2015,4.7,46,4.4
+"Virginia",2016,5.7,46,4.1
+"Virginia",2017,5.3,46,3.8
+"Washington",1996,4.6,47,6.1
+"Washington",1997,4.3,47,4.9
+"Washington",1998,3.9,47,4.8
+"Washington",1999,3,47,4.9
+"Washington",2000,3.3,47,5.2
+"Washington",2001,3,47,6.3
+"Washington",2002,3,47,7.4
+"Washington",2003,3,47,7.4
+"Washington",2004,3.1,47,6.3
+"Washington",2005,3.3,47,5.6
+"Washington",2006,3,47,5
+"Washington",2007,2.7,47,4.7
+"Washington",2008,2.9,47,5.4
+"Washington",2009,2.9,47,9.2
+"Washington",2010,2.3,47,10
+"Washington",2011,2.4,47,9.3
+"Washington",2012,3.1,47,8.1
+"Washington",2013,2.3,47,7
+"Washington",2014,2.5,47,6.1
+"Washington",2015,3,47,5.7
+"Washington",2016,2.7,47,5.3
+"Washington",2017,3.1,47,4.8
+"West Virginia",1996,3.8,48,7.5
+"West Virginia",1997,4.1,48,6.9
+"West Virginia",1998,4.3,48,6.6
+"West Virginia",1999,4.4,48,6.5
+"West Virginia",2000,2.5,48,5.5
+"West Virginia",2001,2.2,48,5
+"West Virginia",2002,3.2,48,5.9
+"West Virginia",2003,3.5,48,6
+"West Virginia",2004,3.7,48,5.3
+"West Virginia",2005,4.4,48,5.1
+"West Virginia",2006,4.1,48,4.9
+"West Virginia",2007,3.5,48,4.6
+"West Virginia",2008,3.3,48,4.3
+"West Virginia",2009,4.6,48,7.7
+"West Virginia",2010,3.1,48,8.7
+"West Virginia",2011,4.7,48,8.1
+"West Virginia",2012,3.8,48,7.5
+"West Virginia",2013,3.3,48,6.7
+"West Virginia",2014,4,48,6.6
+"West Virginia",2015,4.6,48,6.7
+"West Virginia",2016,4.6,48,6.1
+"West Virginia",2017,4.7,48,5.2
+"Wisconsin",1996,4.2,49,3.6
+"Wisconsin",1997,4,49,3.6
+"Wisconsin",1998,3.6,49,3.4
+"Wisconsin",1999,3.4,49,3.1
+"Wisconsin",2000,3.2,49,3.5
+"Wisconsin",2001,3.6,49,4.5
+"Wisconsin",2002,2.8,49,5.4
+"Wisconsin",2003,3.3,49,5.7
+"Wisconsin",2004,2.8,49,5
+"Wisconsin",2005,3.5,49,4.7
+"Wisconsin",2006,3,49,4.7
+"Wisconsin",2007,3.3,49,4.9
+"Wisconsin",2008,2.6,49,4.9
+"Wisconsin",2009,2.6,49,8.6
+"Wisconsin",2010,2.7,49,8.7
+"Wisconsin",2011,2.4,49,7.8
+"Wisconsin",2012,3,49,7
+"Wisconsin",2013,2.8,49,6.7
+"Wisconsin",2014,2.9,49,5.4
+"Wisconsin",2015,4.2,49,4.6
+"Wisconsin",2016,4,49,4
+"Wisconsin",2017,3.2,49,3.3
+"Wyoming",1996,3.3,50,4.9
+"Wyoming",1997,3.5,50,4.8
+"Wyoming",1998,4.8,50,4.7
+"Wyoming",1999,2.3,50,4.6
+"Wyoming",2000,2.4,50,3.9
+"Wyoming",2001,1.8,50,3.8
+"Wyoming",2002,3,50,4
+"Wyoming",2003,2.8,50,4.3
+"Wyoming",2004,2.2,50,3.8
+"Wyoming",2005,2.7,50,3.6
+"Wyoming",2006,1.7,50,3.2
+"Wyoming",2007,3.1,50,2.8
+"Wyoming",2008,1.9,50,3.1
+"Wyoming",2009,2,50,6.3
+"Wyoming",2010,1.4,50,6.4
+"Wyoming",2011,3.2,50,5.8
+"Wyoming",2012,2.4,50,5.3
+"Wyoming",2013,2.9,50,4.7
+"Wyoming",2014,2.7,50,4.1
+"Wyoming",2015,2.7,50,4.2
+"Wyoming",2016,3.4,50,5.3
+"Wyoming",2017,2.6,50,4.2
