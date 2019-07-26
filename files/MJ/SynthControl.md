@@ -36,7 +36,8 @@ This walk-through uses the statistical package R, but at the end or the article 
 
 R has many functions right-out-of-the-box, but often you will need to install additional software packages to increase the functionality. This is done in the chunk of code below, although the actual installation is commented-out so because it only needs to be run once on each computer.
 
-```{r setup, results='hide', warning=FALSE, message=FALSE}
+
+```r
 # Set options for the RMarkdown 
 knitr::opts_chunk$set(echo = TRUE)
 
@@ -59,7 +60,8 @@ library(kableExtra)
 
 We looked online for homocide data at the state-level, and also data on at least one important predictor of homocide. We found good data on unemployment, which tracks closely to the health of the local economy and is therefore correlated with a host of economic factors that could influence the homocide rate. Ideally we would have data on police numbers, public spending, other drug use, but to illustrate the application of synthetic control it is sufficient to limit to just two data sources. 
 
-```{r Load data}
+
+```r
 # Load the data s
 d_wide <- openxlsx::read.xlsx('HomocideData.xlsx')
 
@@ -90,7 +92,8 @@ write.csv(d, 'data.csv', row.names = FALSE)
 
 This step, which you can look at in the code below, is just technical. The `synth` command in R needs the data to be prepared in a particular way. We tell the function that the intervention is introduced in 2014, that the only treated State is Washington, and that the optimisation of the weighted average should be done using the data from 1996-2013 using the homocide rate and the unemployment rate. 
 
-```{r}
+
+```r
 # Prep data for synth
 d_synth <- dataprep(d, dependent='HR', 
                     unit.variable='id', 
@@ -110,7 +113,8 @@ d_synth <- dataprep(d, dependent='HR',
 
 Instead of rushing straight to the synthetic controls command, we can first look at how Washington's homocide rate compares to the other states. We first plotted the mean homocide rates over the whole period, in order of decreasing rate, with Washington highlighted in red:
 
-```{r Washington in context}
+
+```r
 # Summarise each state by the mean homocide rate 
 m     <- aggregate(HR ~ STATE,data=d,FUN=mean)
 # Mark Washinton in red 
@@ -123,9 +127,12 @@ plot(m$HR, bty='n', pch=16, xlab='Rank', col=m$colour,
      ylab='Homicide rate, per 100,000', cex=1)
 ```
 
+![](SynthControl_files/figure-html/Washington in context-1.png)<!-- -->
+
 Second, we plotted the trends over time, with Washington highlighted in red:
 
-```{r Washington in context 2}
+
+```r
 # Plot the trends 
 plot(loess(d$HR~d$time), type = 'n', ylim=c(min(d$HR),max(d$HR)), bty='n', xlab='Year', ylab='Homicide rate, per 100,000')
 
@@ -139,9 +146,12 @@ for (n in unique(d$STATE)){
 lines(loess(d$HR[d$STATE=='Washington']~d$time[d$STATE=='Washington']),lwd=2, col='red', ylim=c(min(d$HR),max(d$HR)))
 ```
 
+![](SynthControl_files/figure-html/Washington in context 2-1.png)<!-- -->
+
 So we can see that while on average Washington has a lower homicide rate than other states, the trend is in the pack of trends in other states, with lines above and below. This implies that with the right weighting it would be possible to create a weighted average of the trends in other states that lay along the trend in Washington. 
 
-```{r Analysis, results='hide'}
+
+```r
 s <- synth(data.prep.obj = d_synth, method="All")
 ```
 
@@ -150,17 +160,44 @@ s <- synth(data.prep.obj = d_synth, method="All")
 
 So now we have generated the synthetic control, what does it look like? First we can look at the mean levels of the input variables in the Washington and the synthetic Washington. 
 
-```{r Tables}
+
+```r
 t <- synth.tab(d_synth, synth.res=s)
 knitr::kable(t$tab.pred, col.names = c('Washington','Synthetic Washington','All states')) %>%
   kable_styling() 
 ```
 
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Washington </th>
+   <th style="text-align:right;"> Synthetic Washington </th>
+   <th style="text-align:right;"> All states </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> UR </td>
+   <td style="text-align:right;"> 6.533 </td>
+   <td style="text-align:right;"> 6.533 </td>
+   <td style="text-align:right;"> 5.593 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> HR </td>
+   <td style="text-align:right;"> 3.117 </td>
+   <td style="text-align:right;"> 3.117 </td>
+   <td style="text-align:right;"> 4.804 </td>
+  </tr>
+</tbody>
+</table>
+
 We can see that they are very similar on both homocide rate and the unemployment rate, and that these are both different from the overall means of either.
 
 We know that the synthetic Washington is a weighted average of the other states, so what are those weights? Which states are most highly weighted, and which less so?
 
-```{r}
+
+```r
 # Merge the weights from the Synth command with US states 
 weights <- merge(us_states, t$tab.w[,1:2], 
                  by.x='NAME', by.y='unit.names', all.x=TRUE)
@@ -168,9 +205,12 @@ weights <- merge(us_states, t$tab.w[,1:2],
 plot(weights['w.weights'], main='Weights', breaks='jenks')
 ```
 
+![](SynthControl_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+
 The plot isn't that easy to read, but we can see that a lot of weight is on Utah and then on the coastal states. What is interesting is that most states are included at some level in the synthetic Washington. We can see this more clearly in the table below.
 
-```{r}
+
+```r
 knitr::kable(t$tab.w[,c(2,1)],
              row.names = F,
              col.names = c('State','Weight')) %>%  
@@ -178,13 +218,221 @@ knitr::kable(t$tab.w[,c(2,1)],
   scroll_box(width = "500px", height = "200px")
 ```
 
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; "><table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> State </th>
+   <th style="text-align:right;"> Weight </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Alabama </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alaska </td>
+   <td style="text-align:right;"> 0.010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Arizona </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Arkansas </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> California </td>
+   <td style="text-align:right;"> 0.009 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Colorado </td>
+   <td style="text-align:right;"> 0.008 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Connecticut </td>
+   <td style="text-align:right;"> 0.010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Delaware </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Florida </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Georgia </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hawaii </td>
+   <td style="text-align:right;"> 0.010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Idaho </td>
+   <td style="text-align:right;"> 0.020 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Illinois </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Indiana </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iowa </td>
+   <td style="text-align:right;"> 0.008 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kansas </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kentucky </td>
+   <td style="text-align:right;"> 0.010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Louisiana </td>
+   <td style="text-align:right;"> 0.003 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maine </td>
+   <td style="text-align:right;"> 0.024 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maryland </td>
+   <td style="text-align:right;"> 0.003 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Massachusetts </td>
+   <td style="text-align:right;"> 0.012 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Michigan </td>
+   <td style="text-align:right;"> 0.008 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Minnesota </td>
+   <td style="text-align:right;"> 0.009 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mississippi </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Missouri </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Montana </td>
+   <td style="text-align:right;"> 0.010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nebraska </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nevada </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Hampshire </td>
+   <td style="text-align:right;"> 0.009 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Jersey </td>
+   <td style="text-align:right;"> 0.010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Mexico </td>
+   <td style="text-align:right;"> 0.004 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New York </td>
+   <td style="text-align:right;"> 0.009 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Carolina </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Dakota </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ohio </td>
+   <td style="text-align:right;"> 0.010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Oklahoma </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Oregon </td>
+   <td style="text-align:right;"> 0.590 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pennsylvania </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rhode Island </td>
+   <td style="text-align:right;"> 0.046 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Carolina </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Dakota </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tennessee </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Texas </td>
+   <td style="text-align:right;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Utah </td>
+   <td style="text-align:right;"> 0.009 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vermont </td>
+   <td style="text-align:right;"> 0.008 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Virginia </td>
+   <td style="text-align:right;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> West Virginia </td>
+   <td style="text-align:right;"> 0.014 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Wisconsin </td>
+   <td style="text-align:right;"> 0.009 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Wyoming </td>
+   <td style="text-align:right;"> 0.007 </td>
+  </tr>
+</tbody>
+</table></div>
+
 With so many states being needed to create the synthetic Washington, we can start to see the usefulness of this method. Had we just picked a state to compare Washington with -- say Oregon -- then we would not have been able to draw on all of the other states to bring the trend closer. Although heavily weighted, Oregon is only 59% of the synthetic Washington. 
 
 ## Comparing Washington with synthetic Washington 
 
 Finally, we can start looking at how Washington and the synthetic Washington compare over time, and crucially after 2014. 
 
-```{r Figures}
+
+```r
 # Update the 'path.plot' function to match formatting 
 path.plot2 <- function (synth.res = NA, 
                         dataprep.res = NA, 
@@ -223,9 +471,12 @@ path.plot2(synth.res = s, dataprep.res = d_synth,
           Legend.position=c('topleft'),tr.intake = 2014)
 ```
 
+![](SynthControl_files/figure-html/Figures-1.png)<!-- -->
+
 To make it easier to see the difference between the two, we can plot it directly, as below: 
 
-```{r}
+
+```r
 # Slightly update the gaps plot to not have a box around it
 gaps.plot2 <- function (synth.res = NA, 
                        dataprep.res = NA, 
@@ -251,6 +502,8 @@ gaps.plot2 <- function (synth.res = NA,
 gaps.plot2(synth.res = s, dataprep.res = d_synth,tr.intake=2014,
            Ylab='Treatment-synth control HR', Xlab='Year')
 ```
+
+![](SynthControl_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 # Conclusions 
 
