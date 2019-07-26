@@ -14,8 +14,8 @@ x10 <- html_table(html_nodes(page, xpath=paste0('//*[@id="mw-content-text"]/div/
 
 # Plot Con and Lab
 par(lwd=2)
-plot(x=1,y=1,type='n', xlim=c(2010,2019), ylim=c(0,100),
-     xlab='Year', ylab='%', bty='n')
+plot(x=1,y=1,type='n', xlim=c(2010,2020), ylim=c(0,100), axes=FALSE,
+     xlab='Year', ylab='% of electorate', bty='n')
 lines(x=c(2010,2015,2017),
       y=c(as.numeric(x10[x10[,2]=='Conservative','%']),
           as.numeric(x15[x15[,2]=='Conservative','%']),
@@ -46,3 +46,12 @@ lines(x=c(2017,2019),
 lines(x=c(2017,2019),
       y=c(as.numeric(x17[x17[,2]=='Labour','%']),hypo_labour), lty=2, col='red')
 
+# Add a legend 
+legend(x=2010,y=100,legend=c('Turnout', 'Conservative','Labour'),
+       fill=c('black','blue','red'), bty='n')
+legend(x=2014,y=100,legend=c('Observed', 'Hypothetical'),
+       col=c('black','black'), lty=c(1,2), bty='n')
+
+# Add axes 
+axis(1, at=c(2010,2015,2017,2019))
+axis(2, at=c(0,30,60,100))
