@@ -71,10 +71,10 @@ An additional advantage that I didn't mention is that by simply changing the 'ou
 
 The formatting of the pdf file can be controlled by adding a .tex file in the header of the Latex file produced by RStudio before being sent to Latex to compile (ignore all of this if it means nothing to you and you don't care about Latex!). This is done quite simply but the YAML code needs to be quite precise
 
-		output:
-		  pdf_document: 
-		    includes:
-		      in_header: header.tex
+	output:
+	  pdf_document:
+	    includes:
+	      in_header: header.tex
 
 It is also possible to change the template that is used, although I have never done that so can't advise. 
 
