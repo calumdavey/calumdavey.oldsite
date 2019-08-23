@@ -1,0 +1,66 @@
+---
+title: "R Users Group -- 2018/19 review"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Users 
+
+The R Users Group mailing list has 218 members
+
+We have had 12 meetings (this is the 13th!)
+
+The BeginRs group has ## members 
+
+## Past events 
+
+- 26 July *ggplot2*
+- 28 June *parallel processing*
+- 30 May *Git* 
+- 26 April *data.table*
+- 4 April *spatial data*
+- 01 March *Rcpp* 
+- 31 January *missing Data*
+- 29 November 19 *High Performance Cluster*
+- 25 October 19 *regression* 
+- 27 September 19 *Shiny* 
+- 20 July 19 *reproducible Research* 
+- 28 June 19 *tidyverse*
+
+## Huge thank you! 
+
+Sam, Jenny, Amy, Rosalind, Hunter, Carl, Hannah, Hope, Leonard, Matteo, Peninah, Liz, Nick, Claudio , Chris, and Syreen  
+
+![](tenor.gif)
+
+## Future events? 
+
+- Super Learner & machine learning (Kamaryn)
+- Projects & organising files in R
+- Using lists 
+- `make` files (Carl)
+- Adventures with Git (Jocelyn)
+- Plot/ggplot2 'show and tell'? 
+
+## Teaching 
+
+Background: 
+
+- Most mobules hoping to offer R versions of computer practicals 
+- No School-wide coordination on what packages used 
+- Many module organisers & practical leaders new to R
+- New MSc in Data Science likely (surely?) involves R training 
+
+Next steps?
+
+- Organise a meeting of module organisers and R users 
+- Discuss 'roadmap' for R at the School: look ahead 
+- Agree process for developing curriculum so R-learning in different modules mutually supportive
+
+## Admin 
+
+- Website 
+- BeginRs
