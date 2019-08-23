@@ -4,6 +4,8 @@ title: Writing Word documents in RStudio
 tags: R
 ---
 
+**Updated 23 Aug 2019 with note re: PDFs and journal submissions**
+
 For collaborating in research it is often necessary to produce Word documents (.docx format) for sharing with co-authors for comments and changes. To produce research outputs that are reproducible, and to avoid spending any more time than is necessary in Word (plus having a system that doesn't 'corrupt') we can use RStudio, BibDesk, and a few setup steps to write documents in markdown and output in Word. (I'm assuming that you [have a Mac](https://calumdavey.github.io/Cheap-Cheap/), but if not then I think everything works the same except for the reference manager). 
 
 If that previous sentence made no sense at all, don't worry. Each of these things is simple. But before explaining what each is, it's good to step back and address The Big difference between producing documents with Word and in this alternative, more complicated *sounding*, way. 
@@ -61,5 +63,19 @@ Once you've finished working on your document, including adding all your referen
 
 RStudio will run some things, actually more than one programme but you don't need to worry about it, and very soon there will be a Word document created in the same folder as the Rmarkdown file. Open that up and take a look. If it looks nice, you're done! If something isn't quite right (and there usually is something) then you will have to check you've done your markdown property, or that the cite-keys are all correct, or that the formatting is how you want it. That all sounds tedious, but it doesn't take long and the good thing is that each improvement you make will be useful for all the projects that you're working on, either directly (in the case of the formatting files) or by learning more about how to create beautiful reproducible research documents.
 
+## PDFs and journal submissions (Update)
 
+This post has been about producing Word docs from RStudio, building a bridge between reproducible work-flow and the horrors of Word. 
 
+An additional advantage that I didn't mention is that by simply changing the 'output' in the YAML to 'pdf_document' instead of 'word_document' then when you knit RStudio will look for Latex on the system and if it is there will use that to produce a Latex pdf (it is even possible to tell RStudio to do both formats at once, but that's a bit advanced). 
+
+The formatting of the pdf file can be controlled by adding a .tex file in the header of the Latex file produced by RStudio before being sent to Latex to compile (ignore all of this if it means nothing to you and you don't care about Latex!). This is done quite simply but the YAML code needs to be quite precise
+
+		output:
+		  pdf_document: 
+		    includes:
+		      in_header: header.tex
+
+It is also possible to change the template that is used, although I have never done that so can't advise. 
+
+This fine control over the Word and pdf output formats means that when journals require specific formats then it is easy to refer the RMarkdown file to a different Word template or .tex file and update the formatting of your document in a click. If, god forbid, your paper is rejected from the first journal, changing to the format for your second choice journal is a matter of changing the reference Word template or the .tex file. 
