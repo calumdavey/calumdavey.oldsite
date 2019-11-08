@@ -1,0 +1,51 @@
+---
+title: "Submit"
+subtitle: ""
+author: "Calum Davey"
+date: "08/11/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## the problem
+
+- academics need to publish papers in journals 
+- writing is hard 
+- getting published is harder 
+- desk rejections -- where the editors do not send the paper for review -- make up a major proportion of the failures to publish 
+
+## the gap  
+
+- no dedicated software for capturing ideas 
+- no trusted systems for ensuring ideas are developed 
+- no paper-writing workflow management system that breaks down the problem and also provides an overview of progress 
+- few academics realise that editors have style preferences 
+- actually submitting a paper can take up to 4-5 hours of formatting and filling out forms 
+
+## the solution 
+
+- dedicated ideas-to-submission software
+- project-manages paper writing 
+- subscription service includes submission assistance 
+
+## functionality
+
+- innovation capture: ideas / titles in one place 
+- to-do list: pulls out the most urgent to-dos based on user's deadlines 
+- paper-writing workflow: dashboard for progress 
+- templates: created automatically from articles scraped from journals 
+- formatting: loaded with automatic formatting requirements for journals 
+- pro/subscription: personal support with submission (and re-submission) of papers
+
+## form 
+
+- desk / mobile app 
+- quick capture of ideas with topic tags 
+- overview mode: where you are overall  
+- project mode: breaks-down the act of writing into chunks (sections, paragraphs, sentences -- user can toggle detail level)
+- distraction-free writing environment 
+
+
