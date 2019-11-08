@@ -3,7 +3,7 @@ title: "Submit"
 subtitle: ""
 author: "Calum Davey"
 date: "08/11/2019"
-output: ioslides_presentation
+output: slidy_presentation
 ---
 
 ```{r setup, include=FALSE}
