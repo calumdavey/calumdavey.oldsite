@@ -48,4 +48,15 @@ knitr::opts_chunk$set(echo = FALSE)
 - project mode: breaks-down the act of writing into chunks (sections, paragraphs, sentences -- user can toggle detail level)
 - distraction-free writing environment 
 
+## architecture 
+
+- three tabbed environments: ideas, overview, project 
+- ideas environment simple: just a space to add an idea, auto-complete tags, and other meta information (deadlines, journals, grants, etc)
+- overview will include a list of ideas that can be sorted by topic, with progress-bar overlay 
+- selecting an idea will go to the project environment, which is where the workflow happens 
+  - questions develop the idea further (who else involved, what journal etc)
+  - next step produces template for the paper
+    - could be .docx, or plain-text fields to be filled in (would need to think about references)
+  - will need to consult about drafting processes 
+
 
