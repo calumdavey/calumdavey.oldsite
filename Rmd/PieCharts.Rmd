@@ -1,0 +1,62 @@
+---
+title: "In defense of pie charts"
+output: 
+  html_document:
+    keep_md: yes
+---
+
+There is a common opinion that pie charts are _verboten_. 
+A sign of a novice analyst.
+Who might, god forbid, have made the chart in Excel.
+
+However, I have recently come across a situation where pie charts are the ideal choice.
+And the situtation is not all that peculiar. 
+It is the situation where the message is about how the parts make up a whole.
+When the point is not to dissect, but to compile.
+
+The idea came to me when interpreting a working-style quiz (which I will come to later) but I think that the idea is better represented using the example of the recent UK parliamentary elections. 
+Because of how the elections work, it is natural to want to _dissect_ the results to identify the _largest_ party, since they will form the next government.
+The rest of the parties matter much less (as long as there is not a hung parliament) and for this purpose the bar charts below makes the point well. 
+
+```{r barchart, echo = F, fig.height=4}
+votes <- c(43.6,32.1,11.5,3.9,.8,.6,.5,.4,2.7,.4,2,1.6)
+seats <- c(365,202,11,48,8,7,4,2,1,1,0,1)
+parties <- c('Con','Lab','Lib','SNP','DUP','SF','PC','SDLP','Grn','APNI','Bxt','Othr')
+colours <- c('blue','red','orange','yellow',
+             rep('gray50',times=8))
+par(mfrow=c(1,2), mar=c(3,0,1,2))
+barplot(votes, names.arg = parties, col=colours, main='Votes')
+barplot(seats, names.arg = parties, col=colours, main='Seats')
+```
+
+However, bar charts are less good when what we want is to say something overall about how the country voted. 
+Instead of partitioning the country into different votes or seats, we want to present the overall 'tapestry'. 
+For this, a pie chart is more appropriate, because it presents a whole (pie) and how it is made up.
+It also doesn't over-emphasise the ordering of the categories in addition to their magnitude.
+
+```{r pies, echo = FALSE, fig.height=4}
+par(mfrow=c(1,2), mar=c(0,0,2,1))
+pie(votes, labels = parties, col=colours, main='Votes')
+pie(seats, labels = parties, col=colours, main='Seats')
+```
+
+As I said, I started to think about this when my team completed a working-styles test and were comparing the results.
+The results were presented as a bar chart of how much people were of each 'type'.
+I've replicated my results below to show what I mean (I've ommitted what these types are supposed to be since a. I am not sure they're all that meaningful and b. it would take a lot of explaining).
+Most people focused all of their discussion and interpretation on the first of these, even when others were not far behind.
+I think that this had a lot to do with how the data were presented in a bar chart, when in fact a pie chart would be more appropriate since the results were intended to say something about the 'whole' person, not the amount that different personality traits contributed to matching someone to a type. 
+
+To me, the same applies with the charts above.
+The pie charts do a better job of describing the whole.
+The voting one, in particular, does a good job of showing that far from being a country overwhelmed by Conservative support, it's acually quite a mix. 
+Which is the most important point: the country is not one thing, not the biggest group, but is a tapestry of differences. 
+
+```{r types, echo = FALSE}
+par(mfrow=c(1,2))
+types <- c(73, 63, 58, 53, 42, 32, 32)
+barplot(types, col=rainbow(7))
+pie(types, col=rainbow(7))
+```
+
+
+
