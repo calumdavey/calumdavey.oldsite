@@ -1,0 +1,121 @@
+---
+title: "Covid-19 Cases by country"
+output: 
+  html_document:
+    code_folding: hide
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library("rvest")
+library("dplyr")
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+I saw [this graph](https://twitter.com/MarkJHandley/status/1237119688578138112) on Twitter, and was asonished by the similarities in the growth rate of Covid-19 cases between countries. But I was frustrated that there was no code to explain how the graph was produced. 
+
+I tried to replicate the results by scraping data from Wikipedia (the code can be revealed if you wish).
+
+I plotted the number of cases per day on the log scale, from the start of the epidemic in each country. 
+I arbitrarity set the 'start' of tranmission in the country to the first day with 100 cases or more in one day.
+Because of this, Japan does not appear on this graph, despite being an important counterpoint in the linked graph. 
+I also struggled to find easily accessible data for France and Spain, so have focused on Italy, UK, USA, and Germany.
+
+```{r get-data-from-wiki}
+# SCRAPING CODE FROM WIKIPEDIA 
+#=============================
+
+wiki_italy <- read_html('https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Italy')
+wiki_uk <- read_html('https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_the_United_Kingdom')
+wiki_usa <- read_html('https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_the_United_States#State_number_of_reported_cases_by_date')
+wiki_germany <- read_html('https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Germany')
+wiki_japan <- read_html('https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Japan')
+
+# SET EPIDEMIC START VALUE
+epi.cases <- 100
+
+# ITALY
+italy <- wiki_italy %>%
+  html_node(xpath = '//*[@id="mw-content-text"]/div/table[4]') %>%
+  html_table(fill=TRUE) %>%
+  .[,c(1,24)] %>%
+  mutate(date = as.Date(Date, "%Y-%m-%d"),
+         cases = as.numeric(sub(',','',Confirmed))) %>%
+  filter(Date != 'Date' & !is.na(date)) %>%
+  select(date, cases) 
+  
+# START OF THE EPIDEMIC IN ITALY 
+start <- italy$date[min(which(italy$cases>epi.cases))]
+
+# UK 
+UK <- wiki_uk %>%
+  html_node(xpath = '//*[@id="mw-content-text"]/div/table[3]') %>%
+  html_table(fill=TRUE) %>%
+  .[,c(1,14)] %>%
+  mutate(date = as.Date(Date, "%Y/%m/%d")) %>%
+  filter(!is.na(date))
+UK$cases <- as.numeric(sub('','',sub('\\[.*','',UK[,2])))
+UK <- UK[,c('date','cases')]
+
+# USA 
+USA <- wiki_usa %>%
+  html_node(xpath = '//*[@id="mw-content-text"]/div/table[6]') %>%
+  html_table(fill=TRUE) %>%
+  .[,c(1,41)] %>%
+  mutate(date = as.Date(Date, "%b %d")) %>%
+  filter(!is.na(date))
+USA$cases <- as.numeric(sub('','',sub('\\[.*','',USA[,2])))
+USA <- USA[,c('date','cases')]
+
+# GERMANY 
+germany <- wiki_germany %>%
+  html_node(xpath = '//*[@id="mw-content-text"]/div/table[3]') %>%
+  html_table(fill=TRUE)
+g <- rbind(germany, colnames(germany))
+g <- g[c(1,20,21), !(colnames(g) %in% 'State')]
+g <- as.data.frame(t(g))
+g$date <- as.Date(paste0(g$`21`, g$`1`), '%B %d')
+g$cases <- as.numeric(as.character(g$`20`))
+germany <- g[,c('cases', 'date')]
+
+# JAPAN -- not had more than 100 cases in a day 
+# japan <- wiki_japan %>%
+#   html_node(xpath = '//*[@id="mw-content-text"]/div/table[2]') %>%
+#   html_table(fill=TRUE) %>%
+#   .[,c(1,2)] 
+# japan$date <- as.Date(japan[,1], '%d %b %Y')
+# japan$cases <- as.numeric(sub(',','',japan[,2]))
+
+```
+
+The graph below does not replicate what was shown in the Tweet. 
+Not sure why. 
+Looks like UK might be on a different trajectory from Italy, and Germany have had some wobbles. 
+
+```{r plot}
+# PLOTTING THE RESULTS 
+#=====================
+
+plot(x = italy[italy$date>=start,'date'] - start,
+     y = italy[italy$date>=start,'cases'],
+     xlim=c(0,Sys.Date()-start),
+     log='y', xlab = 'Days since >=100 cases in one day',
+     ylab = 'Covid-19 cases (log scale)', 
+     type='l', pch='.', col = 'purple')
+
+add.lines <- function(country, colour='black'){
+  lines(x = country$date - country$date[min(which(country$cases>epi.cases))],
+        y = country$cases, type='l', col = colour, pch='.')
+}
+
+add.lines(UK)
+add.lines(USA, 'red')
+add.lines(germany, 'green')
+
+legend(x='bottomright',
+       legend = c('Italy','UK','USA','Germany'),
+       col=c('purple','black','red','green'),
+       lty=1, bty='n')
+```
+
