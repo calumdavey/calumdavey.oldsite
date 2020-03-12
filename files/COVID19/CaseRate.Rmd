@@ -50,7 +50,7 @@ start <- italy$date[min(which(italy$cases>epi.cases))]
 
 # UK 
 UK <- wiki_uk %>%
-  html_node(xpath = '//*[@id="mw-content-text"]/div/table[3]') %>%
+  html_node(xpath = '//*[@id="mw-content-text"]/div/table[4]') %>%
   html_table(fill=TRUE) %>%
   .[,c(1,14)] %>%
   mutate(date = as.Date(Date, "%Y/%m/%d")) %>%
@@ -62,7 +62,7 @@ UK <- UK[,c('date','cases')]
 USA <- wiki_usa %>%
   html_node(xpath = '//*[@id="mw-content-text"]/div/table[6]') %>%
   html_table(fill=TRUE) %>%
-  .[,c(1,41)] %>%
+  .[,c(1,46)] %>%
   mutate(date = as.Date(Date, "%b %d")) %>%
   filter(!is.na(date))
 USA$cases <- as.numeric(sub('','',sub('\\[.*','',USA[,2])))
@@ -76,7 +76,7 @@ g <- rbind(germany, colnames(germany))
 g <- g[c(1,20,21), !(colnames(g) %in% 'State')]
 g <- as.data.frame(t(g))
 g$date <- as.Date(paste0(g$`21`, g$`1`), '%B %d')
-g$cases <- as.numeric(as.character(g$`20`))
+g$cases <- as.numeric(as.character(sub('\\[.*','',g$`20`)))
 germany <- g[,c('cases', 'date')]
 
 # JAPAN -- not had more than 100 cases in a day 
@@ -111,11 +111,11 @@ add.lines <- function(country, colour='black'){
 
 add.lines(UK)
 add.lines(USA, 'red')
-add.lines(germany, 'green')
+#add.lines(germany, 'green')
 
 legend(x='bottomright',
-       legend = c('Italy','UK','USA','Germany'),
-       col=c('purple','black','red','green'),
+       legend = c('Italy','UK','USA'),
+       col=c('purple','black','red'),
        lty=1, bty='n')
 ```
 
