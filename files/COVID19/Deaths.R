@@ -62,7 +62,7 @@ dta <- dta_raw %>%
   arrange(country, time)
 
 DF_plot = dta %>%
-  filter(value >= 10) %>%
+  filter(value >= 1) %>%
   group_by(country) %>% 
   mutate(days_after_1 = 0:(length(country)-1)) %>% 
   
