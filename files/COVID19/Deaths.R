@@ -83,15 +83,15 @@ plot1 = DF_plot %>%
   ggplot(aes(x = days_after_1, y = value, color = country)) +
   geom_line() + 
   ggrepel::geom_label_repel(aes(label = name_end), show.legend = FALSE, segment.color = "grey", segment.size  = .2) + #, segment.linetype = 5 
-  # scale_y_log10(
-  #   breaks = scales::trans_breaks("log10", function(x) 10^x),
-  #   labels = scales::trans_format("log10", scales::math_format(10^.x))) + 
+   scale_y_log10(
+     breaks = scales::trans_breaks("log10", function(x) 10^x),
+     labels = scales::trans_format("log10", scales::math_format(10^.x))) + 
   scale_x_continuous(breaks = seq(0, max(DF_plot$value), 2)) +
   labs(
     title = "Confirmed Covid deaths",
     subtitle = "Arranged by number of days since 10 or more deaths",
     x = "Days after 10 confirmed cases",
-    y = "Confirmed deaths", 
+    y = "Confirmed deaths (log scale)", 
     caption = "Source: Johns Hopkins CSSE"
   ) +
   theme_minimal() +
