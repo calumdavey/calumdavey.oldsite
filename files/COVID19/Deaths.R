@@ -62,7 +62,7 @@ dta <- dta_raw %>%
   arrange(country, time)
 
 DF_plot = dta %>%
-  filter(value >= 1) %>%
+  filter(value >= 5) %>%
   group_by(country) %>% 
   mutate(days_after_1 = 0:(length(country)-1)) %>% 
   
@@ -89,8 +89,8 @@ plot1 = DF_plot %>%
   scale_x_continuous(breaks = seq(0, max(DF_plot$value), 2)) +
   labs(
     title = "Confirmed Covid deaths",
-    subtitle = "Arranged by number of days since 10 or more deaths",
-    x = "Days after 10 confirmed cases",
+    subtitle = "Arranged by number of days since 5 or more deaths",
+    x = "Days after 5 confirmed cases",
     y = "Confirmed deaths (log scale)", 
     caption = "Source: Johns Hopkins CSSE"
   ) +
