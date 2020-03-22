@@ -195,7 +195,7 @@ for (country in countries){
 ### Final touches 
 
 To finish up, we can add the axes and titles. 
-And we're done. ../images/Covid/
+And we're done.
 
 ```r
 # Add the axes 
