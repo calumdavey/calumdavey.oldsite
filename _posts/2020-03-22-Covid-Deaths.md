@@ -1,26 +1,29 @@
 ---
 layout: post
-title: Covid-19 deaths graphs, a walk-through
+title: Covid deaths graphs -- a walk-through
 ---
 
 *(Note that if you don't need any help with `R` you can find the complete script [here](https://github.com/calumdavey/calumdavey.github.io/blob/master/files/COVID19/COVID_DEATHS_GRAPHS.R))*
 
 Keeping up with what is going on with Covid-19 is challenging. 
+
 Trends in the number of cases can be difficult to interpret as testing [varies between countries and over time](https://ourworldindata.org/covid-testing). 
-So while in South Korea it is possible to [get tested](https://www.aljazeera.com/programmes/upfront/2020/03/testing-times-south-korea-covid-19-strategy-working-200320051718670.html) if you have even relatively mild symptoms, or where exposed to someone who is ill, in the UK you won't be tested unless you need hospitalisation with severe symptoms. 
-It is possible that the UK will change its approach to testing, to include milder cases, in which case the number of confirmed cases would rise even if the epidemic hadn't changed.
-Likewise, in Korea, if they decided to cut back on testing to only severe cases, the number of confirmed cases would fall without any change in the spread of the disease.
+So while in South Korea it is possible to [get tested](https://www.aljazeera.com/programmes/upfront/2020/03/testing-times-south-korea-covid-19-strategy-working-200320051718670.html) if you have even relatively mild symptoms, or exposed to someone who is ill, in the UK you won't be tested unless you need hospitalisation with severe symptoms. 
+It is possible that the UK will change its approach to testing to include milder cases, in which case the number of confirmed cases would rise even if the epidemic hadn't changed.
+Likewise in Korea, if they decided to cut back on testing to only severe cases, the number of confirmed cases would fall without any change in the spread of the disease.
 Therefore, the number of confirmed cases is not in ideal way to compare the growth of cases in different countries. 
 
 Because people with severe symptoms are being tested in high-income settings, the number of Covid-19 deaths is a more consistent indicator of the progression of the pandemic. 
+
 These figures should also be interpreted with caution since the absolute number of deaths does not account for differences in the population sizes of different countries. 
 However, one aspect of the trend does not depend on the size of the population (at the start of the epidemic) is the growth rate: how much the number of deaths is changing over time. 
 Ordinarily we would think of the rate of change as the slope of a line showing how the number of deaths is changing with time. 
 However, because each case with the virus infects around two other people, the growth is exponential, and the slope of the line showing the absolute number of deaths itself increases with time. 
 To account for the fact that it is the relative change in the number of deaths that matters, we can take the logarithm of the number of deaths, which undoes the exponent so that the trend (in log deaths) is linear. 
 
-Graphs of the log number of deaths by country can be found in the media -- although many of the better onese are behind paywalls. 
+Graphs of the log number of deaths by country can be found in the media -- although many of the better ones are behind paywalls. 
 It is interesting, and perhaps useful, to be able to produce these graphs oneself. 
+
 Fortunately, [Johns Hopkins University](https://www.jhu.edu) in Baltimore, US, publishes an updated table of cumulative deaths each day, for each country in the world. 
 We can use these data to produce a graph of the log deaths in whatever countries we choose. 
 
