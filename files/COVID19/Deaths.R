@@ -90,7 +90,7 @@ plot1 = DF_plot %>%
   labs(
     title = "Confirmed Covid deaths",
     subtitle = "Arranged by number of days since 5 or more deaths",
-    x = "Days after 5 confirmed cases",
+    x = "Days after 5 deaths",
     y = "Confirmed deaths (log scale)", 
     caption = "Source: Johns Hopkins CSSE"
   ) +
