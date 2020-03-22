@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Covid-19 deaths graphs: walk-through
+title: Covid-19 deaths graphs, a walk-through
 ---
 
 *(Note that if you don't need any help with `R` you can find the complete script [here](https://github.com/calumdavey/calumdavey.github.io/blob/master/files/COVID19/COVID_DEATHS_GRAPHS.R))*
