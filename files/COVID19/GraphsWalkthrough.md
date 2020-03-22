@@ -1,14 +1,7 @@
 ---
-title: "Covid deaths graphs: walk-through"
-output: 
-  html_document:
-    keep_md: yes
+layout: post
+title: Covid-19 deaths graphs: walk-through
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(global.device = TRUE)
-```
 
 *(Note that if you don't need any help with `R` you can find the complete script [here](https://github.com/calumdavey/calumdavey.github.io/blob/master/files/COVID19/COVID_DEATHS_GRAPHS.R))*
 
@@ -59,7 +52,8 @@ Alternatively, you can copy-paste *all* of the code in one go by going [here](ht
 The `read.csv()` command can find a .csv file on your computer or, helpfully, at a URL online.
 When `read.csv()` loads in the data at the URL below, we assign this data to the name `data_raw` using the `<-` symbol. 
 
-```{r Load raw data}
+
+```r
 data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv")
 ```
 
@@ -78,7 +72,7 @@ This is done by asking `R` to check if each row of the 'Country.Region' column i
 We can assign this reduced dataset with only the countries we want to the object called `data`. 
 And to simplify things, we can remove columns that we won't be using. 
 
-```{r Select countries}
+```r
 # Names of selected countries 
 countries <- c("Italy","Spain","France","Germany","US","Japan","United Kingdom")
 
@@ -100,7 +94,7 @@ Each country will have multiple rows associated with it, one for each date.
 We do this re-organisation with `reshape()`. 
 It is not 100% necessary to understand how `reshape()` works, but after running it you can use `View(data)` again to see how the data has changed. 
 
-```{r Reshape the data}
+```r
 # Change the data from 'wide' to 'long'
 data <- reshape(data = data, 
                 direction = 'long',
@@ -115,7 +109,7 @@ The latter is achieved with `aggregate()`.
 Finally, since we are only interested in the state of the epidemic once local transmission started, we set an arbitrary minimum number of deaths. 
 Doing so means that we are plotting the trend in deaths after at least five deaths were recorded in the country in one day. 
 
-```{r dates}
+```r
 # Identify the dates as dates in the data 
 data$time <- as.Date(data$time, "%m.%d.%y")
 
@@ -146,7 +140,7 @@ Since Italy has the highest deaths, we can use Italy's data to determine the num
 We assign the data for Italy alone to a dataset called `plot_data`
 We plot `plot_data` (however we tell `R` that the 'type' of plot is 'none' (`'n'`) so no data is actually plotted yet) and add some gridlines. 
 
-```{r Set the scene, results='hide'}
+```r
 # Choose colours for each country 
 # install.packages('RColorBrewer')
 library(RColorBrewer)
@@ -168,6 +162,8 @@ plot(plot_data$x, type = 'n',
 grid(nx = NULL, ny = NULL, col = "lightgray", lty = "dotted", lwd = par("lwd"), equilogs = F)
 ```
 
+![](../images/Covid/Set-the-scene-1.png)
+
 ### Adding the trend lines 
 
 Finally, after all that, we are ready to add the trend lines. 
@@ -176,7 +172,7 @@ The `for(){}` code tells `R` to do the code inside of the curly brackets once fo
 The colour of the line is taken from the `cols` that we produced earlier. 
 After plotting the line, we also add a label to the final point using `text()` with the name of the country and the number of days since five or more cases were recorded there. 
 
-```{r add the countries}
+```r
 # Add each of the other countries 
 for (country in countries){
   plot_data <- data[data$Group.1 == country,]
@@ -191,12 +187,14 @@ for (country in countries){
 }
 ```
 
+![](../images/Covid/add-the-countries-1.png)
+
 ### Final touches 
 
 To finish up, we can add the axes and titles. 
-And we're done. 
+And we're done. ../images/Covid/
 
-```{r final touches}
+```r
 # Add the axes 
 axis(1, lwd=0, cex.axis=.7)
 axis(2, lwd=0, las=1, cex.axis=.7)
@@ -207,4 +205,6 @@ mysubtitle = "Arranged by number of days since 5 or more deaths"
 mtext(side=3, line=2, at=-0.07, adj=0, cex=1, mytitle)
 mtext(side=3, line=1, at=-0.07, adj=0, cex=0.7, mysubtitle)
 ```
+
+![](../images/Covid/final-touches-1.png)
 
