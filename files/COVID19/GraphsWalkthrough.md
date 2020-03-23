@@ -1,7 +1,11 @@
 ---
-layout: post
-title: Covid-19 deaths graphs: walk-through
+title: "Covid deaths graphs: walk-through"
+output: 
+  html_document:
+    keep_md: yes
 ---
+
+
 
 *(Note that if you don't need any help with `R` you can find the complete script [here](https://github.com/calumdavey/calumdavey.github.io/blob/master/files/COVID19/COVID_DEATHS_GRAPHS.R))*
 
@@ -72,6 +76,7 @@ This is done by asking `R` to check if each row of the 'Country.Region' column i
 We can assign this reduced dataset with only the countries we want to the object called `data`. 
 And to simplify things, we can remove columns that we won't be using. 
 
+
 ```r
 # Names of selected countries 
 countries <- c("Italy","Spain","France","Germany","US","Japan","United Kingdom")
@@ -94,6 +99,7 @@ Each country will have multiple rows associated with it, one for each date.
 We do this re-organisation with `reshape()`. 
 It is not 100% necessary to understand how `reshape()` works, but after running it you can use `View(data)` again to see how the data has changed. 
 
+
 ```r
 # Change the data from 'wide' to 'long'
 data <- reshape(data = data, 
@@ -107,7 +113,8 @@ data <- reshape(data = data,
 The final step before we can actually plot the data is to tell `R` that the time variable is supposed to be a date, and to ensure that each country only has one entry per day (looking at you, USA).
 The latter is achieved with `aggregate()`. 
 Finally, since we are only interested in the state of the epidemic once local transmission started, we set an arbitrary minimum number of deaths. 
-Doing so means that we are plotting the trend in deaths after at least five deaths were recorded in the country in one day. 
+Doing so means that we are plotting the trend in deaths after at least ten deaths were recorded in the country. 
+
 
 ```r
 # Identify the dates as dates in the data 
@@ -119,7 +126,7 @@ data <- aggregate(data$X,
                    'sum')
 
 # Only keep days with 5 or more deaths 
-data <- data[data$x>=5,]
+data <- data[data$x>=10,]
 ```
 
 ## Plotting the data
@@ -140,6 +147,7 @@ Since Italy has the highest deaths, we can use Italy's data to determine the num
 We assign the data for Italy alone to a dataset called `plot_data`
 We plot `plot_data` (however we tell `R` that the 'type' of plot is 'none' (`'n'`) so no data is actually plotted yet) and add some gridlines. 
 
+
 ```r
 # Choose colours for each country 
 # install.packages('RColorBrewer')
@@ -154,7 +162,7 @@ plot(plot_data$x, type = 'n',
      bty = 'n', # no border around the plot 
      xlim = c(1,(nrow(plot_data)+4)),
      axes = FALSE, bg='gray80',
-     xlab='Days after 5 confirmed deaths',
+     xlab='Days after 10 confirmed deaths',
      ylab='Confirmed deaths (log scale)',
      cex.lab=.7)
 
@@ -162,7 +170,7 @@ plot(plot_data$x, type = 'n',
 grid(nx = NULL, ny = NULL, col = "lightgray", lty = "dotted", lwd = par("lwd"), equilogs = F)
 ```
 
-![](../images/Covid/Set-the-scene-1.png)
+![](GraphsWalkthrough_files/figure-html/Set the scene-1.png)<!-- -->
 
 ### Adding the trend lines 
 
@@ -171,6 +179,7 @@ To do this, we tell `R` to select the data from `data` for each country in `coun
 The `for(){}` code tells `R` to do the code inside of the curly brackets once for each country in `countries`.
 The colour of the line is taken from the `cols` that we produced earlier. 
 After plotting the line, we also add a label to the final point using `text()` with the name of the country and the number of days since five or more cases were recorded there. 
+
 
 ```r
 # Add each of the other countries 
@@ -187,12 +196,13 @@ for (country in countries){
 }
 ```
 
-![](../images/Covid/add-the-countries-1.png)
+![](GraphsWalkthrough_files/figure-html/add the countries-1.png)<!-- -->
 
 ### Final touches 
 
 To finish up, we can add the axes and titles. 
-And we're done. ../images/Covid/
+And we're done. 
+
 
 ```r
 # Add the axes 
@@ -201,10 +211,10 @@ axis(2, lwd=0, las=1, cex.axis=.7)
 
 # Add titles
 mytitle = "Covid-19 deaths"
-mysubtitle = "Arranged by number of days since 5 or more deaths"
+mysubtitle = "Arranged by number of days since 10 or more deaths"
 mtext(side=3, line=2, at=-0.07, adj=0, cex=1, mytitle)
 mtext(side=3, line=1, at=-0.07, adj=0, cex=0.7, mysubtitle)
 ```
 
-![](../images/Covid/final-touches-1.png)
+![](GraphsWalkthrough_files/figure-html/final touches-1.png)<!-- -->
 

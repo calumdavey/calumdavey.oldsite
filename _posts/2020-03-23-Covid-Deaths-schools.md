@@ -43,8 +43,10 @@ plot(plot_data$x, type = 'n',
      bty = 'n', # no border around the plot 
      xlim = c(1,(nrow(plot_data)+4)),
      axes = FALSE, bg='gray80',
-     xlab='Days after 5 confirmed deaths',
+     xlab='Days after 10 confirmed deaths',
      ylab='Confirmed deaths (log scale)',
+     sub = 'N.B. US has not closed schools; Japan closed before 10 deaths',
+     cex.sub=.6,
      cex.lab=.7)
 
 # Add gridlines 
@@ -97,7 +99,7 @@ axis(2, lwd=0, las=1, cex.axis=.7)
 
 # Add titles
 mytitle = "Covid-19 deaths"
-mysubtitle = "Arranged by number of days since 5 or more deaths"
+mysubtitle = "Arranged by number of days since 10 or more deaths"
 mtext(side=3, line=2, at=-0.07, adj=0, cex=1, mytitle)
 mtext(side=3, line=1, at=-0.07, adj=0, cex=0.7, mysubtitle)
 

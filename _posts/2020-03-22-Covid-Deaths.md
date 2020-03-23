@@ -112,7 +112,7 @@ data <- reshape(data = data,
 The final step before we can actually plot the data is to tell `R` that the time variable is supposed to be a date, and to ensure that each country only has one entry per day (looking at you, USA).
 The latter is achieved with `aggregate()`. 
 Finally, since we are only interested in the state of the epidemic once local transmission started, we set an arbitrary minimum number of deaths. 
-Doing so means that we are plotting the trend in deaths after at least five deaths were recorded in the country in one day. 
+Doing so means that we are plotting the trend in deaths after at ~~least five~~ ten deaths were recorded in the country~~in one day~~. 
 
 ```r
 # Identify the dates as dates in the data 
@@ -123,8 +123,8 @@ data <- aggregate(data$X,
                    list(data$Country.Region, data$time),
                    'sum')
 
-# Only keep days with 5 or more deaths 
-data <- data[data$x>=5,]
+# Only keep days with 10 or more deaths 
+data <- data[data$x>=10,]
 ```
 
 ## Plotting the data
@@ -159,7 +159,7 @@ plot(plot_data$x, type = 'n',
      bty = 'n', # no border around the plot 
      xlim = c(1,(nrow(plot_data)+4)),
      axes = FALSE, bg='gray80',
-     xlab='Days after 5 confirmed deaths',
+     xlab='Days after 10 confirmed deaths',
      ylab='Confirmed deaths (log scale)',
      cex.lab=.7)
 
@@ -206,7 +206,7 @@ axis(2, lwd=0, las=1, cex.axis=.7)
 
 # Add titles
 mytitle = "Covid-19 deaths"
-mysubtitle = "Arranged by number of days since 5 or more deaths"
+mysubtitle = "Arranged by number of days since 10 or more deaths"
 mtext(side=3, line=2, at=-0.07, adj=0, cex=1, mytitle)
 mtext(side=3, line=1, at=-0.07, adj=0, cex=0.7, mysubtitle)
 ```
