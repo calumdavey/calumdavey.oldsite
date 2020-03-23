@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Covid deaths graphs -- a walk-through
+title: Covid deaths graphs -- a walk-through (part 1)
 ---
 
 *(Note that if you don't need any help with `R` you can find the complete script [here](https://github.com/calumdavey/calumdavey.github.io/blob/master/files/COVID19/COVID_DEATHS_GRAPHS.R))*
+
+**Update: add school closures in [new post](https://calumdavey.github.io/Covid-Deaths-schools/)**
 
 Keeping up with what is going on with Covid-19 is challenging. 
 
