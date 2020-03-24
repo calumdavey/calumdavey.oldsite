@@ -4,7 +4,7 @@
 # 22 MAR 2020
 
 # LOAD THE DATA 
-data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv",
+data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv",
                      as.is = TRUE)
 
 # DATA MANAGEMENT 
