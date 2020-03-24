@@ -60,7 +60,7 @@ The `read.csv()` command can find a .csv file on your computer or, helpfully, at
 When `read.csv()` loads in the data at the URL below, we assign this data to the name `data_raw` using the `<-` symbol. 
 
 ```{r Load raw data}
-data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv")
+data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 ```
 
 ## Data management

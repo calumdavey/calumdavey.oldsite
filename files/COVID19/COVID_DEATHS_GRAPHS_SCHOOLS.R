@@ -67,9 +67,9 @@ for (country in countries){
           lty=2, lwd=.7)
   }
   # Add a label
-  text(x=nrow(plot_data), y=max(plot_data$x),
+  text(x=nrow(plot_data), y=max(plot_data$x, na.rm=T),
        label=paste0(country,' (',nrow(plot_data),' days)'), 
-       pos=4, offset=.1, cex=.6, font=2,
+       pos=4, offset=.1, cex=.6, font=1,
        col=cols[which(countries==country)])
 }
 
