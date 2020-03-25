@@ -2,6 +2,7 @@
 layout: post
 title: Covid deaths graphs -- lockdown (part 3)
 ---
+*(Note that if you don't need any help with `R` you can find the complete script [here](https://github.com/calumdavey/calumdavey.github.io/blob/master/files/COVID19/COVID_DEATHS_GRAPHS_SCHOOLS_LOCKDOWN.R))*
 
 In previous walk-throughs we have [made graphs of the emerging Covid-19 deaths](https://calumdavey.github.io/Covid-Deaths/) and [added data on school closures](https://calumdavey.github.io/Covid-Deaths-schools/). 
 In this short post we will add points to indicate when countries have entered 'lockdown'.
