@@ -13,7 +13,7 @@ df <- read_excel(tf)
 # CLEAN UP THE DATA 
 df$Date <- as.Date(as.character(df$Date), "%Y%m%d")
 # EXPLORE THE STRINGNCY OF CONTROL 
-# Names of selected countries 
+# Names of countries with 10 or more deaths 
 countries <- c("Italy","Spain","France","Germany","USA","UK") # "Japan" mostly missing?
 # Rename in df
 df$CountryName[df$CountryName=='United Kingdom'] <- 'UK'
@@ -41,9 +41,6 @@ grid(nx = NULL, ny = NULL, col = "lightgray", lty = "dotted", lwd = par("lwd"), 
 
 for (country in countries){
   plot_df <- df[df$CountryName==country & !is.na(df$StringencyIndex) & df$ConfirmedDeaths>=5,]
-  # Since only updated every 1-3 days, drop final 2 rows 
-  plot_df <- plot_df[1:(nrow(plot_df)-3),]
-  
   # Add the lines 
   lines((1:nrow(plot_df)),plot_df$StringencyIndex,
         col=cols[which(countries==country)])
