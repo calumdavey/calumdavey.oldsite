@@ -57,6 +57,11 @@ ld$Date <- as.Date(ld$Date, "%d/%m/%Y")
 # PLOT 
 #=====
 
+# Choose colours for each country 
+# install.packages('RColorBrewer')
+library(RColorBrewer)
+cols <- brewer.pal(length(countries), 'Dark2')
+
 # Start with an 'empty' plot of Italy 
 plot_data <- data[data$Group.1=='Italy', ]
 
