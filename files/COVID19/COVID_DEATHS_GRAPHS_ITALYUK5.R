@@ -127,4 +127,4 @@
   mtext("Response stringency",side=4,line=2,cex=.7)
 
 # Add legend 
-  legend(x='bottomright', legend=c('Deaths','Stringency'), lty=c(1,2), bty='n', cex=.7)
+  legend(x='bottomright', legend=c('Deaths','Stringency'), lty=c(1,3), bty='n', cex=.7)
