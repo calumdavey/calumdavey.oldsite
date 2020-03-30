@@ -12,11 +12,9 @@
 # DATA MANAGEMENT 
   countries <- c("Italy", "United Kingdom", "China", "Korea, South")
   
-  # Keep data for selected countries 
-  data <- data_raw[data_raw$`Country.Region` %in% countries, ]
-    
+  # Keep data for selected countries
   # Keep only country (column 2) and the columns with the cases per day (columns 5 onward)
-  data <- data[, c(2, c(5:ncol(data)))]
+  data <- data_raw[data_raw$`Country.Region` %in% countries , c(2, c(5:ncol(data_raw)))]
   
   # Change the data from 'wide' to 'long'
   data <- reshape(data = data, 
@@ -44,11 +42,12 @@
   max_x <- nrow(plot_data)
   
   par(mar=c(5, 4, 4, 6) + 0.1)
-  plot(plot_data$x, type = 'n', 
+  plot(plot_data$x, 
+       type = 'n', 
        log = 'y', # y-axis is on the log scale 
        bty = 'n', # no border around the plot 
        xlim = c(1,(max_x+6)),
-       axes = FALSE, bg='gray80',
+       axes = FALSE, 
        xlab='Days after 5 confirmed deaths',
        ylab='Confirmed deaths (log scale)',
        cex.lab=.7)
@@ -58,13 +57,15 @@
     plot_data <- data[data$Group.1 == country,]
     
     # Plot the lines 
-    lines(c(1:nrow(plot_data)), plot_data$x, col=cols[which(countries==country)],lwd=1.5)
+    lines(c(1:nrow(plot_data)), plot_data$x, 
+          col=cols[which(countries==country)],
+          lwd=1.5)
     
     # Add a labels
-    text(x=ifelse(nrow(plot_data)<=max_x, nrow(plot_data), max_x), 
-         y=ifelse(nrow(plot_data)<=max_x, max(plot_data$x, na.rm=T), plot_data$x[max_x]),
+    text(x=ifelse(nrow(plot_data)<=(max_x+6), nrow(plot_data), max_x+4), 
+         y=ifelse(nrow(plot_data)<=(max_x+6), max(plot_data$x, na.rm=T), plot_data$x[max_x]),
          label=paste0(country,'\n (',nrow(plot_data),
-                      ifelse(nrow(plot_data)<=max_x, ' days)', ' days→')), 
+                      ifelse(nrow(plot_data)<=(max_x+6), ' days)', ' days→')), 
          pos=4, offset=.3, cex=.7,
          col=cols[which(countries==country)])
   }

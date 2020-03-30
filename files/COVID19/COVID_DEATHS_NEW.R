@@ -26,7 +26,7 @@
   data <- aggregate(data$X, list(data$Country.Region, data$time), 'sum')
 
   # Only keep days with 1 or more deaths 
-  data <- data[data$x>=1,]
+  data <- data[data$x>=10,]
 
 countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'US', 'Spain','France')  
   
@@ -70,7 +70,7 @@ countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'U
     text(x=max(plot_data$x, na.rm = T), 
          y=max(plot_data$y, na.rm = T),
          label=country, 
-         pos=1, offset=1, cex=.7,
+         pos=1, offset=.5, cex=.7,
          col=cols[which(countries==country)])
   }
 
