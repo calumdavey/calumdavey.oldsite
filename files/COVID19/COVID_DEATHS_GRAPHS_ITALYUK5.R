@@ -10,7 +10,7 @@
   data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 
 # DATA MANAGEMENT 
-  countries <- c("Italy", "United Kingdom", "China", "Korea, South")
+  countries <- c("Italy", "United Kingdom", "China", "Korea, South", 'Germany')
   
   # Keep data for selected countries
   # Keep only country (column 2) and the columns with the cases per day (columns 5 onward)
