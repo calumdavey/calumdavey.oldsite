@@ -28,7 +28,7 @@
   # Only keep days with 1 or more deaths 
   data <- data[data$x>=10,]
 
-countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'US', 'Spain','France')  
+countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'US', 'Spain','France','Spain')  
   
 # PLOTTING THE DATA
   max_x <- max(data$x[data$Group.1=='Italy'],na.rm=T)
@@ -42,13 +42,14 @@ countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'U
   plot(c(1,1), type = 'n', 
        log = 'xy', # y-axis is on the log scale 
        bty = 'n', # no border around the plot 
-       xlim = c(50,max_x),
+       xlim = c(50,max_x+10000),
        ylim = c(10,max_y),
        axes = FALSE, 
        xlab='Total number of deaths',
        ylab='Deaths in last five days',
        cex.lab=.7)
-
+  grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted", lwd = par("lwd"), equilogs = F)
+  
   # Function to get the row above
   rowShift <- function(x, shiftLen = -5L) {
     r <- (1L + shiftLen):(length(x) + shiftLen)
@@ -67,10 +68,10 @@ countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'U
     lines(plot_data$x, plot_data$y,col=cols[which(countries==country)])
 
     # Add a labels
-    text(x=max(plot_data$x, na.rm = T), 
-         y=max(plot_data$y, na.rm = T),
+    text(x=plot_data$x[nrow(plot_data)], 
+         y=plot_data$y[nrow(plot_data)],
          label=country, 
-         pos=1, offset=.5, cex=.7,
+         pos=4, offset=.1, cex=.7,
          col=cols[which(countries==country)])
   }
 
