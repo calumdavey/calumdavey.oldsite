@@ -40,10 +40,10 @@ countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'U
   cols <- brewer.pal(length(countries), 'Dark2')
   
   plot(c(1,1), type = 'n', 
-       log = 'xy', # y-axis is on the log scale 
+       #log = 'xy', # y-axis is on the log scale 
        bty = 'n', # no border around the plot 
        xlim = c(50,max_x+10000),
-       ylim = c(10,max_y),
+       ylim = c(1,10000),
        axes = FALSE, 
        xlab='Total number of deaths',
        ylab='Deaths in last five days',
@@ -81,6 +81,6 @@ countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'U
 
 # Add titles
   mytitle = "New and total Covid-19 deaths"
-  mysubtitle = "Arranged on a log-scale"
+  mysubtitle = "Arranged on a linear scale"
   mtext(side=3, line=2, adj=0, cex=1, mytitle)
   mtext(side=3, line=1, adj=0, cex=0.7, mysubtitle)

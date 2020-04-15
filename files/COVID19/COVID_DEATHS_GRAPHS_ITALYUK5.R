@@ -10,7 +10,7 @@
   data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 
 # DATA MANAGEMENT 
-  countries <- c("Italy", "United Kingdom", "China", "Korea, South", 'Germany')
+  countries <- c("Italy", "United Kingdom", "China", "Korea, South", 'Germany', 'US')
   
   # Keep data for selected countries
   # Keep only country (column 2) and the columns with the cases per day (columns 5 onward)
@@ -87,6 +87,7 @@
 # CLEAN UP THE DATA 
   df$Date <- as.Date(as.character(df$Date), "%Y%m%d")
   df$CountryName[df$CountryName=='South Korea'] <- 'Korea, South'
+  df$CountryName[df$CountryName=='United States'] <- 'US'
     
 # MERGE DATASETS TO ENSURE THE DATES MATCH
   data <- merge(data, df, by.x=c('Group.1','Group.2'), by.y=c('CountryName','Date'),all.x=T)

@@ -31,7 +31,7 @@
   data <- aggregate(data$X, list(data$Country.Region, data$time), 'sum')
 
   # Only keep days with 5 or more deaths 
-  data <- data[data$x>=1,]
+  data <- data[data$x>=5,]
 
 # PLOTTING THE DATA
   # Choose colours for each country 

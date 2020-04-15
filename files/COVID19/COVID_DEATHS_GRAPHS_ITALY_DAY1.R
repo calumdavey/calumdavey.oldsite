@@ -10,7 +10,7 @@
   data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 
 # DATA MANAGEMENT 
-  countries <- c("Italy", "United Kingdom")
+  countries <- c("Italy", "United Kingdom", "France")
   
   # Keep data for selected countries 
   data <- data_raw[data_raw$`Country.Region` %in% countries, ]
@@ -58,7 +58,7 @@ for (i in c(1,5,10)){
        xlim = c(1,(max_x+6)),
        axes = FALSE, bg='gray80',
        xlab=paste0('Days after ', i,' confirmed deaths'),
-       ylab='Confirmed deaths (log scale)',
+       ylab='Confirmed deaths',
        cex.lab=.7)
   
   # Add each of the other countries 
