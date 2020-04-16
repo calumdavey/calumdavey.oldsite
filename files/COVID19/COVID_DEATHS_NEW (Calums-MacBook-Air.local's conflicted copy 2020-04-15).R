@@ -1,9 +1,12 @@
 # COVID DEATHS GRAPHS 
 # CALUM DAVEY
 # LSHTM 
-# 27 MAR 2020; update 16 APR
+# 27 MAR 2020; update 16 APR 
 
-# Load the data 
+# PLOT THE DEATHS
+#================
+
+# LOAD THE DATA JHU data on deaths 
   data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 
 # DATA MANAGEMENT 
@@ -19,20 +22,31 @@
   # Group the data by country and time, with the sum of cases 
   data <- aggregate(data$X, list(data$Country.Region, data$time), 'sum')
 
-  # Only keep days with ten or more deaths 
+  # Only keep days with 10 or more deaths 
   data <- data[data$x>=10,]
 
-countries <- c('China', 'Italy', 'Germany', 'Spain', 'France','US', 'Sweden', 'United Kingdom')  
+countries <- c('China', 'United Kingdom', 'Korea, South', 'Italy', 'Germany', 'US', 'Spain','France','Spain', 'Sweden')  
   
 # PLOTTING THE DATA
+  max_x <- max(data$x[data$Group.1=='Italy'],na.rm=T)
+  max_y <- max(data$x[data$Group.1=='Italy'],na.rm=T)
+  mini  <- min(data$x[data$Group.1=='Italy'],na.rm=T)
+  
   # install.packages('RColorBrewer')
   library(RColorBrewer)
-  cols <- brewer.pal(length(countries), 'Paired')
+  cols <- brewer.pal(length(countries), 'Dark2')
   
   plot.new()
-  plot.window(xlim = c(1,max(data$x)+1000), ylim = c(1,10000))
-  rect(par("usr")[1],par("usr")[3],par("usr")[2],par("usr")[4],col = "gray95", lwd=0)
-  grid(nx = NULL, ny = NULL, col = "white", lty = "dotted", lwd = 2)
+  plot.window(xlim = c(50,max_x+10000), ylim = c(10,max_y))
+  plot(c(1,1), type = 'n', 
+       log = 'xy', # y-axis is on the log scale 
+       bty = 'n', # no border around the plot 
+       ,
+       axes = FALSE, 
+       xlab='Total number of deaths',
+       ylab='Deaths in last five days',
+       cex.lab=.7)
+  grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted", lwd = par("lwd"), equilogs = F)
   
   # Function to get the row above
   rowShift <- function(x, shiftLen = -5L) {
@@ -49,26 +63,22 @@ countries <- c('China', 'Italy', 'Germany', 'Spain', 'France','US', 'Sweden', 'U
     plot_data$y <- plot_data$x - plot_data$x_prev
     
     # Plot the lines 
-    lines(plot_data$x, plot_data$y,col=cols[which(countries==country)], lwd=2)
+    lines(plot_data$x, plot_data$y,col=cols[which(countries==country)])
 
     # Add a labels
     text(x=plot_data$x[nrow(plot_data)], 
          y=plot_data$y[nrow(plot_data)],
          label=country, 
-         pos=4, offset=.1, cex=1,
+         pos=4, offset=.1, cex=.7,
          col=cols[which(countries==country)])
   }
 
   # Add the axes 
-  axis(2, lwd=0, las =1, 
-       at=seq(0,10000,2000), cex.axis=.8,
-       labels=format(seq(0,10000,2000), big.mark = ','))
-  axis(1, lwd=0, cex.axis=.8,
-       at=seq(0,100000,5000), 
-       labels=format(seq(0,100000,5000), big.mark = ','))
+  axis(1, lwd=0, cex.axis=.7)
+  axis(2, lwd=0, las=1, cex.axis=.7)    
 
-# Add titles & axes 
-  mtext(side=3, line=2, adj=0, cex=1.2, "New and total Covid-19 deaths")
-  mtext(side=3, line=1, adj=0, Sys.Date())
-  title(main='', xlab='Total number of deaths', 
-        ylab='Deaths in last five days')
+# Add titles
+  mytitle = "New and total Covid-19 deaths"
+  mysubtitle = "Arranged on a log-scale"
+  mtext(side=3, line=2, adj=0, cex=1, mytitle)
+  mtext(side=3, line=1, adj=0, cex=0.7, mysubtitle)
