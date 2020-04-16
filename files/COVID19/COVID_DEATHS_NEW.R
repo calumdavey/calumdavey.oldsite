@@ -6,7 +6,7 @@
 # Load the data 
   data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 
-# DATA MANAGEMENT 
+# Data management  
   # Keep only country (column 2) and the columns with the cases per day (columns 5 onward)
   data <- data_raw[, c(2, c(5:ncol(data_raw)))]
   
@@ -24,7 +24,7 @@
 
 countries <- c('China', 'Italy', 'Germany', 'Spain', 'France','US', 'Sweden', 'United Kingdom')  
   
-# PLOTTING THE DATA
+# Plot 
   # install.packages('RColorBrewer')
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Paired')
