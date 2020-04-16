@@ -27,6 +27,7 @@
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Paired')
   
+  par(mar=c(4,1,5,5))
   plot.new()
   plot.window(xlim = c(1,max(data$x)+1000), ylim = c(1,10000))
   rect(par("usr")[1],par("usr")[3],par("usr")[2],par("usr")[4],col = "gray95", lwd=0)
@@ -58,7 +59,7 @@
   }
 
   # Add the axes 
-  axis(2, lwd=0, las =1, 
+  axis(4, lwd=0, las =1, 
        at=seq(0,10000,2000), cex.axis=.8,
        labels=format(seq(0,10000,2000), big.mark = ','))
   axis(1, lwd=0, cex.axis=.8,
@@ -68,5 +69,7 @@
 # Add titles & axes 
   mtext(side=3, line=2, adj=0, cex=1.2, "New and total Covid-19 deaths")
   mtext(side=3, line=1, adj=0, Sys.Date())
-  title(main='', xlab='Total number of deaths', 
-        ylab='Deaths in last five days')
+  text(par("usr")[2]*1.1, mean(par("usr")[3:4]), "Deaths in last five days", srt = -90, xpd = TRUE, pos = 4)
+  title(main='', xlab='Total number of deaths', ylab='')
+  
+  
