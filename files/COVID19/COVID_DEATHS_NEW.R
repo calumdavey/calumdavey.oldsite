@@ -19,10 +19,8 @@
   # Group the data by country and time, with the sum of cases 
   data <- aggregate(data$X, list(data$Country.Region, data$time), 'sum')
 
-  # Only keep days with ten or more deaths 
-  data <- data[data$x>=10,]
-
-countries <- c('China', 'Italy', 'Germany', 'Spain', 'France','US', 'Sweden', 'United Kingdom')  
+  # Choose the countries to include 
+  countries <- c('China', 'Italy', 'Germany', 'Spain', 'France','US', 'Sweden', 'United Kingdom')  
   
 # Plot 
   # install.packages('RColorBrewer')
