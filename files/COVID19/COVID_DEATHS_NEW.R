@@ -28,20 +28,20 @@
   countries <- c('China', 'Italy', 'Germany', 'Spain', 'France', 'USA', 'Sweden', 'UK')  
   
 # Plot 
-  ymax <- 35000
+  ymax <- 30000
   # install.packages('RColorBrewer')
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Paired')
   
   par(mar=c(4,2,5,6))
   plot.new()
-  plot.window(xlim = c(1,max(data$x)+1000), ylim = c(1,ymax))
+  plot.window(xlim = c(1,ymax/2), ylim = c(1,ymax))
   
   # Add horizontal lines 
   abline(h=seq(0,ymax,5000), col='gray92', lwd=3)
 
   # Function to get the deaths two weeks earlier 
-  rowShift <- function(x, shiftLen = -14L) {
+  rowShift <- function(x, shiftLen = 14L) {
     r <- (1L + shiftLen):(length(x) + shiftLen)
     r[r<1] <- NA
     return(x[r])
@@ -53,14 +53,14 @@
     
     # Get the number of new deaths since last 2 weeks 
     plot_data$x_prev <- rowShift(plot_data$x)
-    plot_data$y      <- plot_data$x - plot_data$x_prev
+    plot_data$y      <- abs(plot_data$x - plot_data$x_prev)
     
     # Plot the lines 
     lines(plot_data$x, plot_data$y,col=cols[which(countries==country)], lwd=2.5)
 
     # Add a labels
-    text(x=plot_data$x[nrow(plot_data)], 
-         y=plot_data$y[nrow(plot_data)],
+    text(x=plot_data$x[nrow(plot_data)-14], 
+         y=plot_data$y[nrow(plot_data)-14],
          label=country, font = 2, 
          pos=4, offset=.1, cex=1.1,
          col=cols[which(countries==country)])
@@ -75,13 +75,13 @@
        labels=format(seq(0,100000,5000), big.mark = ','))
 
 # Add titles & axes 
-  mtext(side=3, line=2, adj=0, cex=1.4, "New and total Covid-19 deaths")
+  mtext(side=3, line=2, adj=0, cex=1.4, "New and total Covid-19 deaths: total and future")
   mtext(side=3, line=1, adj=0, Sys.Date(), cex=1.1)
-  text(par("usr")[2]*1.11, mean(par("usr")[3:4])+2000, "Deaths in last two weeks", srt = -90, xpd = TRUE, pos = 4)
-  title(main='', xlab='Total deaths', ylab='')
+  text(par("usr")[2]*1.15, mean(par("usr")[3:4])+4000, "Deaths in next two weeks", srt = -90, xpd = TRUE, pos = 4)
+  title(main='', xlab='Total deaths to date', ylab='')
   
 # Add doubling line 
-  abline(a = 0, b = 1, lty=2, lwd=2, col='gray80')
-  text(ymax/2, ymax/2, "Doubling every two weeks", srt = 41, xpd = TRUE, pos = 3, col='gray60')
+  #abline(a = 0, b = 1, lty=2, lwd=2, col='gray80')
+  #text(ymax/2, ymax/2, "Total deaths = deaths in next two weeks", srt = 41, xpd = TRUE, pos = 3, col='gray60')
   
   
