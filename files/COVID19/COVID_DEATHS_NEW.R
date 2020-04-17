@@ -28,19 +28,20 @@
   countries <- c('China', 'Italy', 'Germany', 'Spain', 'France', 'USA', 'Sweden', 'UK')  
   
 # Plot 
+  ymax <- 35000
   # install.packages('RColorBrewer')
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Paired')
   
   par(mar=c(4,2,5,6))
   plot.new()
-  plot.window(xlim = c(1,max(data$x)+1000), ylim = c(1,15000))
+  plot.window(xlim = c(1,max(data$x)+1000), ylim = c(1,ymax))
   
   # Add horizontal lines 
-  abline(h=c(0,5000,10000,15000), col='gray92', lwd=3)
+  abline(h=seq(0,ymax,5000), col='gray92', lwd=3)
 
-  # Function to get the deaths a week earlier 
-  rowShift <- function(x, shiftLen = -7L) {
+  # Function to get the deaths two weeks earlier 
+  rowShift <- function(x, shiftLen = -14L) {
     r <- (1L + shiftLen):(length(x) + shiftLen)
     r[r<1] <- NA
     return(x[r])
@@ -50,7 +51,7 @@
   for (country in countries){
     plot_data <- data[data$Group.1 == country,]
     
-    # Get the number of new deaths since last week 
+    # Get the number of new deaths since last 2 weeks 
     plot_data$x_prev <- rowShift(plot_data$x)
     plot_data$y      <- plot_data$x - plot_data$x_prev
     
@@ -67,8 +68,8 @@
 
   # Add the axes 
   axis(4, lwd=0, las =1,
-       at=seq(0,15000,5000), cex.axis=1,
-       labels=format(seq(0,15000,5000), big.mark = ','))
+       at=seq(0,ymax,5000), cex.axis=1,
+       labels=format(seq(0,ymax,5000), big.mark = ','))
   axis(1, lwd=0, cex.axis=1, lwd.ticks = 2, col='gray80',
        at=seq(0,100000,5000), 
        labels=format(seq(0,100000,5000), big.mark = ','))
@@ -76,6 +77,11 @@
 # Add titles & axes 
   mtext(side=3, line=2, adj=0, cex=1.4, "New and total Covid-19 deaths")
   mtext(side=3, line=1, adj=0, Sys.Date(), cex=1.1)
-  text(par("usr")[2]*1.1, mean(par("usr")[3:4])+2000, "Deaths in last week", srt = -90, xpd = TRUE, pos = 4)
+  text(par("usr")[2]*1.11, mean(par("usr")[3:4])+2000, "Deaths in last two weeks", srt = -90, xpd = TRUE, pos = 4)
   title(main='', xlab='Total deaths', ylab='')
+  
+# Add doubling line 
+  abline(a = 0, b = 1, lty=2, lwd=2, col='gray80')
+  text(ymax/2, ymax/2, "Doubling every two weeks", srt = 41, xpd = TRUE, pos = 3, col='gray60')
+  
   
