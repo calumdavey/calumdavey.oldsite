@@ -28,20 +28,20 @@
   countries <- c('China', 'Italy', 'Germany', 'Spain', 'France', 'USA', 'Sweden', 'UK')  
   
 # Plot 
-  ymax <- 30000
+  ymax <- 35000
   # install.packages('RColorBrewer')
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Paired')
   
   par(mar=c(4,2,5,6))
   plot.new()
-  plot.window(xlim = c(1,ymax/2), ylim = c(1,ymax))
+  plot.window(xlim = c(1,ymax+10000), ylim = c(1,ymax))
   
   # Add horizontal lines 
   abline(h=seq(0,ymax,5000), col='gray92', lwd=3)
 
   # Function to get the deaths two weeks earlier 
-  rowShift <- function(x, shiftLen = 14L) {
+  rowShift <- function(x, shiftLen = -14L) {
     r <- (1L + shiftLen):(length(x) + shiftLen)
     r[r<1] <- NA
     return(x[r])
@@ -59,8 +59,8 @@
     lines(plot_data$x, plot_data$y,col=cols[which(countries==country)], lwd=2.5)
 
     # Add a labels
-    text(x=plot_data$x[nrow(plot_data)-14], 
-         y=plot_data$y[nrow(plot_data)-14],
+    text(x=plot_data$x[nrow(plot_data)], 
+         y=plot_data$y[nrow(plot_data)],
          label=country, font = 2, 
          pos=4, offset=.1, cex=1.1,
          col=cols[which(countries==country)])
