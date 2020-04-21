@@ -10,7 +10,7 @@
   data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
 
 # DATA MANAGEMENT 
-  countries <- c("Italy", "United Kingdom", 'Germany')
+  countries <- c("Italy", "United Kingdom", 'Germany', 'US')
   
   # Keep data for selected countries
   # Keep only country (column 2) and the columns with the cases per day (columns 5 onward)
@@ -37,8 +37,8 @@
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Dark2')
   
-  # Start with an 'empty' plot of Italy 
-  plot_data <- data[data$Group.1=='Italy', ]
+  # Start with an 'empty' plot of US 
+  plot_data <- data[data$Group.1=='US', ]
   max_x <- nrow(plot_data)
   
   par(mar=c(5, 4, 4, 6) + 0.1)

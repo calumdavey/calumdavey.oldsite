@@ -28,20 +28,21 @@
   countries <- c('China', 'Italy', 'Germany', 'Spain', 'France', 'USA', 'Sweden', 'UK')  
   
 # Plot 
-  ymax <- 35000
+  ymax <- 20000
+  xmax <- 50000
   # install.packages('RColorBrewer')
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Paired')
   
   par(mar=c(4,2,5,6))
   plot.new()
-  plot.window(xlim = c(1,ymax+10000), ylim = c(1,ymax))
+  plot.window(xlim = c(1,xmax), ylim = c(1,ymax))
   
   # Add horizontal lines 
   abline(h=seq(0,ymax,5000), col='gray92', lwd=3)
 
   # Function to get the deaths two weeks earlier 
-  rowShift <- function(x, shiftLen = -14L) {
+  rowShift <- function(x, shiftLen = -7L) {
     r <- (1L + shiftLen):(length(x) + shiftLen)
     r[r<1] <- NA
     return(x[r])
@@ -75,9 +76,9 @@
        labels=format(seq(0,100000,5000), big.mark = ','))
 
 # Add titles & axes 
-  mtext(side=3, line=2, adj=0, cex=1.4, "New and total Covid-19 deaths: total and future")
+  mtext(side=3, line=2, adj=0, cex=1.4, "New and total Covid-19 deaths: total and recent")
   mtext(side=3, line=1, adj=0, Sys.Date(), cex=1.1)
-  text(par("usr")[2]*1.15, mean(par("usr")[3:4])+4000, "Deaths in next two weeks", srt = -90, xpd = TRUE, pos = 4)
+  text(par("usr")[2]*1.15, mean(par("usr")[3:4])+5000, "Deaths in previous week", srt = -90, xpd = TRUE, pos = 4)
   title(main='', xlab='Total deaths to date', ylab='')
   
 # Add doubling line 
