@@ -1,10 +1,7 @@
-# COVID DEATHS GRAPHS 
+# BLACK CLOUD 
 # CALUM DAVEY
 # LSHTM 
-# 20 APR 2020
-
-# PLOT THE DEATHS
-#================
+# 21 APR 2020
 
 # LOAD THE DATA JHU data on deaths 
   data_raw <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
