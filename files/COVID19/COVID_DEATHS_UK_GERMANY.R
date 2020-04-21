@@ -29,7 +29,7 @@
   data <- aggregate(data$X, list(data$Country.Region, data$time), 'sum')
 
   # Only keep days with 10 or more deaths 
-  data <- data[data$x>=10 & data$Group.1 %in% countries, ]
+  data <- data[data$x>=10, ]
   
   # Function to get new deaths
   rowShift <- function(x, shiftLen = -1L) {
@@ -68,8 +68,9 @@
        c(1:nrow(plot_data)), 
        plot_data$y, 
        col=cols[which(countries==country)], lwd=0)  
+  #lines(c(1:nrow(plot_data)), plot_data$y,col='gray80', lwd=2.5)
   }
-
+  
   # Add the axes 
   axis(1, lwd=0, cex.axis=.7)
   axis(4, lwd=0, las=1, cex.axis=.7)    
