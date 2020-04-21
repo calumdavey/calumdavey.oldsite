@@ -28,7 +28,7 @@
   # Group the data by country and time, with the sum of cases 
   data <- aggregate(data$X, list(data$Country.Region, data$time), 'sum')
 
-  # Only keep days with 5 or more deaths 
+  # Only keep days with 10 or more deaths 
   data <- data[data$x>=10 & data$Group.1 %in% countries, ]
   
   # Function to get new deaths
