@@ -5,25 +5,33 @@
 
 # Plotting function   
 plot_animate <- function(data = NULL, x = NULL, y = NULL, z = NULL, add = TRUE,
-                         w=500, h=500, r=96){
-    XRANGE <- c(min(data[,x], na.rm = T), max(data[,x], na.rm = T))
-    YRANGE <- c(min(data[,y], na.rm = T), max(data[,y], na.rm = T))
-  
-    par(bg=NA)
+                         xrange = c(min(data[,x], na.rm = T), max(data[,x], na.rm = T)),
+                         yrange = c(min(data[,y], na.rm = T), max(data[,y], na.rm = T)),
+                         w=500, h=500, r=96, add=TRUE){
+    
     img <- image_graph(w, h, res = r)
-    datalist <- split(data, data[,z])
-
-    lapply(datalist, function(d){
-      plot.new(); plot.window(xlim=XRANGE, ylim=YRANGE); axis(1); axis(2)
-      points(d[,x], d[,y])
-    })
+    Z <- unique(data[,z])
+    plot.new(); plot.window(xlim = xrange, ylim = yrange); axis(1); axis(2)
+    
+    for (i in Z){
+      if (add == TRUE){
+          d <- data[data[,z] %in% Z[1:which(Z == i)],]
+        } else {
+          d <- data[data[,z]==i,] 
+        }
+      plot.new(); plot.window(xlim = xrange, ylim = yrange); axis(1); axis(2)
+      points(d[,x], d[,y])  
+    }
     
     dev.off()
-    animation <- image_animate(img, fps = 2, optimize = TRUE, dispose = 'none')
+    animation <- image_animate(img, fps = 2, optimize = TRUE)
     print(animation)    
   }
 
 # Basic plot 
-plot_animate(data = iris, x = "Petal.Length", y = "Petal.Width", z = "Species")  
+  # Additive 
+  plot_animate(data = iris, x = "Petal.Length", y = "Petal.Width", z = "Species")  
 
+  # Non-additive 
+  plot_animate(data = iris, x = "Petal.Length", y = "Petal.Width", z = "Species", add = FALSE)  
   
