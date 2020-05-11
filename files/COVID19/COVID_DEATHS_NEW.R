@@ -28,8 +28,8 @@
   countries <- c('China', 'Italy', 'Germany', 'Spain', 'France', 'USA', 'Sweden', 'UK')  
   
 # Plot 
-  ymax <- 20000
-  xmax <- 50000
+  ymax <- 17000
+  xmax <- 82000
   # install.packages('RColorBrewer')
   library(RColorBrewer)
   cols <- brewer.pal(length(countries), 'Paired')
@@ -78,7 +78,7 @@
 # Add titles & axes 
   mtext(side=3, line=2, adj=0, cex=1.4, "New and total Covid-19 deaths: total and recent")
   mtext(side=3, line=1, adj=0, Sys.Date(), cex=1.1)
-  text(par("usr")[2]*1.15, mean(par("usr")[3:4])+5000, "Deaths in previous week", srt = -90, xpd = TRUE, pos = 4)
+  text(par("usr")[2]*1.12, mean(par("usr")[3:4])+5000, "Deaths in previous week", srt = -90, xpd = TRUE, pos = 4)
   title(main='', xlab='Total deaths to date', ylab='')
   
 # Add doubling line 

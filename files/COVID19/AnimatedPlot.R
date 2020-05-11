@@ -34,4 +34,3 @@ plot_animate <- function(data = NULL, x = NULL, y = NULL, z = NULL, add = TRUE,
 
   # Non-additive 
   plot_animate(data = iris, x = "Petal.Length", y = "Petal.Width", z = "Species", add = FALSE)  
-  
