@@ -1,0 +1,44 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+So we want to add person-level summaries of a variable to the right of a data-frame? 
+
+1. Create some data 
+
+```{r}
+library(dplyr)
+suppressMessages(library(data.table))
+
+d <- data.frame(ID = rep(seq(1,5,1), each = 5),
+                X  = rnorm(25))
+head(d) %>% knitr::kable()
+```
+
+2. The `dplyr` way 
+
+```{r}
+d %>%
+  group_by(ID) %>% 
+  mutate(mean_of_X = mean(X)) %>%
+  head(.) %>% knitr::kable()
+```
+
+3. The `data.table` way
+
+```{r}
+DT <- as.data.table(d)
+DT[, mean_of_X := mean(X), by = ID]
+head(DT) %>% knitr::kable()
+```
+
+4. The base R way 
+
+```{r}
+d <- merge(d, aggregate(d$X, by=list(d$ID), FUN=mean), by.x = 'ID', by.y = 'Group.1')
+head(d) %>% knitr::kable()
+```
+

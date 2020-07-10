@@ -41,7 +41,7 @@
   cols <- c('gray40','white')
   
   xmax <- sum(data$Group.1==countries[2])-1.5
-  ymax <- 1000
+  ymax <- 1500
   
   # Start with an 'empty' plot 
   par(mar=c(4,4,5,6))
